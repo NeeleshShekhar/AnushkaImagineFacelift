@@ -101,7 +101,7 @@ function MainComponent(props) {
                     <div className = "row">
                     <div className = "col-md-4">
                         <Card>
-                         <CardImg top width="100%" src="./images/Ques1.jpeg" alt="Ques1" />
+                         <CardImg top width="100%" src="./images/Ques1.png" alt="Ques1" />
                             <CardBody>
                                 <CardTitle tag="h5">Mathematics</CardTitle>
                                 <CardSubtitle tag="h6" className="mb-2 text-muted">5 $XLM</CardSubtitle>
@@ -113,7 +113,7 @@ function MainComponent(props) {
 
                        <div className="col-md-4">
                         <Card>
-                            <CardImg top width="100%" src="./images/Ques2a.jpeg"  alt="Ques2" />
+                            <CardImg top width="100%" src="./images/Ques2a.png"  alt="Ques2" />
                             <CardBody>
                                 <CardTitle tag="h5">Mathematics</CardTitle>
                                 <CardSubtitle tag="h6" className="mb-2 text-muted">3 $XLM</CardSubtitle>
@@ -124,7 +124,7 @@ function MainComponent(props) {
                         </div>
                         <div className = "col-md-4">
                         <Card>
-                            <CardImg top width="100%" src="./images/Ques3.jpeg" alt="Ques3" />
+                            <CardImg top width="100%" src="./images/Ques3.png" alt="Ques3" />
                             <CardBody>
                                 <CardTitle tag="h5">Mathematics</CardTitle>
                                 <CardSubtitle tag="h6" className="mb-2 text-muted">10 $XLM</CardSubtitle>
