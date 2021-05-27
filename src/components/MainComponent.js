@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import TelegramIcon from '@material-ui/icons/Telegram';
+import MenuIcon from '@material-ui/icons/Menu';
 import {
     Card, CardImg, CardTitle, CardText, CardDeck,
     CardSubtitle, CardBody
@@ -35,21 +36,26 @@ function MainComponent(props) {
                     <div className="container">
                         <NavbarBrand className="mr-auto logo" href="/" ><img src='./images/SkilWil.png' height="30px" width="100px" alt='SKILWIL' /></NavbarBrand>
                      
-                        <NavbarToggler style={{ backgroundColor : 'blue', background: 'url("skilwilicon.png")', backgroundSize : '100% 100%'}} onClick={switchNav} className = "mr-2" />
+                        <NavbarToggler 
+                        // style={{ backgroundColor : 'blue', background: 'url("skilwilicon.png")', backgroundSize : '100% 100%'}} 
+                        onClick={switchNav} 
+                        className = "mr-2" >
+                        <MenuIcon style = {{fontSize : "30px"}}/>
+                        </NavbarToggler>
                         <Collapse navbar isOpen = {navOpen} >
                       
                             <Nav navbar className = "justify-content-end" style = {{width :'100%'}}>
                             <NavItem >
-                                <NavLink className="nav-link" href = "https://forms.gle/2GyMKybVWRX5h2sF6" > Doubt Clearing <Badge color = "primary" style = {{backgroundColor : 'red'}}>FREE</Badge> </NavLink>
+                                <NavLink onClick={switchNav} className="nav-link" href = "https://forms.gle/2GyMKybVWRX5h2sF6" > Doubt Clearing <Badge color = "primary" style = {{backgroundColor : 'red'}}>FREE</Badge> </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" href = "#reward">Earn</NavLink>
+                                    <NavLink className="nav-link" onClick={switchNav}  href = "#reward">Earn</NavLink>
                             </NavItem>
                                 <NavItem >
-                                <NavLink className="nav-link" href= "https://forms.gle/vcXEqv1QAg5QsGiTA" >Contact us</NavLink>
+                                    <NavLink className="nav-link" onClick={switchNav}  href= "https://forms.gle/vcXEqv1QAg5QsGiTA" >Contact us</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" href = "#contribute">Contribute</NavLink>
+                                    <NavLink onClick={switchNav} className="nav-link" href = "#contribute">Contribute</NavLink>
                                 </NavItem>
                                
                             </Nav>
