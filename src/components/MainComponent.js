@@ -70,7 +70,7 @@ function MainComponent(props) {
       <div class="col-lg-8">
           <h1 class="display-4">Earn while you Learn! <br/>$XLM Giveaway. (Upto INR 50,000)</h1>
           <br/>
-  <p class="lead"><span style = {{color : '#0066b2', fontWeight : 'bold'}}>SkilWil</span> provides a platform which exposes an individual to brainstorming contests which enables them to explore, asses and deepen their depth of knowledge.
+  <p class="lead"><span style = {{color : '#0066b2', fontWeight : 'bold'}}>SkilWil</span> provides a platform which exposes an individual to brainstorming contests which enables them to explore, assess and deepen their depth of knowledge.
 </p>
 
         
