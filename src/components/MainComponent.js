@@ -5,6 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import MenuIcon from '@material-ui/icons/Menu';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
 import {
     Card, CardImg, CardTitle, CardText, CardDeck,
     CardSubtitle, CardBody
@@ -197,6 +199,21 @@ function MainComponent(props) {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <br />
+                <div class="footer-basic">
+                    <footer>
+                        <div class="social"><a href="whatsapp://send?text= https://www.skilwil.com
+                                        Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards.
+                                        Also, ask your subject doubts for free."><WhatsAppIcon style={{ fontSize: "35px" }} /></a><a href="https://twitter.com/skilwilbusiness?s=08"><TwitterIcon style={{ fontSize: "35px" }} /></a><a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free"><TelegramIcon style={{ fontSize: "35px" }} /></a><a href="https://www.instagram.com/skilwil/"><InstagramIcon style={{ fontSize: "35px" }} /></a></div>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#">Home</a></li>
+                            <li class="list-inline-item"><a href="https://forms.gle/vcXEqv1QAg5QsGiTA">Contact Us</a></li>
+                            <li class="list-inline-item"><a href="https://forms.gle/6pkQi1QXtek4Lw6dA">Donate</a></li>
+                        </ul>
+                        <p class="copyright">SkilWil © 2020</p>
+                    </footer>
                 </div>
             </div>
 
