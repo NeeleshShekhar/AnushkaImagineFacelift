@@ -102,3 +102,9 @@ border: 0;
   margin-bottom:0;
 }
 
+.buttonGroup
+{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}

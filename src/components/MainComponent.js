@@ -111,10 +111,13 @@ function MainComponent(props) {
                         <Card>
                          <CardImg top width="100%" src="./images/Ques1.png" alt="Ques1" />
                             <CardBody>
-                                <CardTitle tag="h5">Mathematics</CardTitle>
-                                <CardSubtitle tag="h6" className="mb-2 text-muted">5 $XLM</CardSubtitle>
+                                <CardTitle tag="h5">Mathematics <Badge style={{ color: 'black' , background : 'yellow'}}>Solved</Badge></CardTitle>
+                                <CardSubtitle tag="h6" className="mb-2 text-muted">Rewarded</CardSubtitle>
                                 <CardText>Question posted by Admin. <br/> Submit your answer and hear from us soon.</CardText>
-                                <Button className = "earnButton" href = "https://forms.gle/3LikKa6LcStX9cyc8" outline>Submit</Button>
+                               <div className = "buttonGroup">
+                                <Button disabled className = "earnButton" href = "https://forms.gle/3LikKa6LcStX9cyc8" outline>Submit</Button>
+                                                <Button className="earnButton" href="https://drive.google.com/file/d/14dR28ByEHQQJ-TcMrpnslVDctKqKMMb9/view?usp=sharing" outline>Solution</Button>
+                                 </div>
                             </CardBody>
                         </Card>
                         </div>
@@ -123,10 +126,13 @@ function MainComponent(props) {
                         <Card>
                             <CardImg top width="100%" src="./images/Ques2a.png"  alt="Ques2" />
                             <CardBody>
-                                <CardTitle tag="h5">Mathematics</CardTitle>
-                                <CardSubtitle tag="h6" className="mb-2 text-muted">3 $XLM</CardSubtitle>
+                                <CardTitle tag="h5">Mathematics <Badge style={{ color: 'black' , background : 'yellow'}}>Solved</Badge></CardTitle>
+                                <CardSubtitle tag="h6" className="mb-2 text-muted">Rewarded</CardSubtitle>
                                 <CardText>Question posted by Admin. <br/> Submit your answer and hear from us soon.</CardText>
-                                <Button className = "earnButton" href = "https://forms.gle/m7xT7xdvEgRaXccFA" outline>Submit</Button>
+                                            <div className="buttonGroup">
+                                                <Button disabled className="earnButton" href="https://forms.gle/3LikKa6LcStX9cyc8" outline>Submit</Button>
+                                                <Button className="earnButton" href="https://drive.google.com/file/d/196V7m67swnNRplloW_x6rKy0HJwHejJU/view?usp=sharing" outline>Solution</Button>
+                                            </div>
                             </CardBody>
                         </Card>
                         </div>
@@ -135,7 +141,7 @@ function MainComponent(props) {
                             <CardImg top width="100%" src="./images/Ques3.png" alt="Ques3" />
                             <CardBody>
                                 <CardTitle tag="h5">Mathematics</CardTitle>
-                                <CardSubtitle tag="h6" className="mb-2 text-muted">10 $XLM</CardSubtitle>
+                                <CardSubtitle tag="h6" className="mb-2 text-muted">Eligible for Reward</CardSubtitle>
                                 <CardText>Question posted by Admin. <br/> Submit your answer and hear from us soon.</CardText>
                                 <Button className = "earnButton" href = "https://forms.gle/1P9NYEiKGt9VGbi3A" outline>Submit</Button>
                             </CardBody>
