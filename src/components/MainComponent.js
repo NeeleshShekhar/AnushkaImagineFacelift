@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse,Button, NavItem ,NavLink, Jumbotron, CardGroup, Container } from 'reactstrap';
-import { makeStyles } from '@material-ui/core/styles';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, Button, NavItem, NavLink, Jumbotron, CardGroup, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import Typography from '@material-ui/core/Typography';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import TelegramIcon from '@material-ui/icons/Telegram';
@@ -8,24 +7,58 @@ import MenuIcon from '@material-ui/icons/Menu';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import {
-    Card, CardImg, CardTitle, CardText, CardDeck,
+    Card, CardImg, CardTitle, CardText,
     CardSubtitle, CardBody
 } from 'reactstrap';
+import Helmet from "react-helmet";
 import { Badge } from 'reactstrap';
-const useStyles = makeStyles({
-    root: {
-        backgroundColor : 'whitesmoke',
-        maxWidth: 300,
+import { withStyles, makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+const StyledTableCell = withStyles((theme) => ({
+    head: {
+        backgroundColor: '#0066b2',
+        color: theme.palette.common.white,
+        border : 'none'
     },
-    media: {
-        height: 140,
+    body: {
+        fontSize: 14,
+        border:'none',
+    },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+    root: {
+        '&:nth-of-type(odd)': {
+
+            backgroundColor: '#6699CC',
+        },
+        '&:nth-of-type(even)': {
+            backgroundColor: '#F0F8FF',
+        },
+    },
+}))(TableRow);
+
+const useStyles = makeStyles({
+    table: {
+        minWidth: 650,
     },
 });
 
 function MainComponent(props) {
     const classes = useStyles();
     const [navOpen, setNavOpen] = useState(false);
-    
+    const [openModal, toggleModal] = useState(false);
+
+    const openForm = () => {
+        toggleModal(!openModal);
+    }
     const switchNav = () =>
     {
      setNavOpen(!navOpen);  
@@ -160,11 +193,61 @@ function MainComponent(props) {
                     </div>
                 </div>
                 </div>
-                
-                <br/>
-                <div>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSflq9KzJJZnrKahdF2PmXiXLgwsnw7b0vllS1bMq4akAKjnQA/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+               <br/>
+                <div className = "container">
+                    <TableContainer component={Paper}>
+                        <Table className={classes.table} aria-label="customized table">
+                            <TableHead>
+                                <TableRow>
+                                    <StyledTableCell>Quiz Type</StyledTableCell>
+                                    <StyledTableCell align="right">Reward</StyledTableCell>
+                                    <StyledTableCell align="right">Status</StyledTableCell>
+                                    <StyledTableCell align="right">Winners</StyledTableCell>
+                                    <StyledTableCell align="right">Solution</StyledTableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+
+                                <StyledTableRow >
+                                    <StyledTableCell onClick={openForm} style={{ cursor: 'pointer' }} component="th" scope="row">
+                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'red' }}>Running</Badge>
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">Eligible</StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={openForm} color="success" size="sm"> Attempt </Button></StyledTableCell>
+                                    <StyledTableCell align="right">TBA</StyledTableCell>
+                                    <StyledTableCell align="right">TBA</StyledTableCell>
+                                </StyledTableRow>
+
+                                <StyledTableRow >
+                                    <StyledTableCell component="th" scope="row">
+                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
+                                    <StyledTableCell align="right"> <Button href="https://forms.gle/GkzqzcboV3FPSaS46" color="warning" size="sm"> Practice </Button></StyledTableCell>
+                                    <StyledTableCell align="right">2</StyledTableCell>
+                                    <StyledTableCell align="right">TBA</StyledTableCell>
+                                </StyledTableRow>
+
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </div>
+
+                <Modal style={{ backgroundColor: '#88C0EB' }} className="modal-container modal-fullscreen" isOpen={openModal} toggle={openForm}>
+                    <ModalHeader style={{ backgroundColor: '#88C0EB', border: 'none' }}>Welcome ! All the best.</ModalHeader>
+                    <ModalBody style={{ backgroundColor: '#88C0EB' }}>
+                        <div class="involveme_embed" data-project="mega-quiz-maths">
+                            <Helmet>
+                                <script src="https://skilwil.involve.me/embed"></script>
+                            </Helmet>
+                        </div>
+                    </ModalBody>
+                    <ModalFooter style={{ backgroundColor: '#88C0EB', border: 'none', paddingRight: '30px' }}>
+                        <Button color="primary" href="https://forms.gle/x54pCrPRHPQwy18x8">Contact Us</Button>{' '}
+                        <Button color="secondary" onClick={openForm}>Leave</Button>
+                    </ModalFooter>
+                </Modal>
+                <br />
 
                 <div id = "contribute" className = "container">
 
