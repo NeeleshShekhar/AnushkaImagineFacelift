@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, Button, NavItem, NavLink, Jumbotron, CardGroup, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import Typography from '@material-ui/core/Typography';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
@@ -20,6 +20,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import ReactGA from "react-ga";
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -52,12 +53,82 @@ const useStyles = makeStyles({
 });
 
 function MainComponent(props) {
+
+    useEffect(() => {
+        ReactGA.initialize('UA-198309082-1')
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
     const classes = useStyles();
     const [navOpen, setNavOpen] = useState(false);
     const [openModal, toggleModal] = useState(false);
 
     const openForm = () => {
+
+        ReactGA.event({
+            category: 'Button',
+            action: 'User clicked on Attempt Quiz'
+        })
         toggleModal(!openModal);
+    }
+
+    const practiceButtonClicked = () => {
+        ReactGA.event({
+            category: 'Button',
+            action: 'User clicked on Practice Quiz'
+        })
+    }
+
+    const earnNowClicked = () => {
+        ReactGA.event({
+            category: 'Button',
+            action: 'User clicked on Earn now'
+        })
+    }
+
+    const donateNowClicked = () => {
+
+        ReactGA.event({
+            category: 'Button',
+            action: 'User clicked on Donate Now !'
+        })
+
+
+    }
+
+    const doubtClearingClicked = () => {
+
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'User clicked on doubt clearing !'
+        })
+    }
+
+    const whatsappIconClicked = () => {
+        ReactGA.event({
+            category: 'Social',
+            action: 'User shared on Whatsapp!'
+        })
+    }
+
+    const instagramIconClicked = () => {
+        ReactGA.event({
+            category: 'Social',
+            action: 'User clicked on Instagram!'
+        })
+    }
+
+    const twitterIconClicked = () => {
+        ReactGA.event({
+            category: 'Social',
+            action: 'User clicked on Twitter!'
+        })
+    }
+
+    const telegramIconClicked = () => {
+        ReactGA.event({
+            category: 'Social',
+            action: 'User shared on Telegram!'
+        })
     }
     const switchNav = () =>
     {
@@ -72,7 +143,7 @@ function MainComponent(props) {
                         <NavbarBrand className="mr-auto logo" href="/" ><img src='./images/SkilWil.png' height="30px" width="100px" alt='SKILWIL' /></NavbarBrand>
                      
                         <NavbarToggler 
-                        // style={{ backgroundColor : 'blue', background: 'url("skilwilicon.png")', backgroundSize : '100% 100%'}} 
+                        style = {{outline : 'none'}}
                         onClick={switchNav} 
                         className = "mr-2" >
                         <MenuIcon style = {{fontSize : "30px"}}/>
@@ -80,10 +151,10 @@ function MainComponent(props) {
                         <Collapse navbar isOpen = {navOpen} >
                       
                             <Nav navbar className = "justify-content-end" style = {{width :'100%'}}>
-                            <NavItem >
+                                <NavItem onClick={doubtClearingClicked}>
                                 <NavLink onClick={switchNav} className="nav-link" href = "https://forms.gle/2GyMKybVWRX5h2sF6" > Doubt Clearing <Badge color = "primary" style = {{backgroundColor : 'red'}}>FREE</Badge> </NavLink>
                             </NavItem>
-                            <NavItem>
+                            <NavItem onClick = {earnNowClicked}>
                                     <NavLink className="nav-link" onClick={switchNav}  href = "#reward">Earn</NavLink>
                             </NavItem>
                                 <NavItem >
@@ -116,7 +187,7 @@ function MainComponent(props) {
 
         
         <span>
-         <Button className = "earnButton" outline href = "#reward"> Earn Now !</Button>
+         <Button className = "earnButton" onClick = {earnNowClicked} outline href = "#reward"> Earn Now !</Button>
          
         <p style = {{color : '#002D62'}}>No sign up required !</p>
         </span>
@@ -223,7 +294,7 @@ function MainComponent(props) {
                                         SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
                                     </StyledTableCell>
                                     <StyledTableCell align="right">Ineligible</StyledTableCell>
-                                    <StyledTableCell align="right"> <Button href="https://forms.gle/GkzqzcboV3FPSaS46" color="warning" size="sm"> Practice </Button></StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" color="warning" size="sm"> Practice </Button></StyledTableCell>
                                     <StyledTableCell align="right">2</StyledTableCell>
                                     <StyledTableCell align="right">TBA</StyledTableCell>
                                 </StyledTableRow>
@@ -270,17 +341,17 @@ function MainComponent(props) {
         </ul>
 
          Share : <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free"
-                                    > <TelegramIcon style={{ color: 'black', fontSize: '35px'}} /></a>
+                                    > <TelegramIcon onClick={telegramIconClicked} style={{ color: 'black', fontSize: '35px'}} /></a>
                                     &nbsp; &nbsp;
          <a href="whatsapp://send?text= https://www.skilwil.com 
                                         Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards.
                                         Also, ask your subject doubts for free."
                                         data-action="share/whatsapp/share"
-                                        target="_blank"><WhatsAppIcon style = {{color : 'black', fontSize : '30px'}}/></a>
+                                        target="_blank"><WhatsAppIcon onClick={whatsappIconClicked} style = {{color : 'black', fontSize : '30px'}}/></a>
                                  
                                        <br/>
                                        <br/>
-                                    <Button className="earnButton" href= "https://forms.gle/6pkQi1QXtek4Lw6dA" outline > Donate now !</Button>
+                                    <Button onClick={donateNowClicked} className="earnButton" href= "https://forms.gle/6pkQi1QXtek4Lw6dA" outline > Donate now !</Button>
       </Typography>
                             </div>
                             <div className = "col-md-6">
@@ -295,11 +366,11 @@ function MainComponent(props) {
                     <footer>
                         <div class="social"><a href="whatsapp://send?text= https://www.skilwil.com
                                         Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards.
-                                        Also, ask your subject doubts for free."><WhatsAppIcon style={{ fontSize: "35px" }} /></a><a href="https://twitter.com/skilwilbusiness?s=08"><TwitterIcon style={{ fontSize: "35px" }} /></a><a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free"><TelegramIcon style={{ fontSize: "35px" }} /></a><a href="https://www.instagram.com/skilwil/"><InstagramIcon style={{ fontSize: "35px" }} /></a></div>
+                                        Also, ask your subject doubts for free."><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a><a href="https://twitter.com/skilwilbusiness?s=08"><TwitterIcon onClick={twitterIconClicked} style={{ fontSize: "35px" }} /></a><a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free"><TelegramIcon onClick={telegramIconClicked} style={{ fontSize: "35px" }} /></a><a href="https://www.instagram.com/skilwil/"><InstagramIcon onClick={instagramIconClicked}  style={{ fontSize: "35px" }} /></a></div>
                         <ul class="list-inline">
                             <li class="list-inline-item"><a href="#">Home</a></li>
                             <li class="list-inline-item"><a href="https://forms.gle/vcXEqv1QAg5QsGiTA">Contact Us</a></li>
-                            <li class="list-inline-item"><a href="https://forms.gle/6pkQi1QXtek4Lw6dA">Donate</a></li>
+                            <li class="list-inline-item"><a onClick={donateNowClicked} href="https://forms.gle/6pkQi1QXtek4Lw6dA">Donate</a></li>
                         </ul>
                         <p class="copyright">SkilWil © 2020</p>
                     </footer>
