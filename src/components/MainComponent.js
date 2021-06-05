@@ -193,7 +193,7 @@ function MainComponent(props) {
         </span>
       </div>
       <div class=" col-sm-12 col-md-12 col-lg-4 align-items-center d-flex">
-        <img src="./images/quizsteps-2.png" alt="" class="img-fluid"/>
+        <img src="./images/Jumbotron.svg" alt="" class="img-fluid"/>
       </div>
     </div>
 
