@@ -1,3 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+.head{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(./Images/home.png);
+border-radius: 42px;
+box-shadow: 0px 4px 23px 6px rgba(0, 0, 0, 0.25);
+width:"fit-content";
+height:fit-content;
+padding: 2.5%;
+
+
+
+}
+
+.display-6{
+  font-weight: 500;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #e0eeff;
+}
+.display-7{
+  font-weight: 500;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #031f42;
+}
+
+.section2{
+  background: linear-gradient(0deg, rgba(0, 34, 73, 0.93), rgba(0, 34, 73, 0.93)), url(./Images/section3.jpg);
+  padding: 2%;
+  
+}
+.head-content{
+  background: rgba(8, 78, 117, 0.19);
+backdrop-filter: blur(33px);
+/* Note: backdrop-filter has minimal browser support */
+padding: 30px;
+border-radius: 35px;
+
+}
+
+.head-nav{
+  border-radius: 10px;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(165, 244, 255, 0.2), rgba(165, 244, 255, 0.2)), url(./Images/nav.jpg);
+box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+border-radius: 16px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: rgb(91, 94, 94);
+font-size: large;
+
+}
+
+
+.logo-nav{
+  font-weight: bold;
+  font-size: xx-large;
+}
 .navbar-dark {
     background-color :white;
 } 
@@ -16,17 +71,18 @@ cursor:pointer;
 width: 100%;
 margin:0;
 background-color: #8BC6EC;
-background-image: linear-gradient(180deg, #8BC6EC 0%, #4b53d6 100%);
+background-image: linear-gradient(180deg, #ebfbff 0%, #d3f6ff 100%);
 
 }
 .earnButton
 {
-  color: black;
+  color: rgb(3, 61, 63);
   border-color: #002D62;
+  background-color: rgb(200, 238, 255);
 }
 .earnButton:hover{
   color: white;
-  background-color:#002D62;
+  background-color:#2a839e;
 }
 
 .card

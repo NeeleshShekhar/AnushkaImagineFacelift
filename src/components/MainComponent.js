@@ -22,6 +22,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ReactGA from "react-ga";
 
+  
+ 
+
 const StyledTableCell = withStyles((theme) => ({
     head: {
         backgroundColor: '#0066b2',
@@ -135,12 +138,12 @@ function MainComponent(props) {
      setNavOpen(!navOpen);  
     }
         return (
-            <div  >
+            <div>
             
                 <Navbar  nav-fill expand="md" >
                   
                     <div className="container">
-                        <NavbarBrand className="mr-auto logo" href="/" ><img src='./images/SkilWil.png' height="30px" width="100px" alt='SKILWIL' /></NavbarBrand>
+                        <NavbarBrand className="mr-auto logo" href="/" ><span className="logo-nav">SkilWil</span></NavbarBrand>
                      
                         <NavbarToggler 
                         style = {{outline : 'none'}}
@@ -174,38 +177,58 @@ function MainComponent(props) {
                   
                 </Navbar>
             
-                <Jumbotron style = {{marginTop:'40px'}}>
-
-                     <div class="container  text-lg-left">
-    
-    <div class="row">
-      <div class="col-lg-8">
-          <h1 class="display-4">Earn while you Learn! <br/>$XLM Giveaway. (Upto INR 50,000)</h1>
+                <Jumbotron style = {{marginTop:'2px'}}>
+                <div className="container text-lg-left head">
+                <div className="row">
+                <div className="col-lg-8  head-content">
+          <h2 style={{color:'white'}}>Earn while you Learn! <br/>$XLM Giveaway! (Upto INR 50,000)</h2>
           <br/>
-  <p class="lead"><span style = {{color : '#0066b2', fontWeight : 'bold'}}>SkilWil</span> provides a platform which exposes an individual to brainstorming contests which enables them to explore, assess and deepen their depth of knowledge.
+  <p className="lead" style={{color:'white'}}><span style = {{color : '#96D2FF', fontWeight : 'bold'}}>SkilWil</span> provides a platform which exposes an individual to brainstorming contests which enables them to explore, assess and deepen their depth of knowledge.
 </p>
 
         
         <span>
          <Button className = "earnButton" onClick = {earnNowClicked} outline href = "#reward"> Earn Now !</Button>
          
-        <p style = {{color : '#002D62'}}>No sign up required !</p>
+        <p style = {{color : '#D2ECFF'}}>No sign up required !</p>
         </span>
       </div>
-      <div class=" col-sm-12 col-md-12 col-lg-4 align-items-center d-flex">
-        <img src="./images/Jumbotron.svg" alt="" class="img-fluid"/>
-      </div>
+      
     </div>
+</div>
 
- </div>
                 </Jumbotron>
                 <br/>
+                <div className="container">
+                <div className="row head-nav">
+                    <div className="col-lg-2 col-sm-12 align-center ">
+                    Mathematics
+                    </div>
+                    <div className="col-lg-2 col-sm-12 align-center ">
+                    Art <Badge  color = "primary" style = {{backgroundColor : '#043985'}}>Coming soon</Badge>
+                    </div>
+                    <div className="col-lg-2 col-sm-12">
+                    Cryptocurrency
+                    </div>
+                    <div className="col-lg-2 col-sm-12 ">
+                    Experts
+                    </div>
+                    <div className="col-lg-2 col-sm-12 ">
+                    Articles
+                    </div>
+                    <div className="col-lg-2 col-sm-12 ">
+                    Upcoming quiz
+                    </div>
+                </div>
+                </div>
+
                 <br/>
-            <div className = "container">
-            <div className = "row">
+            <div className="section2">
+            <div className="container">
+            <div className="row">
                         <div class="col-lg-8">
                             <h2 className = "display-6">Can you solve these ?</h2>
-                            </div>
+                        </div>
             </div>
             <br/>
             <div className = "row">
@@ -255,12 +278,13 @@ function MainComponent(props) {
                     </CardGroup>
                 </div>
                 </div>
+                </div>
                 <br/>
 
                 <div id = "reward" className = "container">
                 <div className="row">
                     <div class="col-lg-8">
-                        <h2 className="display-6">Earn your reward !</h2>
+                        <h2 className="display-7">Earn your reward !</h2>
                     </div>
                 </div>
                 </div>
@@ -324,7 +348,7 @@ function MainComponent(props) {
 
                     <div className = "row">
                         <div class="col-lg-8">
-                            <h2 className="display-6">Contribute and help us grow.</h2>
+                            <h2 className="display-7">Contribute and help us grow.</h2>
                         </div>
                         <br/>
                         <div className = "row">
@@ -380,4 +404,5 @@ function MainComponent(props) {
             
         );
     }
+
 export default MainComponent;
