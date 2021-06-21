@@ -21,6 +21,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ReactGA from "react-ga";
+import manread from '../Images/manreading.png';
 
   
  
@@ -199,43 +200,19 @@ function MainComponent(props) {
 
                 </Jumbotron>
                 <br/>
-                <div className="container">
-                <div className="row head-nav">
-                    <div className="col-lg-2 col-sm-12 align-center ">
-                    Mathematics
-                    </div>
-                    <div className="col-lg-2 col-sm-12 align-center ">
-                    Art <Badge  color = "primary" style = {{backgroundColor : '#043985'}}>Coming soon</Badge>
-                    </div>
-                    <div className="col-lg-2 col-sm-12">
-                    Cryptocurrency
-                    </div>
-                    <div className="col-lg-2 col-sm-12 ">
-                    Experts
-                    </div>
-                    <div className="col-lg-2 col-sm-12 ">
-                    Articles
-                    </div>
-                    <div className="col-lg-2 col-sm-12 ">
-                    Upcoming quiz
-                    </div>
-                </div>
-                </div>
-
+               
                 <br/>
             <div className="section2">
             <div className="container">
-            <div className="row">
-                        <div class="col-lg-8">
-                            <h2 className = "display-6">Can you solve these ?</h2>
-                        </div>
-            </div>
+            <h2 className = "display-6" >Can you solve these ?</h2>
+                       
+           
             <br/>
             <div className = "row">
                     <CardGroup>
                     <div className = "row">
                     <div className = "col-md-4">
-                        <Card>
+                        <Card className="seccard">
                          <CardImg top width="100%" src="./images/Ques1.png" alt="Ques1" />
                             <CardBody>
                                 <CardTitle tag="h5">Mathematics <Badge style={{ color: 'black' , background : 'yellow'}}>Solved</Badge></CardTitle>
@@ -250,7 +227,7 @@ function MainComponent(props) {
                         </div>
 
                        <div className="col-md-4">
-                        <Card>
+                        <Card className="seccard">
                             <CardImg top width="100%" src="./images/Ques2a.png"  alt="Ques2" />
                             <CardBody>
                                 <CardTitle tag="h5">Mathematics <Badge style={{ color: 'black' , background : 'yellow'}}>Solved</Badge></CardTitle>
@@ -264,7 +241,7 @@ function MainComponent(props) {
                         </Card>
                         </div>
                         <div className = "col-md-4">
-                        <Card>
+                        <Card className="seccard">
                             <CardImg top width="100%" src="./images/Ques3.png" alt="Ques3" />
                             <CardBody>
                                 <CardTitle tag="h5">Mathematics</CardTitle>
@@ -289,7 +266,10 @@ function MainComponent(props) {
                 </div>
                 </div>
                <br/>
-                <div className = "container">
+               <div className="container"> 
+               <div className = " row">
+               
+                <div className="col-lg-8 cold-sm-12">
                     <TableContainer component={Paper}>
                         <Table className={classes.table} aria-label="customized table">
                             <TableHead>
@@ -308,7 +288,7 @@ function MainComponent(props) {
                                         SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'red' }}>Running</Badge>
                                     </StyledTableCell>
                                     <StyledTableCell align="right">Eligible</StyledTableCell>
-                                    <StyledTableCell align="right"> <Button onClick={openForm} color="success" size="sm"> Attempt </Button></StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={openForm} color="success" target="_blank" size="sm"> Attempt </Button></StyledTableCell>
                                     <StyledTableCell align="right">TBA</StyledTableCell>
                                     <StyledTableCell align="right">TBA</StyledTableCell>
                                 </StyledTableRow>
@@ -318,14 +298,59 @@ function MainComponent(props) {
                                         SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
                                     </StyledTableCell>
                                     <StyledTableCell align="right">Ineligible</StyledTableCell>
-                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" color="warning" size="sm"> Practice </Button></StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" target="_blank" color="warning" size="sm"> Practice </Button></StyledTableCell>
                                     <StyledTableCell align="right">2</StyledTableCell>
+                                    <StyledTableCell align="right">TBA</StyledTableCell>
+                                </StyledTableRow>
+
+                                <StyledTableRow >
+                                    <StyledTableCell component="th" scope="row">
+                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" target="_blank" color="warning" size="sm"> Practice </Button></StyledTableCell>
+                                    <StyledTableCell align="right">3</StyledTableCell>
+                                    <StyledTableCell align="right">TBA</StyledTableCell>
+                                </StyledTableRow>
+
+                                <StyledTableRow >
+                                    <StyledTableCell component="th" scope="row">
+                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" target="_blank" color="warning" size="sm"> Practice </Button></StyledTableCell>
+                                    <StyledTableCell align="right">1</StyledTableCell>
+                                    <StyledTableCell align="right">TBA</StyledTableCell>
+                                </StyledTableRow>
+
+                                <StyledTableRow >
+                                    <StyledTableCell component="th" scope="row">
+                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" target="_blank" color="warning" size="sm"> Practice </Button></StyledTableCell>
+                                    <StyledTableCell align="right">4</StyledTableCell>
+                                    <StyledTableCell align="right">TBA</StyledTableCell>
+                                </StyledTableRow>
+
+                                <StyledTableRow >
+                                    <StyledTableCell component="th" scope="row">
+                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
+                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" color="warning" size="sm" target="_blank"> Practice </Button></StyledTableCell>
+                                    <StyledTableCell align="right">3</StyledTableCell>
                                     <StyledTableCell align="right">TBA</StyledTableCell>
                                 </StyledTableRow>
 
                             </TableBody>
                         </Table>
                     </TableContainer>
+                </div>
+                <div className="col-lg-4 col-sm-12">
+                <img src={manread} className="tableimage" alt="BigCo Inc. logo"/>
+                </div>
+                </div>
                 </div>
 
                 <Modal style={{ backgroundColor: '#88C0EB' }} className="modal-container modal-fullscreen" isOpen={openModal} toggle={openForm}>
@@ -344,17 +369,13 @@ function MainComponent(props) {
                 </Modal>
                 <br />
 
-                <div id = "contribute" className = "container">
+                <div id = "contribute" className = " container endsection">
 
                     <div className = "row">
-                        <div class="col-lg-8">
-                            <h2 className="display-7">Contribute and help us grow.</h2>
-                        </div>
-                        <br/>
-                        <div className = "row">
-                            <div className = "col-md-6">
+                      <div className = "col-md-8 head-content">
+                            <h2 className="display-8" >Contribute and help us grow.</h2>
                             <br/>
-                                <Typography style={{ fontSize: "20px" }} variant="body1" gutterBottom>
+                                <Typography style={{ fontSize: "20px" },{color:"white"}} variant="body1" gutterBottom>
 
         We further aim to : <br/>
         <br/>
@@ -378,11 +399,11 @@ function MainComponent(props) {
                                     <Button onClick={donateNowClicked} className="earnButton" href= "https://forms.gle/6pkQi1QXtek4Lw6dA" outline > Donate now !</Button>
       </Typography>
                             </div>
-                            <div className = "col-md-6">
+                            <div className = "col-md-4">
                                 <img src = "./images/donate.svg" width = "100%" alt = "Contribute"/>
                             </div>
                         </div>
-                    </div>
+                    
                 </div>
 
                 <br />

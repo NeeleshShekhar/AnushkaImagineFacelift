@@ -5,16 +5,18 @@ border-radius: 42px;
 box-shadow: 0px 4px 23px 6px rgba(0, 0, 0, 0.25);
 width:"fit-content";
 height:fit-content;
-padding: 2.5%;
+padding: 4.5%;
 
 
 
 }
 
 .display-6{
-  font-weight: 500;
+  font-weight: 700;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #e0eeff;
+  color: #031f42;
+  text-align: center;
+
 }
 .display-7{
   font-weight: 500;
@@ -22,10 +24,26 @@ padding: 2.5%;
   color: #031f42;
 }
 
-.section2{
-  background: linear-gradient(0deg, rgba(0, 34, 73, 0.93), rgba(0, 34, 73, 0.93)), url(./Images/section3.jpg);
-  padding: 2%;
+.seccard{
+  border-radius: 10px;
+box-shadow: 0px 4px 23px 6px rgba(0, 0, 0, 0.25);
+margin: 2px;
+}
+
+.tableimage{
   
+  width: 100%;
+  align-items: center;
+  margin: 5px;
+}
+
+.endsection{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(./Images/end.jpg);
+  width: fit-content;
+  border-radius: 35px;
+  background-repeat:round;
+  padding: 50px;
+
 }
 .head-content{
   background: rgba(8, 78, 117, 0.19);
@@ -47,7 +65,10 @@ color: rgb(91, 94, 94);
 font-size: large;
 
 }
-
+.display-8{
+  color: #ebfbff;
+  font-family: sans-serif;
+}
 
 .logo-nav{
   font-weight: bold;
@@ -79,6 +100,16 @@ background-image: linear-gradient(180deg, #ebfbff 0%, #d3f6ff 100%);
   color: rgb(3, 61, 63);
   border-color: #002D62;
   background-color: rgb(200, 238, 255);
+}
+
+.navbutton{
+  color: rgb(219, 254, 255);
+  background-color: rgb(3, 48, 70);
+}
+
+.navbutton:hover{
+  color: rgb(0, 46, 48);
+  background-color: rgb(228, 247, 255);
 }
 .earnButton:hover{
   color: white;
