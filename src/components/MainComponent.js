@@ -303,45 +303,7 @@ function MainComponent(props) {
                                     <StyledTableCell align="right">TBA</StyledTableCell>
                                 </StyledTableRow>
 
-                                <StyledTableRow >
-                                    <StyledTableCell component="th" scope="row">
-                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
-                                    </StyledTableCell>
-                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
-                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" target="_blank" color="warning" size="sm"> Practice </Button></StyledTableCell>
-                                    <StyledTableCell align="right">3</StyledTableCell>
-                                    <StyledTableCell align="right">TBA</StyledTableCell>
-                                </StyledTableRow>
-
-                                <StyledTableRow >
-                                    <StyledTableCell component="th" scope="row">
-                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
-                                    </StyledTableCell>
-                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
-                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" target="_blank" color="warning" size="sm"> Practice </Button></StyledTableCell>
-                                    <StyledTableCell align="right">1</StyledTableCell>
-                                    <StyledTableCell align="right">TBA</StyledTableCell>
-                                </StyledTableRow>
-
-                                <StyledTableRow >
-                                    <StyledTableCell component="th" scope="row">
-                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
-                                    </StyledTableCell>
-                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
-                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" target="_blank" color="warning" size="sm"> Practice </Button></StyledTableCell>
-                                    <StyledTableCell align="right">4</StyledTableCell>
-                                    <StyledTableCell align="right">TBA</StyledTableCell>
-                                </StyledTableRow>
-
-                                <StyledTableRow >
-                                    <StyledTableCell component="th" scope="row">
-                                        SkilWil Mathematics Quiz <Badge style={{ color: 'black', background: 'grey' }}> Expired</Badge>
-                                    </StyledTableCell>
-                                    <StyledTableCell align="right">Ineligible</StyledTableCell>
-                                    <StyledTableCell align="right"> <Button onClick={practiceButtonClicked} href="https://forms.gle/GkzqzcboV3FPSaS46" color="warning" size="sm" target="_blank"> Practice </Button></StyledTableCell>
-                                    <StyledTableCell align="right">3</StyledTableCell>
-                                    <StyledTableCell align="right">TBA</StyledTableCell>
-                                </StyledTableRow>
+                                
 
                             </TableBody>
                         </Table>
