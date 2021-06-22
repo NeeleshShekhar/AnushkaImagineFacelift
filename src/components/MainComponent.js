@@ -22,8 +22,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ReactGA from "react-ga";
 import manread from '../Images/manreading.png';
-
-  
+import educard from '../Images/educard.svg';
+import artcard from '../Images/artcard.svg';
  
 
 const StyledTableCell = withStyles((theme) => ({
@@ -177,7 +177,7 @@ function MainComponent(props) {
                     </div>
                   
                 </Navbar>
-            
+                
                 <Jumbotron style = {{marginTop:'2px'}}>
                 <div className="container text-lg-left head">
                 <div className="row">
@@ -200,8 +200,58 @@ function MainComponent(props) {
 
                 </Jumbotron>
                 <br/>
-               
+               <div className="container hide-mobile">
+                <div className="container head-nav ">
+                <div className="row">
+                <div className="col-lg-2 head-nav-item">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free" style={{color:"white"}}>Mathematics </a>
+                </div>
+                <div className="col-lg-2 head-nav-item">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free" style={{color:"white"}}>
+                Art </a>
+                </div>
+                <div className="col-lg-2 head-nav-item">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free" style={{color:"white"}}>
+                Cryptocurrency 
+                </a></div>
+                <div className="col-lg-2 head-nav-item">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free" style={{color:"white"}}>Experts </a>
+                </div>
+                <div className="col-lg-2 head-nav-item">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free" style={{color:"white"}}>Articles </a>
+                </div>
+                <div className="col-lg-2 head-nav-item">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.skilwil.com&text=Earn%20while%20you%20learn%20!%20Join%20your%20friends%20in%20solving%20brainstorming%20question%20from%20various%20subject%20and%20earn%20rewards.%20Also%2C%20ask%20your%20subject%20doubts%20for%20free" style={{color:"white"}}>Upcoming Quiz </a>
+                </div>
+                </div> 
+            
+                </div>
+               </div>
+
                 <br/>
+                <div className="container">
+                <div className="row justify-content-md-center ">
+                <div className="col-lg-5 col-sm-12 info-cards">
+                <div className="info-cards-heading">
+                <h2>Education</h2>
+                </div>
+                <img src = {educard} width = "100%" alt = "Contribute" />
+                 <div class="overlay">
+                <div class="text">SkilWil provides a platform which exposes an individual to brainstroming contests which enables them to explore, asses and deepen their depth of knowledge.
+                </div>
+                 </div></div>
+                <div className="col-lg-5 col-sm-12 info-cards">
+                <div className="info-cards-heading">
+                <h2>ART</h2>
+                </div>
+                <img src = {artcard} width = "100%" alt = "Contribute" />
+                 <div class="overlay">
+                <div class="text">'Creativity is Intelligence having fun' hence, SkilWil provides you the perfect platform to showcase the artist within you.
+                </div>
+                 </div>
+                </div>
+                </div></div>
+
             <div className="section2">
             <div className="container">
             <h2 className = "display-6" >Can you solve these ?</h2>
