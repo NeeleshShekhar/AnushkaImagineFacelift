@@ -200,7 +200,7 @@ function MainComponent(props) {
 
                 </Jumbotron>
                 <br/>
-               <div className="container hide-mobile">
+               {/* <div className="container hide-mobile">
                 <div className="container head-nav ">
                 <div className="row">
                 <div className="col-lg-2 head-nav-item">
@@ -226,7 +226,7 @@ function MainComponent(props) {
                 </div> 
             
                 </div>
-               </div>
+               </div> */}
 
                 <br/>
                 <div className="container">
