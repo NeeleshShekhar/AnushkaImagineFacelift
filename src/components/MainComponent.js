@@ -182,7 +182,7 @@ function MainComponent(props) {
                 <div className="container text-lg-left head">
                 <div className="row">
                 <div className="col-lg-8  head-content">
-          <h2 style={{color:'white'}}>Earn while you Learn! <br/>$XLM Giveaway! (Upto INR 50,000)</h2>
+          <h2 style={{color:'white'}}>Earn while you Learn! <br/>Win Rewards! (Upto INR 50,000)</h2>
           <br/>
   <p className="lead" style={{color:'white'}}><span style = {{color : '#96D2FF', fontWeight : 'bold'}}>SkilWil</span> provides a platform which exposes an individual to brainstorming contests which enables them to explore, assess and deepen their depth of knowledge.
 </p>
