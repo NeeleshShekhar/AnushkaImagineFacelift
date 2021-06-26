@@ -26,7 +26,7 @@ function Header(props) {
         <div className = "container text-lg-left head" >
         <div className = "row" >
         <div className = "col-lg-8  head-content" >
-        <h2 style = {{ color: 'white' }} > Earn while you Learn! < br / > Win Rewards!(Upto INR 50, 000) </h2> 
+        <h2 style = {{ color: 'white' }} > Earn while you Learn! < br / > Win Rewards!(Upto INR 50,000) </h2> 
         <br/>
         <p className = "lead" style = {
             { color: 'white' }
