@@ -292,3 +292,8 @@
 .smrc {
     flex-grow: 1;
 }
+
+.earnContainer
+{
+     flex-grow: 1;   
+}
