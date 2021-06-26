@@ -43,7 +43,7 @@ const Navigation = (props) =>
         })
     }
     return(
-    <>
+    <div>
         <Navbar  nav-fill expand="md" >
                     <div className="container">
                         <NavbarBrand className="mr-auto logo" href="/" ><span className="logo-nav">SkilWil</span></NavbarBrand>
@@ -81,7 +81,7 @@ const Navigation = (props) =>
                         </Collapse>
                     </div>
                 </Navbar>
-                </>
+        </div>      
     );
 }
 

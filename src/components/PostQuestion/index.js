@@ -8,7 +8,7 @@ import { Badge } from 'reactstrap';
 const PostQuestion = () =>
 {
     return (
-<>
+<div>
             <div className="section2">
                 <div className="container">
                     <h2 className="display-6" >Can you solve these ?</h2>
@@ -61,7 +61,7 @@ const PostQuestion = () =>
                     </div>
                 </div>
             </div>
-</>
+</div>
     );
 }
 export default PostQuestion;

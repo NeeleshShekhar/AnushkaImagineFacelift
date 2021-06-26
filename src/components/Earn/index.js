@@ -64,7 +64,7 @@ const Earn = (props) => {
         })
     }
     return(
-        <>
+        <div>
         <br/>
         <div className = "earnContainer">
             <div id="reward" className="container">
@@ -134,6 +134,6 @@ const Earn = (props) => {
             </Modal>
             <br />
             </div>
-        </>);
+        </div> );
 }
 export default Earn;

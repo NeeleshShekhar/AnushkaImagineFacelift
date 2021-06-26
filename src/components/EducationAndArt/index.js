@@ -23,7 +23,7 @@ const EducationAndArt = (props) =>
         props.history.push(ROUTES.EARN);
     }
     return (
- <>
+ <div>
  <br/>
      <div className="container">
          <div className="row justify-content-md-center ">
@@ -47,7 +47,7 @@ const EducationAndArt = (props) =>
                  </div>
              </div>
          </div></div>
- </>   
+ </div>   
     );
 }
 
