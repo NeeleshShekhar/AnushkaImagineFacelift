@@ -11,7 +11,7 @@ function MainComponent(props) {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, [])
         return (
-            <div>
+            <div className = "main-body">
             <Header/>
                 <br/>
                 <EducationAndArt/>

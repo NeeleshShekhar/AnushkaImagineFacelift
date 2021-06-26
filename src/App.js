@@ -18,7 +18,6 @@ function App() {
       <meta name="description" content="Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards. Also, ask your subject doubts for free." />
       <meta name="theme-color" content="#008f68" />
     </Helmet>
-
     <Router>
       <Navigation />
      <Route exact path = {ROUTES.LANDING} component = {MainComponent}/>
