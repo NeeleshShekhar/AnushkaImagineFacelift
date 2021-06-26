@@ -160,6 +160,10 @@ border: 2px;
   padding:20px 0;
   background-color:#002D62;
   color:whitesmoke;
+  position:absolute;
+  width:100%;
+  bottom: 0;
+
 }
 
 .footer-basic ul {

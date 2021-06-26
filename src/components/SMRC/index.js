@@ -13,7 +13,6 @@ const SMRC = (props) =>
 
            <br />
    <h2 style = {{textAlign:"center"}}>
-  
        SMRC - Registration -- Coming Soon
    </h2>
            <br />
