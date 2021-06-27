@@ -112,7 +112,7 @@
     width: 100%;
     margin: 0;
     background-color: #dbf1ff;
-    background-image: linear-gradient(180deg, #ebfbff 0%, #d3f6ff 100%);
+    background-image: linear-gradient(180deg, #edf3f5 0%, #e7f1f3 100%);
 }
 
 .earnButton {
@@ -267,11 +267,58 @@
     
     width: 100%;
     
-    padding: 3%;
+    padding: 0%;
     
     
 }
 
+.smrc-event-card{
+    background:#edfbff;
+    box-shadow: 5px 4px 100px rgba(0, 0, 0, 0.25); 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5%;
+}
+.smrc-card-head{
+    background-color: #002f5c;
+    color: #e7faff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.smrc-card-body{
+    color: #002D62;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.event-card{
+   padding: 1%; 
+}
+.event-smrc-name{
+    font-size: 200%;
+    font-weight: 600;
+    color: #022147;
+}
+
+.event-smrc-head{
+    font-size: 300%;
+    font-weight: 800;
+    color: #010238;
+}
+.event-smrc-namedesc{
+    font-size: 110%;
+    font-weight: 500;
+    color: #002f5c;
+    margin-left: 0%;
+}
+
+.event-smrc-desc{
+    font-size: 100%;
+    color: #032544;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.smrc-photo{
+    width: 50%;
+    border-radius: 3%;
+}
 .smrc-jumbo{
     box-shadow: 5px 4px 100px rgba(0, 0, 0, 0.25);  
     padding: 3%;
