@@ -5,7 +5,7 @@ import ReactGA from "react-ga";
 import * as ROUTES from '../../constants/routes';
 import smrc1 from '../../Images/smrc1.png';
 import smrc2 from '../../Images/smrc1.png';
-import ram from '../../Images/ram.jpeg';
+import ram from '../../Images/ram.png';
 import { LaptopWindowsTwoTone } from "@material-ui/icons";
 
 
