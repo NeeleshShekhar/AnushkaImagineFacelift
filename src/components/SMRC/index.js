@@ -48,7 +48,6 @@ const SMRC = (props) => {
         
         </div>
         <br/>
-        
    </div>
 
     );
