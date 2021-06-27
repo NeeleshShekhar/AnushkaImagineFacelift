@@ -20,10 +20,12 @@ const Footer = (props) =>
     }
 
     const donateNowClicked = () => {
+
         ReactGA.event({
             category: 'Button',
             action: 'User clicked on Donate Now from Footer!'
         })
+
     }
     const instagramIconClicked = () => {
         ReactGA.event({
