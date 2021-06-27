@@ -29,10 +29,7 @@ const SMRC = (props) => {
         <div className="col-lg-7 col-sm-12">
         <h1 className="smrc-head1">SMRC</h1>
         <h2 style={{color:"#064c5f"}}>Skilwil Mathematics Reward Contest </h2>
-        <div className="smrc-content">A splendid annual quiz contest – Previously known as M³, 
-        which signifies a competition for the title of Math Muscle Man, 
-        is an hour long Math quiz contest organized by the department of VESAC.
-        
+        <div className="smrc-content">A splendid hour long Mathematics contest, organized by the department of Mathematics, VESASC, which tests your aptitude and reward you with exciting prizes and internship oppurtunities.
         </div>
         <div className="button-smrc">
         <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button className = "Register-smrchome"  outline style={{marginLeft:"2px"}}> Register for SMRC </Button>
