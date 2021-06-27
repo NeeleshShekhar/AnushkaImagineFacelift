@@ -29,10 +29,11 @@ const SMRC = (props) => {
         <div className="col-lg-7 col-sm-12">
         <h1 className="smrc-head1">SMRC</h1>
         <h2 style={{color:"#064c5f"}}>Skilwil Mathematics Reward Contest </h2>
-        <div className="smrc-content">A splendid hour long Mathematics contest, organized by the department of Mathematics, VESASC, which tests your aptitude and reward you with exciting prizes and internship oppurtunities/
+        <div className="smrc-content">A splendid hour long Mathematics contest, organized by the department of Mathematics, VESASC, which tests your aptitude and reward you with exciting prizes and internship oppurtunities.
         </div>
-        <Button type="primary" href = "https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link">Register Now !</Button>
-       </div>
+        <div className="button-smrc">
+        <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button className = "Register-smrchome"  outline style={{marginLeft:"2px"}}> Register for SMRC </Button>
+        </a></div></div>
         <div className="col-lg-5  col-sm-12">
         <img src={smrc1} className="imagetop" alt="Marketing"/>
         </div>
