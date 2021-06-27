@@ -3,6 +3,7 @@ import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, Button, NavItem, Nav
 import ReactGA from "react-ga";
 import * as ROUTES from '../../constants/routes';
 import smrc1 from '../../Images/smrc1.png';
+import smrc2 from '../../Images/smrc1.png';
 import { LaptopWindowsTwoTone } from "@material-ui/icons";
 
 
@@ -27,7 +28,7 @@ const SMRC = (props) => {
          <div className="container ">
         <div className="row">
         <div className="col-lg-7 col-sm-12">
-        <h1 className="smrc-head1">SMRC</h1>
+       <h1 className="smrc-head1">SMRC</h1>
         <h2 style={{color:"#064c5f"}}>Skilwil Mathematics Reward Contest </h2>
         <div className="smrc-content">A splendid hour long Mathematics contest, organized by the department of Mathematics, VESASC, which tests your aptitude and reward you with exciting prizes and internship oppurtunities.
         </div>
@@ -38,8 +39,16 @@ const SMRC = (props) => {
         <img src={smrc1} className="imagetop" alt="Marketing"/>
         </div>
         </div>
+        <div className="row">
+        <div className="col-lg-4 col-sm-12">
+        
+        
+        </div>
+        </div>
+        
         </div>
         <br/>
+        
    </div>
 
     );
