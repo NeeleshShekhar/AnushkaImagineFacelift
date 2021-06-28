@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse,  Card, Button, CardHeader, CardFooter, CardBody,
+import { Nav, Navbar, Badge, NavbarBrand, NavbarToggler, Collapse,  Card, Button, CardHeader, CardFooter, CardBody,
     CardTitle, CardText , NavItem, NavLink, Jumbotron } from 'reactstrap';
 import ReactGA from "react-ga";
 import * as ROUTES from '../../constants/routes';
@@ -32,8 +32,11 @@ const SMRC = (props) => {
         <div className="col-lg-7 col-sm-12">
        <h1 className="smrc-head1">SMRC</h1>
         <h2 style={{color:"#064c5f"}}>Skilwil Mathematics Reward Contest </h2>
-        <div className="smrc-content">A splendid hour long Mathematics contest, organized by the department of Mathematics, VESASC, which tests your aptitude and reward you with exciting prizes and internship oppurtunities.
+        <div className="smrc-content">A splendid hour long Mathematics contest, organized by the department of Mathematics, VESASC, which tests your aptitude and reward you with exciting prizes and internship oppurtunities.   
+        <Badge color="primary" style={{ backgroundColor: '#003E61', fontSize : '20px', padding:'1%', marginLeft:'2px'}}>1 hour</Badge>
         </div>
+        <br />
+        
         <div className="button-smrc">
         <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button className = "Register-smrchome"  outline style={{marginLeft:"2px"}}> Register for SMRC </Button>
         </a></div></div>
@@ -52,7 +55,7 @@ const SMRC = (props) => {
           <CardTitle tag="h5">Quiz Time</CardTitle>
           <CardText>3:00 PM</CardText>
           <CardTitle tag="h5">Prep TalkTime</CardTitle>
-          <CardText>3:00 PM</CardText>
+          <CardText>4:00 PM</CardText>
           
           <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button className = "Register-smrchome"  style={{marginLeft:"2px"}}> Register for SMRC </Button>
           </a>
@@ -66,13 +69,17 @@ const SMRC = (props) => {
         <div className="row">
             <div className="col-lg-6 col-sm-12">
               <div className="event-card">
-              <div className="event-smrc-head" >Prep Talk</div>
+              <div className="event-smrc-head" >Prep Talk <Badge color="primary" style={{ backgroundColor: '#003E61', fontSize : '20px', padding:'1%', marginLeft:'2px'}}> 1 Hour </Badge></div>
               <div className="event-smrc-name" >Sagar Ramchandani</div>
               <div className="event-smrc-namedesc">Student of University of Cologne, Germany </div>
-              <div className="event-smrc-namedesc">Alumini, VESAC Mumbai </div>
+              <div className="event-smrc-namedesc">Alumini, VESASC Mumbai </div>
                 <br/>
-              <div className="event-smrc-desc">Building your portfolio for admission in college outside India </div>
+              <div className="event-smrc-desc">Building your portfolio for admission in college outside India  </div>
+             
               </div>
+              <br />
+              
+        
             </div>
             <div className="col-lg-6 col-sm-12">
               <img src={ram} className="smrc-photo" alt="Sagar Ramchandani"/>
