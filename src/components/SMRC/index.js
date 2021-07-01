@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useRef,useState } from "react";
 import { Nav, Navbar, Badge, NavbarBrand, NavbarToggler, Collapse,  Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText , NavItem, NavLink, Jumbotron } from 'reactstrap';
+    CardTitle, CardText , Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ReactGA from "react-ga";
 import * as ROUTES from '../../constants/routes';
 import smrc1 from '../../Images/smrc1.png';
 import smrc2 from '../../Images/smrc1.png';
 import ram from '../../Images/ram.png';
 import { LaptopWindowsTwoTone } from "@material-ui/icons";
-
+import { ReactTypeformEmbed } from 'react-typeform-embed';
 
 
 const SMRC = (props) => {
+   
+   const [openModal, toggleModal] = useState(false);
     useEffect(() => {
         ReactGA.initialize('UA-198309082-1')
         ReactGA.pageview(window.location.pathname + window.location.search);
+      
     }, [])
 
     const earnNowClicked = () => {
@@ -23,6 +26,13 @@ const SMRC = (props) => {
         })
     
         props.history.push(ROUTES.EARN);
+    }
+
+    const openForm = () =>
+    {
+      
+       toggleModal(!openModal);
+     
     }
     return ( 
     <div className = "smrc">
@@ -36,10 +46,17 @@ const SMRC = (props) => {
         <Badge color="primary" style={{ backgroundColor: '#003E61', fontSize : '20px', padding:'1%', marginLeft:'2px'}}>1 hour</Badge>
         </div>
         <br />
-        
         <div className="button-smrc">
         <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button className = "Register-smrchome"  outline style={{marginLeft:"2px"}}> Register for SMRC </Button>
-        </a></div></div>
+        </a>
+       
+         <a > <Button  className = "Register-smrchome"  onClick={openForm} style={{ cursor: 'pointer' }}>
+                    Practice Quiz
+        </Button>
+        </a>
+         <p  style = {{paddingTop : '2%', fontSize:'15px'}}>Take a sample quiz to get acquainted with the platform. </p>
+        </div></div>
+      <br/>
         <div className="col-lg-5  col-sm-12">
         <img src={smrc1} className="imagetop" alt="Marketing"/>
         </div>
@@ -78,17 +95,34 @@ const SMRC = (props) => {
              
               </div>
               <br />
-              
-        
             </div>
             <div className="col-lg-6 col-sm-12">
               <img src={ram} className="smrc-photo" alt="Sagar Ramchandani"/>
             </div>
         </div>
         </div>
+     
+
+                 
         </div>
       </div>
         <br/>
+        <Modal style={{ backgroundColor: '#88C0EB' }} className="modal-container modal-fullscreen" isOpen={openModal} toggle={openForm}>
+                <ModalHeader style={{ backgroundColor: '#88C0EB', border: 'none' }}>Welcome ! All the best.</ModalHeader>
+                <ModalBody style={{ backgroundColor: '#88C0EB' }}>
+                  
+            <ReactTypeformEmbed
+                    popup = {false}
+                    autoOpen={true}
+                    url="https://ap05itjz22p.typeform.com/to/xOncqpq8"
+                    autoClose = {true}
+                />
+                </ModalBody>
+                <ModalFooter style={{ backgroundColor: '#88C0EB', border: 'none', paddingRight: '30px' }}>
+                    <Button color="primary" href="https://forms.gle/x54pCrPRHPQwy18x8">Contact Us</Button>{' '}
+                    <Button color="secondary" onClick={openForm}>Leave</Button>
+                </ModalFooter>
+            </Modal>
    </div>
 
     );
