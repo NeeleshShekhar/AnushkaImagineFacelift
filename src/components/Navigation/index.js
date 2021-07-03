@@ -59,7 +59,7 @@ const Navigation = (props) =>
                             <NavItem onClick = {smrcRegistrationClicked}>
                                 <Link className="nav-link" to={ROUTES.SMRC} onClick={switchNav} > <Badge color="primary" style={{ backgroundColor: '#DD571C', fontSize : '14px',
                                 paddingTop:'2px'
-                                 }}> Registration-SMRC </Badge> </Link>
+                                 }}> Attempt-SMRC </Badge> </Link>
                             </NavItem>
 
                                 <NavItem onClick={doubtClearingClicked}>

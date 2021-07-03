@@ -47,14 +47,13 @@ const SMRC = (props) => {
         </div>
         <br />
         <div className="button-smrc">
-        <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button className = "Register-smrchome"  outline style={{marginLeft:"2px"}}> Register for SMRC </Button>
-        </a>
+        
        
          <a > <Button  className = "Register-smrchome"  onClick={openForm} style={{ cursor: 'pointer' }}>
-                    Practice Quiz
+                    Attempt Quiz
         </Button>
         </a>
-         <p  style = {{paddingTop : '2%', fontSize:'15px'}}>Take a sample quiz to get acquainted with the platform. </p>
+         <p  style = {{paddingTop : '2%', fontSize:'15px', fontFamily:'Gothic'}}>All the best ! </p>
         </div></div>
       <br/>
         <div className="col-lg-5  col-sm-12">
@@ -122,7 +121,7 @@ const SMRC = (props) => {
                     <Button color="primary" href="https://forms.gle/x54pCrPRHPQwy18x8">Contact Us</Button>{' '}
                     <Button color="secondary" onClick={openForm}>Leave</Button>
                 </ModalFooter>
-            </Modal>
+         </Modal>
    </div>
 
     );
