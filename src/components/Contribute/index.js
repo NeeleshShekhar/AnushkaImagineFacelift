@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import ReactGA from "react-ga";
+import { Helmet } from "react-helmet";
 
 
 const Contribute = (props) => {
@@ -58,7 +59,7 @@ const Contribute = (props) => {
                                  
                                        <br/>
                                        <br/>
-                                    <Button onClick={donateNowClicked} className="earnButton" href= "https://forms.gle/6pkQi1QXtek4Lw6dA" outline > Donate now !</Button>
+                                    <Button onClick={donateNowClicked} className="earnButton" href= "https://www.buymeacoffee.com/skilwil.com" outline > Donate now !</Button>
       </Typography>
                             </div>
                             <div className = "col-md-4">
