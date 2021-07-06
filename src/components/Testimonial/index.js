@@ -29,7 +29,18 @@ const Testimonial = (props) =>
         autoPlay={true}
         interval={6100}
       >
-        <div>
+      
+      <div>
+      <img src={girl} width="100%" alt="Contribute" />
+        <div className="myCarousel">
+          <h3>Mr. Vikas Ware</h3>
+          <h4>Head of Department, VESASC </h4>
+          <p>
+            Great set of questions for the contest. A platform like SkilWil will enhance the ability of the students by letting them synergize with the opportunities provided by SkilWil.
+          </p>
+        </div>
+      
+      <div>
         <img src={girl} width="100%" alt="Contribute" />
           <div className="myCarousel">
             <h3>Nibedita Sharma</h3>
@@ -53,15 +64,7 @@ const Testimonial = (props) =>
           </div>
         </div>
 
-        <div>
-        <img src={girl} width="100%" alt="Contribute" />
-          <div className="myCarousel">
-            <h3>Mr. Vikas Ware</h3>
-            <h4>Head of Department, VESASC </h4>
-            <p>
-              
-            </p>
-          </div>
+       
         </div>
 
       </Carousel>
