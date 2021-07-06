@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import ReactGA from "react-ga";
 import girl from '../../Images/girl.png';
-import artcard from '../../Images/artcard.svg';
+import teacher from '../../Images/teacher.png';
 import { withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -31,7 +31,7 @@ const Testimonial = (props) =>
       >
         
       <div>
-        <img src={girl} width="100%" alt="Contribute" />
+        <img src={teacher} width="100%" alt="Contribute" />
           <div className="myCarousel">
             <h3>Mr. Vikas Ware</h3>
             <h4>Head of Department, VESASC </h4>
