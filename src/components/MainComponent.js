@@ -3,6 +3,7 @@ import ReactGA from "react-ga";
 import Header from './Header';
 import PostQuestion from './PostQuestion';
 import EducationAndArt from './EducationAndArt';
+import Testimonial from './Testimonial';
 import Contribute from './Contribute';
 
 function MainComponent(props) {
@@ -15,6 +16,7 @@ function MainComponent(props) {
             <Header/>
                 <br/>
                 <EducationAndArt/>
+                <Testimonial/>
                 <br/>
                <PostQuestion/>
                <br/>
