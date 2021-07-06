@@ -48,7 +48,7 @@ const Testimonial = (props) =>
             <h6>
               One of the most informative and perfectly organized seminars attended.
             </h6>
-            <p><i>A thoroughly explained seminar that answered almost all relevent queries. The event was extremly organized and I would definately </i></p>
+            <p><i>A thoroughly explained seminar that answered almost all relevent queries. The event was extremly organized and I would definitely invite my friends for upcoming contests and events </i></p>
           </div>
         </div>
 
