@@ -34,7 +34,7 @@ const Testimonial = (props) =>
         <img src={teacher} width="100%" alt="Contribute" />
           <div className="myCarousel">
             <h3>Mr. Vikas Ware</h3>
-            <h4>Head of Department, VESASC </h4>
+            <h4>Head of Department, Mathematics, VESASC </h4>
             <p><i>
             Great set of questions for the contest. A platform like SkilWil will enhance the ability of the students by letting them synergize with the opportunities provided by SkilWil.
             </i></p>
