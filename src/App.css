@@ -531,3 +531,7 @@
       border-radius: 50%;
     }
   }
+
+  .certificates{
+      flex-grow:1;
+  }
