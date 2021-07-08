@@ -68,7 +68,7 @@ const Navigation = (props) =>
 
                            
                             <NavItem onClick = {earnNowClicked}>
-                                <Link className="nav-link" to = {ROUTES.EARN} onClick={switchNav} >Earn</Link>
+                                <Link className="nav-link" to = {ROUTES.EARN} onClick={switchNav} >Compete</Link>
                             </NavItem>
 
                                 <NavItem>

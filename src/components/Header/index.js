@@ -34,14 +34,14 @@ function Header(props) {
         <div className = "container text-lg-left head" >
         <div className = "row" >
         <div className = "col-lg-8  head-content" >
-        <h2 style = {{ color: 'white' }} > Earn while you Learn! < br / > Win Rewards!(Upto INR 50,000) </h2> 
+        <h2 style = {{ color: 'white' }} >Intellect is the most < br / > underrated superpower! </h2> 
         <br/>
         <p className = "lead" style = {
             { color: 'white' }
         } > <span style = {{ color: '#96D2FF', fontWeight: 'bold' }}> SkilWil </span> provides a platform which exposes an individual to brainstorming contests which enables them to explore, assess and deepen their depth of knowledge. </p>
         <span>
-        <Button className = "earnButton" onClick = { earnNowClicked } outline > Earn Now! </Button>
-        <Button className = "Register-smrchome" onClick = { smrcRegistrationClicked } outline style={{marginLeft:"2px"}}> Attempt SMRC  </Button>
+        <Button className = "earnButton" onClick = { earnNowClicked } outline > Compete Now ! </Button>
+        {/* <Button className = "Register-smrchome" onClick = { smrcRegistrationClicked } outline style={{marginLeft:"2px"}}> Attempt SMRC  </Button> */}
         <p style = {{ color: '#D2ECFF' }} > No sign up required! </p> </span> 
         </div>
         </div> 
