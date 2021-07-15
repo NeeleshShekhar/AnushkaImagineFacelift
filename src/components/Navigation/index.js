@@ -5,6 +5,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { withRouter,Link} from "react-router-dom";
 import ReactGA from "react-ga";
 import * as ROUTES from "../../constants/routes";
+import { withFirebase } from "../Firebase";
+import { SignedInUserContext } from "../SessionManagement";
+import { withAuthentication  } from "../SessionManagement";
 
 const Navigation = (props) =>
 {
@@ -42,8 +45,45 @@ const Navigation = (props) =>
             action: 'User clicked on SMRC Registration'
         })
     }
+
+     const signOutAdmin = () =>
+    {
+      props.firebase.signOutUser().then(() =>
+      {
+        alert("You have signed out. Thank you")
+      }
+      ).catch( (error) => {
+          console.log(error);
+      })
+    }
+ const AdminNavbar = () => {
+    return ( <>
+                            <NavItem >
+                                <Link className="nav-link" to={ROUTES.SMRC} onClick={switchNav} > <Badge color="primary" style={{ backgroundColor: 'yellow', color : 'black', fontSize : '14px',
+                                paddingTop:'2px'
+                                 }}> Latest News </Badge> </Link>
+                                 
+                            </NavItem>
+                               <NavItem onClick={switchNav}>
+                                <Link  className="nav-link" to={ROUTES.ADMIN_DASHBOARD} > Dashboard </Link>
+                            </NavItem>
+                                <NavItem onClick={switchNav}>
+                                <Link  className="nav-link" to={ROUTES.ADMIN_COURSES} > Courses </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link className="nav-link"  onClick={switchNav} >Drafts</Link>
+                            </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link" onClick = {signOutAdmin} >Sign Out</NavLink>
+                                </NavItem>
+                
+                           </> );
+    }
+   
     return(
-    <div>
+        <>
+       
+        <div>
         <Navbar  nav-fill expand="md" >
                     <div className="container">
                         <NavbarBrand className="mr-auto logo" href="/" ><span className="logo-nav">SkilWil</span></NavbarBrand>
@@ -77,12 +117,19 @@ const Navigation = (props) =>
                                 <NavItem>
                                 <NavLink onClick={switchNav} className="nav-link" href = "/#contribute">Contribute</NavLink>
                                 </NavItem>
+                                  <SignedInUserContext.Consumer>
+                                    { signedInUser => signedInUser &&  <AdminNavbar/>  } 
+                                  </SignedInUserContext.Consumer>
+                              
                             </Nav>
                         </Collapse>
                     </div>
                 </Navbar>
-        </div>      
+        </div>  
+        </>   
     );
+    
+   
 }
 
-export default Navigation;
+export default withFirebase(Navigation);

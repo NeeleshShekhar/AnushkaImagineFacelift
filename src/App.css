@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto:wght@300&&display=swap');
+
 @media only screen and (max-width: 600px) {
     .hide-mobile {
         display: none;
@@ -535,3 +538,79 @@
   .certificates{
       flex-grow:1;
   }
+
+  .signInContainer{
+      flex-grow:1;
+  }
+
+  .adminDashboardContainer{
+      flex-grow:1;
+      /* background-color:#1F323F;
+      min-width: 100%;
+      color: whitesmoke; */
+  }
+
+  .articles{
+      flex-grow:1;
+  }
+
+  .editorPreview {
+      flex-grow:1;
+  }
+
+   pre.ql-syntax {
+    background-color: #23241f;
+    color: #f8f8f2;
+    overflow: visible;
+}
+
+.addCourseModal{
+      min-width: 80%;
+}
+
+.subTopicContainer {
+    flex-grow : 1;
+}
+
+.courses {
+    flex-grow:1;
+}
+/* Set dropdown font-families */
+
+.ql-editor {
+  font-family: "Ubuntu";
+}
+
+/* Set dropdown font-families */
+
+.ql-picker.ql-font .ql-picker-label[data-value="Ubuntu"]::before, 
+.ql-picker.ql-font .ql-picker-item[data-value="Ubuntu"]::before
+{
+    font-family: "Ubuntu", cursive;
+    content: "Ubuntu";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Raleway"]::before, 
+.ql-picker.ql-font .ql-picker-item[data-value="Raleway"]::before
+{
+    font-family: "Raleway", cursive;
+    content: "Raleway";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before, 
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before
+{
+    font-family: "Roboto", cursive;
+    content: "Roboto";
+}
+/* Set content font-families */
+.ql-font-Raleway {
+  font-family: "Raleway";
+}
+.ql-font-Roboto {
+  font-family: "Roboto";
+}
+
+.ql-container {
+    font-size: 30px;
+}
+
+
