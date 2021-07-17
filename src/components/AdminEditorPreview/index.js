@@ -9,7 +9,7 @@ const AdminEditorPreview = (props) =>
 
     return (
         <div className = "container editorPreview">
-           <div className = "ql-container" style = {{fontFamily : 'Festive'}} dangerouslySetInnerHTML={{__html : props.history.location.state.text}}></div>
+           <div className = "ql-container ql-editor testEditor" style = {{fontFamily : 'Festive'}} dangerouslySetInnerHTML={{__html : props.history.location.state.text}}></div>
         </div>
        
     );

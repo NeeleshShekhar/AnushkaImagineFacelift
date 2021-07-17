@@ -16,13 +16,21 @@ const AdminAddCourse = (props) => {
         props.setCourseDetails({...props.courseDetails,[event.target.name] : event.target.value})
     }
     const editCourse = (event) => {
-      event.preventDefault();
         const validatedData = validate();
         console.log(validatedData.message + " " + validatedData.hasErrors);
         if(!validatedData.hasErrors)
         { 
+          props.firebase.course(props.courseDetails.courseKey).update(
+            {
+              courseName : props.courseDetails.courseName,
+              courseDescription : props.courseDetails.courseDescription,
+              subject : props.courseDetails.subject,
+              courseId : props.courseDetails.courseId,
+
+            }
+          ).then(() => {
             props.setCourses(props.courses.map(eachCourse => {
-            if(props.courseDetails.courseId === eachCourse.courseId)
+            if(props.courseDetails.courseKey === eachCourse.id)
                 {
                     eachCourse.courseName = props.courseDetails.courseName;
                     eachCourse.courseDescription = props.courseDetails.courseDescription;
@@ -31,6 +39,9 @@ const AdminAddCourse = (props) => {
 
               return eachCourse;
         }))
+        }).catch(error => {
+          alert("Error Occured ! Contact your administrator");
+        })
         toggle();
         }
         else
@@ -63,16 +74,17 @@ const AdminAddCourse = (props) => {
           db.collection("courses").doc(id).set(DATA_TO_BE_ADDED).then(() => 
           {
             alert("Course has been created ");
+            props.addCourse({...props.courseDetails, id : id});
+
           }).catch((error) =>
           {
             alert(error);
           })
-             props.addCourse(props.courseDetails);
+            
              toggle();
         }
         else
         props.setCourseDetails({...props.courseDetails, error : validatedData.message})
-
         toggle();
     }
     const validate = () =>

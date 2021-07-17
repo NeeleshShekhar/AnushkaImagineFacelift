@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useMemo,createContext} from "react";
+import React,{useState,useEffect,useMemo,createContext,useRef} from "react";
 import {Button,ButtonGroup} from 'reactstrap';
 import hljs from 'highlight.js'
 import 'react-quill/dist/quill.core.css'
@@ -9,6 +9,7 @@ import { withRouter } from "react-router-dom";
 import 'katex/dist/katex.min.css'
 import * as ROUTES from '../../constants/routes'
 import { withAuthorization } from "../SessionManagement";
+import { withFirebase } from "../Firebase";
 
 import katex from 'katex';
 
@@ -16,20 +17,20 @@ window.katex = katex;
 
 export const EditorContext = createContext("");
 const AdminEditor = (props) => {
- 
+
  const[text,setText] = useState("");
+ let quillRef = useRef(null);
+ 
+ const topicAndCourseDetails = props.location.state
 
  useEffect(() => {
-  
  },[])
-
 
 hljs.configure({
     languages: ['javascript', 'java', 'python'],
   });
  const handleChange = (value) =>
  {
-    console.log("tHE TEXT IS " + text);
     setText(value)
  }
 
@@ -41,7 +42,9 @@ hljs.configure({
  const postBlogAdmin = () => {
 
  }
+ const saveAsDraft = () => {
 
+ }
 var Font = Quill.import('formats/font');
 Font.whitelist = ['Ubuntu', 'Raleway', 'Roboto'];
 Quill.register(Font, true);
@@ -66,9 +69,14 @@ const formats = [
   'formula',
   'code-block',
 ]
-const imageHandler = (event) => {
-  console.log("Hello from image handler");
+const imageHandler = useMemo(() => {
+return () => {
+  const link = prompt("Enter Public Gdrive url")
+      const quills = quillRef.current.getEditor();
+      const range = quills.getSelection();
+      quills.insertEmbed(range.index, 'image', link); 
 }
+});
 const toolbarOptions = [
           [{ header: [3,2] }, { 'font': Font.whitelist}],
           ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
@@ -98,21 +106,21 @@ const toolbarOptions = [
     matchVisual: false,
   }
   }), [])
-console.log(JSON.stringify(props.location.state))
-const topicAndCourseDetails = props.location.state
+  
+// console.log(JSON.stringify(props.location.state))
  return (
     <div className = "articles container">
   <p className = "lead"> You are an writing an article for {topicAndCourseDetails.topicName} under the Course : {topicAndCourseDetails.courseName}</p>
   <ButtonGroup size="lg" >
-  <Button>Save as Draft</Button>
+  <Button onClick = {saveAsDraft}>Save as Draft</Button>
   <Button onClick = {postBlogAdmin}>Post</Button>
   <Button onClick = {sendForPreview}>Preview</Button>
 </ButtonGroup>
-
 <br/>
 <br/>
-        <div className = "row">
-         <ReactQuill value = {text} theme = "snow" onChange={handleChange} modules={modules} formats = {formats}/>
+{console.log(text)}
+        <div className = "row" >
+         <ReactQuill  value = {text} ref={quillRef} theme = "snow" onChange={handleChange} modules={modules} formats = {formats}/>
         </div>  
     </div>
  )
@@ -120,4 +128,4 @@ const topicAndCourseDetails = props.location.state
 
 const condition = signedInUser => !!signedInUser;
 
-export default withRouter(withAuthorization(condition)(AdminEditor));
+export default withFirebase(withRouter(withAuthorization(condition)(AdminEditor)));

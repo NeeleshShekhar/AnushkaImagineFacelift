@@ -26,13 +26,13 @@ signOutUser = () => this.auth.signOut();
 // user = userId => this.db.collection("user").doc(userId);
 // users = this.db.collection("users");
 // blog = blogId => this.db.collection("blogs").doc(blogId);
-// blogs = this.db.collection("blogs");
-// course = courseId => this.db.collection("courses").doc(courseId);
-// courses = this.db.collection("courses");
+blogs = () => this.db.collection("blogs");
+course = courseId => this.db.collection("courses").doc(courseId);
+courses = () => this.db.collection("courses");
 // subject = subjectId => this.db.collection("subjects").doc(subjectId);
 // subjects = this.db.collection("subjects");
-// subTopics =  this.db.collection("subTopics")
-// subTopic = subTopicId => this.db.collections("subTopics").doc(subTopicId)
+subTopics = () => this.db.collection("subTopics")
+subTopic = subTopicId => this.db.collection("subTopics").doc(subTopicId)
 
 }
 export default Firebase;
