@@ -9,7 +9,7 @@ import * as ROUTES from '../../constants/routes'
 const AdminSubTopic = (props) => {
 
     const courseDetails = JSON.parse(props.location.state.courseDetails);
-    const ADD_SUBTOPIC_STATE = {topicKey : "", topicName : "", topicDescription : "", blogId : null, courseId : courseDetails.id, error : ""}
+    const ADD_SUBTOPIC_STATE = {topicKey : "", topicName : "", topicDescription : "", blogId : null, courseId : courseDetails.id, error : "",isDraft : false}
     const STATE_BLOG = {topicModal : false, mode : ""}
     const [topicDetails,setTopicDetails] = useState(ADD_SUBTOPIC_STATE);
     const [addOrEditTopic, setaddOrEditTopic] = useState(STATE_BLOG);
@@ -45,24 +45,28 @@ const AdminSubTopic = (props) => {
         setaddOrEditTopic({topicModal : !addOrEditTopic.topicModal, mode : "EDIT_SUB_TOPIC"})
     }
     const writeBlog = (event) => {
-
-        setTimeout(() => {
-             var selectedTopic = topics.filter(eachTopic => eachTopic.id === event.target.id)[0]
-             const selectedTopicJson = JSON.stringify(selectedTopic);
-             console.log(selectedTopicJson)
-             if(selectedTopicJson.blog === "")
-             {
-                 const blogId = props.firebase.blogs().doc().id;
+            console.log("Your id is" + event.target.id);
+             props.firebase.subTopic(event.target.id).get().then(doc => {
+                const DATA = doc.data()
+            setTimeout(() => {
+                if(!DATA.blog)
+                {
+                const blogId = props.firebase.blogs().doc().id;
                  props.firebase.subTopic(event.target.id).update({
                     "blog" : blogId,
                  }).then(() => {
-                        console.log("New blog created !")
+                        alert("New blog created !" + blogId)
                  }).catch(() => {
                      alert("Something went wrong! Please contact your admin.")
                  })
-             }
-             props.history.push({pathname : ROUTES.ADMIN_WRITE_ARTICLE, state: {...selectedTopic, ...courseDetails}});
-        }, 1000);
+                }
+             props.history.push({pathname : ROUTES.ADMIN_WRITE_ARTICLE, state: {topicId : event.target.id,...DATA, ...courseDetails}});
+             }, 1000);
+        }).catch(error => {
+            alert("Some error occured! Contact your administrator");
+        })
+            
+
           
     }
 

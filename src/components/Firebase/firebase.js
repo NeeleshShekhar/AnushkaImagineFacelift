@@ -25,7 +25,7 @@ signOutUser = () => this.auth.signOut();
 
 // user = userId => this.db.collection("user").doc(userId);
 // users = this.db.collection("users");
-// blog = blogId => this.db.collection("blogs").doc(blogId);
+blog = blogId => this.db.collection("blogs").doc(blogId);
 blogs = () => this.db.collection("blogs");
 course = courseId => this.db.collection("courses").doc(courseId);
 courses = () => this.db.collection("courses");

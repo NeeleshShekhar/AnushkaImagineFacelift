@@ -18,12 +18,37 @@ window.katex = katex;
 export const EditorContext = createContext("");
 const AdminEditor = (props) => {
 
- const[text,setText] = useState("");
+ const[text,setText] = useState("Start Typing Here!");
  let quillRef = useRef(null);
  
  const topicAndCourseDetails = props.location.state
 
  useEffect(() => {
+   console.log(topicAndCourseDetails);
+   props.firebase.blog(topicAndCourseDetails.blog).get().then((doc) =>
+   {
+     if(!doc.exists)
+     {
+      props.firebase.blog(topicAndCourseDetails.blog).set({
+        
+        "isPublished" : false,
+        "subTopic" : topicAndCourseDetails.topicId,
+        "blogContent" : text
+
+      }).then(() => {
+
+      }).catch(error => {
+        alert("Some error occured ! Contact your administrator");
+      })
+     }
+     else
+     {
+       setText(doc.data().blogContent);
+     }
+   }
+   ).catch(error => {
+     alert("Some error Occured!")
+   })
  },[])
 
 hljs.configure({
@@ -34,8 +59,24 @@ hljs.configure({
     setText(value)
  }
 
+ const update = () => {
+   props.firebase.subTopic(topicAndCourseDetails.topicId).update({
+     "isDraft" : true,
+   }).then(() => {
+      props.firebase.blog(topicAndCourseDetails.blog).update({
+        "blogContent" : text
+      }).then(() => {
+
+      }).catch(error => {
+        alert("Cannot update blog! Please contact your administrator" + error);
+      })
+   }).catch(error => {
+     alert("Cannot update SubTopic! Please contact your administrator" + error);
+   })
+ }
  const sendForPreview = () =>
  {
+    update();
     props.history.push({pathname : ROUTES.ADMIN_PREVIEW_ARTICLE, state: {text}});
  }
 
@@ -43,7 +84,7 @@ hljs.configure({
 
  }
  const saveAsDraft = () => {
-
+  update();
  }
 var Font = Quill.import('formats/font');
 Font.whitelist = ['Ubuntu', 'Raleway', 'Roboto'];
