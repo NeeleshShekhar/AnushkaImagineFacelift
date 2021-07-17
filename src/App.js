@@ -7,6 +7,7 @@ import Contribute  from './components/Contribute';
 import Earn from './components/Earn';
 import SMRC from './components/SMRC';
 import Certificate from './components/Certificates';
+import CertificateCollege from './components/Certificates/CertificateCollege';
 import * as ROUTES from "./constants/routes";
 import './App.css';
 import { Helmet } from 'react-helmet';
@@ -24,7 +25,8 @@ function App() {
      <Route exact path = {ROUTES.LANDING} component = {MainComponent}/>
      <Route exact path = {ROUTES.EARN} component = {Earn}/>
      <Route exact path = {ROUTES.SMRC} component = {SMRC}/>
-     <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/>
+     {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
+     <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
     </Router>
     <Footer/>
     </div>
