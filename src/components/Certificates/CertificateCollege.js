@@ -29,7 +29,7 @@ useEffect(() => {
 
     {console.log(certificates)}
     return (
-    <div className = "container">
+    <div className = "container certificates">
      <Table striped>
       <thead>
         <tr>
