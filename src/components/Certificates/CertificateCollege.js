@@ -33,7 +33,6 @@ useEffect(() => {
      <Table striped>
       <thead>
         <tr>
-          <th>#</th>
           <th>Name</th>
           <th>Certificate</th>
         </tr>
@@ -42,7 +41,6 @@ useEffect(() => {
         {certificates.map(eachCertificate => {
         return(
           <tr key = {eachCertificate.id}>
-          <th scope="row">{eachCertificate.id}</th>
           <td>{eachCertificate.name}</td>
           <td><a href = {eachCertificate.certificateUrl}>Link</a></td>
         </tr>
