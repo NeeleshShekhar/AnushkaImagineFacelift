@@ -1,6 +1,7 @@
 import firebase from "firebase/app"
 import "firebase/storage"
 import "firebase/firestore";
+import "firebase/auth"
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -15,6 +16,23 @@ constructor() {
 firebase.initializeApp(config)
  this.storage = firebase.storage();
  this.db = firebase.firestore();
+ this.auth = firebase.auth();
 }
+
+signInAdminWithEmailAndPassword = (email,password) => this.auth.signInWithEmailAndPassword(email,password);
+
+signOutUser = () => this.auth.signOut();
+
+user = userId => this.db.collection("user").doc(userId);
+// users = this.db.collection("users");
+blog = blogIdentifier => this.db.collection("blogs").doc(blogIdentifier);
+blogs = () => this.db.collection("blogs");s
+course = courseId => this.db.collection("courses").doc(courseId);
+courses = () => this.db.collection("courses");
+// subject = subjectId => this.db.collection("subjects").doc(subjectId);
+// subjects = this.db.collection("subjects");
+subTopics = () => this.db.collection("subTopics")
+subTopic = subTopicId => this.db.collection("subTopics").doc(subTopicId)
+
 }
 export default Firebase;

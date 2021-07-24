@@ -7,6 +7,14 @@ import Contribute  from './components/Contribute';
 import Earn from './components/Earn';
 import SMRC from './components/SMRC';
 import Certificate from './components/Certificates';
+import SignIn from './components/SignIn';
+import AdminDashboard from './components/AdminDashboard';
+import AdminEditor from './components/AdminEditor';
+import AdminEditorPreview from './components/AdminEditorPreview';
+import AdminSubTopic from './components/AdminSubTopic';
+import AdminCourses from './components/AdminCourses';
+import AdminDraftCourses from './components/AdminDraftCourses';
+import { withAuthentication } from './components/SessionManagement';
 import CertificateCollege from './components/Certificates/CertificateCollege';
 import * as ROUTES from "./constants/routes";
 import './App.css';
@@ -16,21 +24,30 @@ function App() {
   return (
     <div className="main">
       <Helmet>
-      <title>SkilWil: Earn and learn</title>
+      <title>SkilWil : Compete and Learn</title>
       <meta name="description" content="Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards. Also, ask your subject doubts for free." />
       <meta name="theme-color" content="#008f68" />
     </Helmet>
     <Router>
       <Navigation />
-     <Route exact path = {ROUTES.LANDING} component = {MainComponent}/>
      <Route exact path = {ROUTES.EARN} component = {Earn}/>
      <Route exact path = {ROUTES.SMRC} component = {SMRC}/>
+     <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/>
+     <Route exact path = {ROUTES.SIGN_IN} component = {SignIn}/>
+    <Route exact path = {ROUTES.LANDING} component = {MainComponent}/>
+    <Route exact path = {ROUTES.ADMIN_DASHBOARD} component = {AdminDashboard}/>
+    <Route exact path = {ROUTES.ADMIN_COURSES} component = {AdminCourses}/>
+    <Route exact path = {ROUTES.ADMIN_WRITE_ARTICLE} component = {AdminEditor}/>
+    <Route exact path = {ROUTES.ADMIN_PREVIEW_ARTICLE} component = {AdminEditorPreview}/>
+    <Route exact path = {ROUTES.ADMIN_ADD_SUBTOPIC_TO_COURSE} component = {AdminSubTopic}/>
+    <Route exact path = {ROUTES.DRAFT_COURSE} component = {AdminDraftCourses}/>
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
      <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
     </Router>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
   );
 }
 
-export default App;
+export default withAuthentication(App);
+// export default App;

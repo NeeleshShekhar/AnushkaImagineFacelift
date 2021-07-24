@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto:wght@300&&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
 @media only screen and (max-width: 600px) {
     .hide-mobile {
         display: none;
@@ -535,3 +539,93 @@
   .certificates{
       flex-grow:1;
   }
+
+  .signInContainer{
+      flex-grow:1;
+  }
+
+  .adminDashboardContainer{
+      flex-grow:1;
+      /* background-color:#1F323F;
+      min-width: 100%;
+      color: whitesmoke; */
+  }
+
+  .articles{
+      flex-grow:1;
+  }
+
+  .editorPreview {
+      flex-grow:1;
+  }
+
+   pre.ql-syntax {
+    background-color: #c8ddf8;
+    color:rgba(5, 15, 24, 0.74);
+    overflow: visible;
+}
+
+.addCourseModal{
+      min-width: 80%;
+}
+
+.subTopicContainer {
+    flex-grow : 1;
+}
+
+.courses {
+    flex-grow:1;
+}
+/* Set dropdown font-families */
+
+/* Set dropdown font-families */
+
+.ql-picker.ql-font .ql-picker-label[data-value="Ubuntu"]::before, 
+.ql-picker.ql-font .ql-picker-item[data-value="Ubuntu"]::before
+{
+    font-family: "Ubuntu", cursive;
+    content: "Ubuntu";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Raleway"]::before, 
+.ql-picker.ql-font .ql-picker-item[data-value="Raleway"]::before
+{
+    font-family: "Raleway", cursive;
+    content: "Raleway";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before, 
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before
+{
+    font-family: "Roboto", cursive;
+    content: "Roboto";
+}
+/* Set content font-families */
+.ql-font-Raleway {
+  font-family: "Raleway";
+}
+.ql-font-Roboto {
+  font-family: "Roboto";
+}
+.ql-font-Ubuntu{
+    font-family: "Ubuntu";
+}
+.ql-container {
+    font-size: 30px;
+}
+
+.testEditor img
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.ql-editor{
+    font-family: "Ubuntu";
+}
+
+.blogTitle
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: '60px';
+}
