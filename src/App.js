@@ -15,6 +15,7 @@ import AdminSubTopic from './components/AdminSubTopic';
 import AdminCourses from './components/AdminCourses';
 import AdminDraftCourses from './components/AdminDraftCourses';
 import { withAuthentication } from './components/SessionManagement';
+import CertificateCollege from './components/Certificates/CertificateCollege';
 import * as ROUTES from "./constants/routes";
 import './App.css';
 import { Helmet } from 'react-helmet';
@@ -40,6 +41,8 @@ function App() {
     <Route exact path = {ROUTES.ADMIN_PREVIEW_ARTICLE} component = {AdminEditorPreview}/>
     <Route exact path = {ROUTES.ADMIN_ADD_SUBTOPIC_TO_COURSE} component = {AdminSubTopic}/>
     <Route exact path = {ROUTES.DRAFT_COURSE} component = {AdminDraftCourses}/>
+     {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
+     <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
     </Router>
     {/* <Footer/> */}
     </div>

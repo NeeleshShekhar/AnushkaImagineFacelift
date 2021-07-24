@@ -49,11 +49,11 @@ const SMRC = (props) => {
         <div className="button-smrc">
         
        
-         <a > <Button  className = "Register-smrchome"  onClick={openForm} style={{ cursor: 'pointer' }}>
-                    Attempt Quiz
+         <a > <Button disabled className = "Register-smrchome"  onClick={openForm} style={{ cursor: 'pointer' }}>
+                    Attempt Contest
         </Button>
         </a>
-         <p  style = {{paddingTop : '2%', fontSize:'15px', fontFamily:'Gothic'}}>All the best ! </p>
+         <p  style = {{paddingTop : '2%', fontSize:'15px', fontFamily:'Gothic'}}>The contest has ended ! </p>
         </div></div>
       <br/>
         <div className="col-lg-5  col-sm-12">
@@ -73,7 +73,7 @@ const SMRC = (props) => {
           <CardTitle tag="h5">Prep TalkTime</CardTitle>
           <CardText>4:00 PM</CardText>
           
-          <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button className = "Register-smrchome"  style={{marginLeft:"2px"}}> Register for SMRC </Button>
+          <a  href="https://docs.google.com/forms/d/e/1FAIpQLScnbl6zGfoUPCTIexdjc5r_xzJRsiCET37RWHSS4nWiEB55Ug/viewform?usp=sf_link" target="_blank"><Button disabled className = "Register-smrchome"  style={{marginLeft:"2px"}}> The event has ended. </Button>
           </a>
 
         </CardBody>

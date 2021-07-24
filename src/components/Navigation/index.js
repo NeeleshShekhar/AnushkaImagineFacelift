@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from "react";
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, Button, NavItem, NavLink, Jumbotron } from 'reactstrap';
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { Badge } from 'reactstrap';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withRouter,Link} from "react-router-dom";
@@ -18,10 +19,13 @@ const Navigation = (props) =>
     }, [])
 
     const [navOpen, setNavOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const switchNav = () => {
         setNavOpen(!navOpen);
     }
+
+    const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
     const doubtClearingClicked = () => {
 
@@ -94,13 +98,20 @@ const Navigation = (props) =>
                         </NavbarToggler>
                         <Collapse navbar isOpen = {navOpen} >
                             <Nav navbar className = "justify-content-end" style = {{width :'100%'}}>
-                                
                             <NavItem onClick = {smrcRegistrationClicked}>
-                                <Link className="nav-link" to={ROUTES.SMRC} onClick={switchNav} > <Badge color="primary" style={{ backgroundColor: '#DD571C', fontSize : '14px',
-                                paddingTop:'2px'
-                                 }}> Attempt-SMRC </Badge> </Link>
+                                <NavLink onClick = {toggleDropdown}> <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} size = "sm">
+                                <DropdownToggle
+                                    tag="span"
+                                    data-toggle="dropdown"
+                                    aria-expanded={dropdownOpen}
+                                >
+                                Events
+                                </DropdownToggle>
+                                <DropdownMenu style = {{backgroundColor : '#EDF3F5'}}>
+                                <Link className="nav-link" to={ROUTES.SMRC} onClick={switchNav} > SMRC-VESASC </Link>
+                                </DropdownMenu>
+                                </Dropdown></NavLink>
                             </NavItem>
-
                                 <NavItem onClick={doubtClearingClicked}>
                                 <NavLink  onClick={switchNav} className="nav-link" href = "https://forms.gle/2GyMKybVWRX5h2sF6" > Doubt Clearing <Badge color = "primary" style = {{backgroundColor : 'red'}}>FREE</Badge> </NavLink>
                             </NavItem>
