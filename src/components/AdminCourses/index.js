@@ -4,10 +4,11 @@ import {Button,Card, CardImg, CardTitle, CardText, CardDeck,
 import AdminAddCourse from "../AdminAddCourse";
 import {withRouter} from "react-router-dom";
 import { withFirebase } from "../Firebase";
+import { withAuthorization } from "../SessionManagement";
 import * as ROUTES from "../../constants/routes"
 import { CollectionsBookmarkRounded } from "@material-ui/icons";
 const AdminCourses = (props) => {
-const ADD_COURSE_STATE = {courseKey : "",courseId : "", courseName : "", courseDescription : "", isPublished : false ,subject : "Mathematics", error : ""}
+const ADD_COURSE_STATE = {courseKey : "",courseId : "", courseName : "", courseDescription : "", isPublished : false ,subject : "Mathematics", error : "",createdBy : ""}
 const COURSE_MODAL_MODE = {courseModal : false, mode : "ADD_COURSE"}
 const [courseDetails, setCourseDetails] = useState(ADD_COURSE_STATE);
 const [addOrEditCourse, setaddOrEditCourse] = useState(COURSE_MODAL_MODE);
@@ -63,13 +64,15 @@ useEffect(() => {
           <CardText>
           {a_course.courseDescription}
             <br/>
+            <br/>
           <p>Course Published Status : {a_course.isPublished.toString()}</p>
+          <p> Course Created By : {a_course.createdBy} </p>
           </CardText>
         </CardBody>
         <CardFooter>
         <Button color = "primary">Publish</Button>
         {' '}
-        <Button id = {a_course.id} color = "primary" onClick = {sendToAddSubTopics}>Add Sub-Topics</Button>
+        <Button id = {a_course.id} color = "primary" onClick = {sendToAddSubTopics}>Sub-Topics</Button>
         {' '}
         <Button id = {a_course.id} color = "primary" onClick = {editCourse}>Edit</Button>{' '}
         </CardFooter>
@@ -81,5 +84,5 @@ useEffect(() => {
         </div>
     );
 }
-
-export default withFirebase(withRouter(AdminCourses));
+const condition = signedInUser => !!signedInUser;
+export default withFirebase(withRouter(withAuthorization(condition)(AdminCourses)));

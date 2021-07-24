@@ -70,8 +70,8 @@ const Navigation = (props) =>
                                 <NavItem onClick={switchNav}>
                                 <Link  className="nav-link" to={ROUTES.ADMIN_COURSES} > Courses </Link>
                             </NavItem>
-                            <NavItem>
-                                <Link className="nav-link"  onClick={switchNav} >Drafts</Link>
+                            <NavItem  onClick={switchNav}>
+                                <Link className="nav-link" to = {ROUTES.DRAFT_COURSE} >Drafts</Link>
                             </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" onClick = {signOutAdmin} >Sign Out</NavLink>
@@ -82,7 +82,6 @@ const Navigation = (props) =>
    
     return(
         <>
-       
         <div>
         <Navbar  nav-fill expand="md" >
                     <div className="container">

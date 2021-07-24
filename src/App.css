@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto:wght@300&&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
 @media only screen and (max-width: 600px) {
     .hide-mobile {
@@ -559,8 +560,8 @@
   }
 
    pre.ql-syntax {
-    background-color: #23241f;
-    color: #f8f8f2;
+    background-color: #c8ddf8;
+    color:rgba(5, 15, 24, 0.74);
     overflow: visible;
 }
 
@@ -576,10 +577,6 @@
     flex-grow:1;
 }
 /* Set dropdown font-families */
-
-.ql-editor {
-  font-family: "Ubuntu";
-}
 
 /* Set dropdown font-families */
 
@@ -608,7 +605,9 @@
 .ql-font-Roboto {
   font-family: "Roboto";
 }
-
+.ql-font-Ubuntu{
+    font-family: "Ubuntu";
+}
 .ql-container {
     font-size: 30px;
 }
@@ -619,4 +618,14 @@
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+}
+
+.ql-editor{
+    font-family: "Ubuntu";
+}
+
+.blogTitle
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: '60px';
 }

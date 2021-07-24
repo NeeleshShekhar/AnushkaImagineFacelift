@@ -19,26 +19,25 @@ export const EditorContext = createContext("");
 const AdminEditor = (props) => {
 
  const[text,setText] = useState("Start Typing Here!");
+ const [topicAndCourseDetails, setTopicAndCourseDetails] = useState(props.location.state);
  let quillRef = useRef(null);
- 
- const topicAndCourseDetails = props.location.state
-
  useEffect(() => {
-   console.log(topicAndCourseDetails);
-   props.firebase.blog(topicAndCourseDetails.blog).get().then((doc) =>
-   {
+    fetchBlogs();
+
+ },[])
+ const fetchBlogs = async() => {
+  try{
+  await props.firebase.db.collection("blogs").doc(topicAndCourseDetails.blog).get().then((doc) =>
+  {
      if(!doc.exists)
      {
-      props.firebase.blog(topicAndCourseDetails.blog).set({
-        
+      props.firebase.db.collection("blogs").doc(topicAndCourseDetails.blog).set({
         "isPublished" : false,
         "subTopic" : topicAndCourseDetails.topicId,
         "blogContent" : text
-
       }).then(() => {
-
       }).catch(error => {
-        alert("Some error occured ! Contact your administrator");
+        alert("Some error occured ! Contact your administrator + error");
       })
      }
      else
@@ -49,8 +48,12 @@ const AdminEditor = (props) => {
    ).catch(error => {
      alert("Some error Occured!")
    })
- },[])
-
+  }
+  catch(error)
+  {
+    console.log(error)
+  }
+ }
 hljs.configure({
     languages: ['javascript', 'java', 'python'],
   });
@@ -60,8 +63,14 @@ hljs.configure({
  }
 
  const update = () => {
-   props.firebase.subTopic(topicAndCourseDetails.topicId).update({
+   console.log(props.signedInUser.uid);
+       var userName = ""
+       props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(doc => {
+            userName = doc.data().name;
+            props.firebase.subTopic(topicAndCourseDetails.topicId).update({
      "isDraft" : true,
+     "lastUpdatedBy" : userName,
+     
    }).then(() => {
       props.firebase.blog(topicAndCourseDetails.blog).update({
         "blogContent" : text
@@ -73,14 +82,39 @@ hljs.configure({
    }).catch(error => {
      alert("Cannot update SubTopic! Please contact your administrator" + error);
    })
+            
+          }).catch(error => {
+            alert("Username cannot be fetched !")
+          });
+  
  }
  const sendForPreview = () =>
  {
     update();
-    props.history.push({pathname : ROUTES.ADMIN_PREVIEW_ARTICLE, state: {text}});
+    props.history.push({pathname : ROUTES.ADMIN_PREVIEW_ARTICLE, state: {text : text,...topicAndCourseDetails}});
  }
 
  const postBlogAdmin = () => {
+      props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(doc => {
+      props.firebase.subTopic(topicAndCourseDetails.topicId).update({
+     "isDraft" : false,
+     "lastUpdatedBy" : doc.data().name,
+     "isPublised" : true,
+   }).then(() => {
+      props.firebase.blog(topicAndCourseDetails.blog).update({
+        "blogContent" : text
+      }).then(() => {
+        alert("Sub Topic successfully Published !")
+      }).catch(error => {
+        alert("Cannot update blog! Please contact your administrator" + error);
+      })
+   }).catch(error => {
+     alert("Cannot update SubTopic! Please contact your administrator" + error);
+   })
+          }).catch(error => {
+            alert("Username cannot be fetched !");
+          })
+   
 
  }
  const saveAsDraft = () => {

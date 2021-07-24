@@ -1,6 +1,7 @@
 import React from "react";
 import { withFirebase } from "../Firebase";
 import {Button,Modal, ModalHeader, ModalBody, ModalFooter, Form,FormGroup,Label,Input} from "reactstrap";
+import { withAuthorization } from "../SessionManagement";
 
 const AdminAddSubTopic = (props) => {
     const onChange = (event) => {
@@ -20,10 +21,11 @@ const AdminAddSubTopic = (props) => {
           const DATA_TO_BE_ADDED = {
               "topicName" : props.topicDetails.topicName,
               "topicDescription" : props.topicDetails.topicDescription,
-              "courseKey" : props.topicDetails.courseId,
+              "courseIdentifier" : props.topicDetails.courseIdentifier,
               "lastUpdatedBy" : null,
               "blog" : null,
               "isDraft" : false,
+              "courseName" : props.topicDetails.courseName
             
           }
             props.firebase.db.collection("subTopics").doc(id).set(DATA_TO_BE_ADDED).then (() => 
@@ -36,8 +38,8 @@ const AdminAddSubTopic = (props) => {
             toggle();
         }
         else
-        props.setTopicDetails({...props.topicDetails, error : validatedData.message})
-
+        props.setTopicDetails({...props.topicDetails, errorTopic : validatedData.message})
+     
     }
     const editTopic = (event) =>
     {
@@ -65,7 +67,7 @@ const AdminAddSubTopic = (props) => {
         toggle();
         }
         else
-        props.setTopicDetails({...props.topicDetails, error : validatedData.message})
+        props.setTopicDetails({...props.topicDetails, errorTopic : validatedData.message})
     }
      const validate = () =>
     {
@@ -82,7 +84,7 @@ const AdminAddSubTopic = (props) => {
     return (
         <Modal className = "addTopicModal" isOpen={true} toggle={toggle} backdrop = {false}>
         <ModalHeader toggle={toggle}>Add a SubTopic to course</ModalHeader>
-        {  props.topicDetails.error &&  <p style = {{color : 'red', textAlign : 'center'}}> <br/> {props.topicDetails.error}</p>}
+        {  props.topicDetails.errorTopic &&  <p style = {{color : 'red', textAlign : 'center'}}> <br/> {props.topicDetails.errorTopic}</p>}
         <ModalBody>
         <Form>
        <FormGroup>
@@ -105,4 +107,5 @@ const AdminAddSubTopic = (props) => {
     );
 }
 
-export default withFirebase(AdminAddSubTopic);
+const condition = signedInUser => !!signedInUser;
+export default withFirebase(withAuthorization(condition)(AdminAddSubTopic));

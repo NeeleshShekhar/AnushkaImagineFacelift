@@ -3,7 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter , Form,FormGroup,Lab
 import {withRouter} from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from '../../constants/routes';
-import { RemoveFromQueue } from "@material-ui/icons";
+import { withAuthorization } from "../SessionManagement";
 const AdminAddCourse = (props) => {
 
   const db = props.firebase.db;
@@ -25,7 +25,6 @@ const AdminAddCourse = (props) => {
               courseName : props.courseDetails.courseName,
               courseDescription : props.courseDetails.courseDescription,
               subject : props.courseDetails.subject,
-              courseId : props.courseDetails.courseId,
 
             }
           ).then(() => {
@@ -48,14 +47,17 @@ const AdminAddCourse = (props) => {
         props.setCourseDetails({...props.courseDetails, error : validatedData.message})
     }
 
-    const addCourse = (event) => {
+    const addCourse = async (event) => {
         event.preventDefault();
-        const validatedData = validate();
-        console.log(validatedData.message + " " + validatedData.hasErrors);
+        const validatedData = await validate();
+        console.log("The message is " + validatedData.message + " " + validatedData.hasErrors);
         if(!validatedData.hasErrors)
         { 
           //Call to Firebase
-          const id = db.collection("courses").doc().id;
+          var userName; 
+          props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(user => {
+            userName = user.data().name;
+               const id = db.collection("courses").doc().id;
           const ref = db.collection("subject").doc(props.courseDetails.subject);
           const DATA_TO_BE_ADDED = {
             "courseName" : props.courseDetails.courseName,
@@ -69,43 +71,76 @@ const AdminAddCourse = (props) => {
             "ratings" : 1,
             "tags" : [],
             "createdAt": Date.now(),
-            "createdBy" : "Admin"
+            "createdBy" : userName
           }
           db.collection("courses").doc(id).set(DATA_TO_BE_ADDED).then(() => 
           {
             alert("Course has been created ");
-            props.addCourse({...props.courseDetails, id : id});
-
+            props.addCourse({...props.courseDetails,createdBy : userName, id : id});
           }).catch((error) =>
           {
             alert(error);
           })
-            
-             toggle();
+           toggle();
+          }).catch(error => {
+            alert("Username cannot be fetched !");
+          })
         }
         else
         props.setCourseDetails({...props.courseDetails, error : validatedData.message})
-        toggle();
+      
     }
-    const validate = () =>
+    const  checkAndUpdate = async () => {
+      let message = ""
+      await props.firebase.db.collection("validCourses").doc(props.courseDetails.courseId).get().then(doc => {
+            if(!doc.exists || (doc.exists && doc.data().isUsed == true) )
+            {
+               message = "You dont have permission to access the course. Please contact Aditya Deo Ojha to have the access"
+            }
+            else
+            {
+              props.firebase.db.collection("validCourses").doc(props.courseDetails.courseId).update({
+                "isUsed" : true
+              }).then(
+                message = ""
+              ).catch(error => {
+                 alert("Something Went Wrong! Please contact the administration. Error is " + error);
+              })
+            }
+    }).catch(error => {
+            alert("Something Went Wrong! Please contact the administration. The error is " + error);
+          });
+
+          return message;
+  }
+
+    const validate = async () =>
     {
          let message = ""
-        //For CourseName
-        if(!props.courseDetails.courseId)
-        message = "You don't have access to create this course. Please contact Aditya Deo Ojha to have the access"
-        else if(!props.courseDetails.courseName)
+         //For CourseName
+        if(!props.courseDetails.courseName)
          message = "Course Name cannot be blanked";
         else if(!props.courseDetails.courseDescription)
         message = "Course Description cannot be blank. Please provide some important details on what this course is all about"
+        else if(props.addOrEditCourse.mode === "ADD_COURSE")
+        {
+          if(props.courseDetails.courseId)
+          {
+           
+           message = await checkAndUpdate();
 
-        const validationData = {'hasErrors' : message, 'message' : message};
-        
-        return validationData;
+          }
+          else
+         message = "Course Id cannot be blank";
+         
+        }
+       
+        return {"hasErrors" : message, "message" : message};
+       
     }
 
     //    console.log(props.courseDetails.courseName + 
     //         " course sub =  " + props.courseDetails.subject + " course des =  " + props.courseDetails.courseDescription + "course Id=  " + props.courseDetails.courseId + " error " + props.courseDetails.error);
-
     return (
     <div>
       <Modal className = "addCourseModal" isOpen={true} toggle={toggle} backdrop = {false}>
@@ -120,10 +155,10 @@ const AdminAddCourse = (props) => {
             <option value = "Physics">Physics</option>
           </Input>
       </FormGroup>
-        <FormGroup>
+       { props.addOrEditCourse.mode === "ADD_COURSE" && <FormGroup>
         <Label for="courseId">Course Id</Label>
         <Input type="text" value = {props.courseDetails.courseId}  onChange = {onChange} name="courseId" id="courseId" placeholder="Enter CourseId"/>
-      </FormGroup>
+      </FormGroup>}
        <FormGroup>
         <Label for="courseName">Course Name</Label>
         <Input type="text" value = {props.courseDetails.courseName}  onChange = {onChange}  name="courseName" id="courseName" placeholder="Enter Name of Course"/>
@@ -145,4 +180,5 @@ const AdminAddCourse = (props) => {
     );
 }
 
-export default withFirebase(withRouter(AdminAddCourse));
+const condition = signedInUser => !!signedInUser;
+export default  withFirebase(withRouter(withAuthorization(condition)(AdminAddCourse)))

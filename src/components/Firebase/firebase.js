@@ -23,10 +23,10 @@ signInAdminWithEmailAndPassword = (email,password) => this.auth.signInWithEmailA
 
 signOutUser = () => this.auth.signOut();
 
-// user = userId => this.db.collection("user").doc(userId);
+user = userId => this.db.collection("user").doc(userId);
 // users = this.db.collection("users");
-blog = blogId => this.db.collection("blogs").doc(blogId);
-blogs = () => this.db.collection("blogs");
+blog = blogIdentifier => this.db.collection("blogs").doc(blogIdentifier);
+blogs = () => this.db.collection("blogs");s
 course = courseId => this.db.collection("courses").doc(courseId);
 courses = () => this.db.collection("courses");
 // subject = subjectId => this.db.collection("subjects").doc(subjectId);

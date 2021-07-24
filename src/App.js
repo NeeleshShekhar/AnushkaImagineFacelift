@@ -13,6 +13,7 @@ import AdminEditor from './components/AdminEditor';
 import AdminEditorPreview from './components/AdminEditorPreview';
 import AdminSubTopic from './components/AdminSubTopic';
 import AdminCourses from './components/AdminCourses';
+import AdminDraftCourses from './components/AdminDraftCourses';
 import { withAuthentication } from './components/SessionManagement';
 import * as ROUTES from "./constants/routes";
 import './App.css';
@@ -38,9 +39,9 @@ function App() {
     <Route exact path = {ROUTES.ADMIN_WRITE_ARTICLE} component = {AdminEditor}/>
     <Route exact path = {ROUTES.ADMIN_PREVIEW_ARTICLE} component = {AdminEditorPreview}/>
     <Route exact path = {ROUTES.ADMIN_ADD_SUBTOPIC_TO_COURSE} component = {AdminSubTopic}/>
- 
+    <Route exact path = {ROUTES.DRAFT_COURSE} component = {AdminDraftCourses}/>
     </Router>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
   );
 }

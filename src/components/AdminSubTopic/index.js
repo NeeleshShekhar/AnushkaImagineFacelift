@@ -4,12 +4,13 @@ import {Button, Card, CardImg, CardTitle, CardText, CardDeck,
 import {withRouter} from "react-router-dom";
 import AdminAddSubTopic from '../AdminAddSubTopic.js';
 import { withFirebase } from '../Firebase/context.js';
+import { withAuthorization } from "../SessionManagement";
 import * as ROUTES from '../../constants/routes'
+import { FormatListNumberedRtlOutlined } from '@material-ui/icons';
 
 const AdminSubTopic = (props) => {
-
     const courseDetails = JSON.parse(props.location.state.courseDetails);
-    const ADD_SUBTOPIC_STATE = {topicKey : "", topicName : "", topicDescription : "", blogId : null, courseId : courseDetails.id, error : "",isDraft : false}
+    const ADD_SUBTOPIC_STATE = {topicKey : "", topicName : "", topicDescription : "", blogId : null, courseIdentifier : courseDetails.id, errorTopic : "",isDraft : false, courseName: ""}
     const STATE_BLOG = {topicModal : false, mode : ""}
     const [topicDetails,setTopicDetails] = useState(ADD_SUBTOPIC_STATE);
     const [addOrEditTopic, setaddOrEditTopic] = useState(STATE_BLOG);
@@ -17,7 +18,7 @@ const AdminSubTopic = (props) => {
 
     useEffect(() => {
         var allTopics = [];
-        props.firebase.subTopics().where("courseKey","==",courseDetails.id).get().then(docs => {
+        props.firebase.subTopics().where("courseIdentifier","==",courseDetails.id).get().then(docs => {
             docs.forEach((doc) => {
                 allTopics.push({id : doc.id, ...doc.data()})
             })
@@ -26,8 +27,7 @@ const AdminSubTopic = (props) => {
             ).catch(error => {
                 alert("Some error occured ! Contact your administration");
             });
-           
-    },[]);
+    });
     const addSubTopicToCourse = (topic) =>
     {
         setTopic(topics.concat(topic))
@@ -35,6 +35,7 @@ const AdminSubTopic = (props) => {
     const addNewSubTopic = () => {
 
        setaddOrEditTopic({topicModal : !addOrEditTopic.topicModal, mode : "ADD_SUB_TOPIC"})
+ 
     }
     const editTopic = (event) => {
         props.firebase.subTopic(event.target.id).get().then(doc => {
@@ -44,32 +45,45 @@ const AdminSubTopic = (props) => {
         })
         setaddOrEditTopic({topicModal : !addOrEditTopic.topicModal, mode : "EDIT_SUB_TOPIC"})
     }
-    const writeBlog = (event) => {
-            console.log("Your id is" + event.target.id);
-             props.firebase.subTopic(event.target.id).get().then(doc => {
-                const DATA = doc.data()
-            setTimeout(() => {
-                if(!DATA.blog)
-                {
-                const blogId = props.firebase.blogs().doc().id;
-                 props.firebase.subTopic(event.target.id).update({
-                    "blog" : blogId,
-                 }).then(() => {
-                        alert("New blog created !" + blogId)
-                 }).catch(() => {
-                     alert("Something went wrong! Please contact your admin.")
-                 })
-                }
-             props.history.push({pathname : ROUTES.ADMIN_WRITE_ARTICLE, state: {topicId : event.target.id,...DATA, ...courseDetails}});
-             }, 1000);
-        }).catch(error => {
-            alert("Some error occured! Contact your administrator");
-        })
-            
-
-          
+    const getBlog = async (event) =>
+    {
+        let DATA = {}
+        await props.firebase.db.collection("subTopics").doc(event.target.id).get().then(doc => {
+              DATA = doc.data();
+          }).catch(error => {
+              alert(error + "Occured in getBlog");
+          })
+        return await DATA;
     }
 
+    const sendToOtherPage = async (event) =>
+    {
+    const DATA = await getBlog(event).then((data) => {
+        return data;
+    }
+    );
+    if(!DATA.blog){
+        const blogId = await props.firebase.db.collection("blogs").doc().id;
+        await props.firebase.db.collection("subTopics").doc(event.target.id).update({
+                    "blog" : await blogId,
+         }).then(() => {
+             alert("New blog created !" + blogId) 
+             DATA.blog = blogId;
+        }).then(() => { 
+        }).catch(() => {
+             alert("Something went wrong! Please contact your admin.")
+         })
+       } 
+       
+       return await function temp (){
+           props.history.push({pathname : ROUTES.ADMIN_WRITE_ARTICLE, state: {topicId : event.target.id,...DATA, ...courseDetails}}); 
+       };
+    }
+    const writeBlog = async (event) => {
+         sendToOtherPage(event).then((temp) => {
+            temp();
+         })
+    }
     return(
     <div className = "container subTopicContainer">
     <div className = "row">
@@ -86,6 +100,7 @@ const AdminSubTopic = (props) => {
         <br/>
         <p>
             The SubTopics in the course are : 
+        </p>
             <br/>
             <br/>
             <div className = "row">
@@ -111,12 +126,11 @@ const AdminSubTopic = (props) => {
         </CardDeck>
             </div>
 
-        </p>
-
-       { addOrEditTopic.topicModal && <AdminAddSubTopic topicDetails = {topicDetails} setTopicDetails = {setTopicDetails} addOrEditTopic = {addOrEditTopic} setaddOrEditTopic = {setaddOrEditTopic} topics = {topics} addSubTopicToCourse = {addSubTopicToCourse} setTopic = {setTopic}/>}
+       { addOrEditTopic.topicModal && <AdminAddSubTopic topicDetails = {{...topicDetails, ...courseDetails}} setTopicDetails = {setTopicDetails} addOrEditTopic = {addOrEditTopic} setaddOrEditTopic = {setaddOrEditTopic} topics = {topics} addSubTopicToCourse = {addSubTopicToCourse} setTopic = {setTopic}/>}
     </div>
   
     );
 }
 
-export default withFirebase(withRouter(AdminSubTopic));
+const condition = signedInUser => !!signedInUser;
+export default withFirebase(withRouter(withAuthorization(condition)(AdminSubTopic)));
