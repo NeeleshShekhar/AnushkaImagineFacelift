@@ -11,7 +11,6 @@ const parameters = useParams();
 const contestName = parameters.contestName;
 const groupName = parameters.groupName;
 useEffect(() => {
-    
     ReactGA.initialize('UA-198309082-1')
     ReactGA.pageview(window.location.pathname + window.location.search);
     var fetchedCertificates = [];
@@ -26,7 +25,6 @@ useEffect(() => {
             alert("Some error occured ! Contact your administrator" + err)
         }))
     },[]);
-
     {console.log(certificates)}
     return (
     <div className = "container certificates">
