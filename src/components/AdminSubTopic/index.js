@@ -67,7 +67,7 @@ const AdminSubTopic = (props) => {
         await props.firebase.db.collection("subTopics").doc(event.target.id).update({
                     "blog" : await blogId,
          }).then(() => {
-             alert("New blog created !" + blogId) 
+             alert("New blog created !"); 
              DATA.blog = blogId;
         }).then(() => { 
         }).catch(() => {

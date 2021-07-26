@@ -5,8 +5,7 @@ import {withRouter} from 'react-router-dom';
 import { withAuthorization } from "../SessionManagement";
 const AdminEditorPreview = (props) => 
 {
-    console.log(props.history.location.state)
-
+    
     return (
         <div className = "container editorPreview">
             <div className = "row">

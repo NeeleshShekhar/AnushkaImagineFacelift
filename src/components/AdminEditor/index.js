@@ -51,7 +51,7 @@ const AdminEditor = (props) => {
   }
   catch(error)
   {
-    console.log(error)
+    alert(error)
   }
  }
 hljs.configure({
@@ -63,7 +63,6 @@ hljs.configure({
  }
 
  const update = () => {
-   console.log(props.signedInUser.uid);
        var userName = ""
        props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(doc => {
             userName = doc.data().name;
@@ -99,10 +98,11 @@ hljs.configure({
       props.firebase.subTopic(topicAndCourseDetails.topicId).update({
      "isDraft" : false,
      "lastUpdatedBy" : doc.data().name,
-     "isPublised" : true,
+     "isPublished" : true,
    }).then(() => {
       props.firebase.blog(topicAndCourseDetails.blog).update({
-        "blogContent" : text
+        "blogContent" : text,
+        "isPublished" : true
       }).then(() => {
         alert("Sub Topic successfully Published !")
       }).catch(error => {
@@ -181,8 +181,6 @@ const toolbarOptions = [
     matchVisual: false,
   }
   }), [])
-  
-// console.log(JSON.stringify(props.location.state))
  return (
     <div className = "articles container">
   <p className = "lead"> You are an writing an article for {topicAndCourseDetails.topicName} under the Course : {topicAndCourseDetails.courseName}</p>
@@ -193,7 +191,6 @@ const toolbarOptions = [
 </ButtonGroup>
 <br/>
 <br/>
-{console.log(text)}
         <div className = "row" >
          <ReactQuill  value = {text} ref={quillRef} theme = "snow" onChange={handleChange} modules={modules} formats = {formats}/>
         </div>  

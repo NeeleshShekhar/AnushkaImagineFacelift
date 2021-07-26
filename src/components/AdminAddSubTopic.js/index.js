@@ -25,7 +25,8 @@ const AdminAddSubTopic = (props) => {
               "lastUpdatedBy" : null,
               "blog" : null,
               "isDraft" : false,
-              "courseName" : props.topicDetails.courseName
+              "courseName" : props.topicDetails.courseName,
+              "isPublised" : false
             
           }
             props.firebase.db.collection("subTopics").doc(id).set(DATA_TO_BE_ADDED).then (() => 
@@ -83,7 +84,7 @@ const AdminAddSubTopic = (props) => {
     }
     return (
         <Modal className = "addTopicModal" isOpen={true} toggle={toggle} backdrop = {false}>
-        <ModalHeader toggle={toggle}>Add a SubTopic to course</ModalHeader>
+        <ModalHeader toggle={toggle}>{props.addOrEditTopic === "ADD_TOPIC"?"Add a SubTopic to course":"Edit Topic"}</ModalHeader>
         {  props.topicDetails.errorTopic &&  <p style = {{color : 'red', textAlign : 'center'}}> <br/> {props.topicDetails.errorTopic}</p>}
         <ModalBody>
         <Form>
@@ -100,7 +101,6 @@ const AdminAddSubTopic = (props) => {
         <ModalFooter>
         {props.addOrEditTopic.mode === 'ADD_SUB_TOPIC' && <Button onClick = {addTopic} color = "primary">ADD</Button>}
         {props.addOrEditTopic.mode === 'EDIT_SUB_TOPIC' && <Button onClick = {editTopic}  color = "primary">Modify</Button>}
-          
           {' '} <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>

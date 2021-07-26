@@ -62,12 +62,12 @@ const Navigation = (props) =>
     }
  const AdminNavbar = () => {
     return ( <>
-                            <NavItem >
+                            {/* <NavItem >
                                 <Link className="nav-link" to={ROUTES.SMRC} onClick={switchNav} > <Badge color="primary" style={{ backgroundColor: 'yellow', color : 'black', fontSize : '14px',
                                 paddingTop:'2px'
                                  }}> Latest News </Badge> </Link>
                                  
-                            </NavItem>
+                            </NavItem> */}
                                <NavItem onClick={switchNav}>
                                 <Link  className="nav-link" to={ROUTES.ADMIN_DASHBOARD} > Dashboard </Link>
                             </NavItem>

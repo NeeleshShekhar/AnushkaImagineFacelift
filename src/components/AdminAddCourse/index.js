@@ -17,7 +17,6 @@ const AdminAddCourse = (props) => {
     }
     const editCourse = (event) => {
         const validatedData = validate();
-        console.log(validatedData.message + " " + validatedData.hasErrors);
         if(!validatedData.hasErrors)
         { 
           props.firebase.course(props.courseDetails.courseKey).update(
@@ -50,7 +49,6 @@ const AdminAddCourse = (props) => {
     const addCourse = async (event) => {
         event.preventDefault();
         const validatedData = await validate();
-        console.log("The message is " + validatedData.message + " " + validatedData.hasErrors);
         if(!validatedData.hasErrors)
         { 
           //Call to Firebase
@@ -144,7 +142,7 @@ const AdminAddCourse = (props) => {
     return (
     <div>
       <Modal className = "addCourseModal" isOpen={true} toggle={toggle} backdrop = {false}>
-        <ModalHeader toggle={toggle}>Add a course</ModalHeader>
+        <ModalHeader toggle={toggle}>{props.addOrEditCourse === "ADD_COURSE" ? "Add a course" : "Edit Course"}</ModalHeader>
         {  props.courseDetails.error &&  <p style = {{color : 'red', textAlign : 'center'}}> <br/> {props.courseDetails.error}</p>}
         <ModalBody>
         <Form>
@@ -179,6 +177,5 @@ const AdminAddCourse = (props) => {
     </div>
     );
 }
-
 const condition = signedInUser => !!signedInUser;
 export default  withFirebase(withRouter(withAuthorization(condition)(AdminAddCourse)))

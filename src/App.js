@@ -44,7 +44,7 @@ function App() {
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
      <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
     </Router>
-    {/* <Footer/> */}
+    <Footer/>
     </div>
   );
 }

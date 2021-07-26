@@ -6,7 +6,6 @@ import {withRouter} from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import { withAuthorization } from "../SessionManagement";
 import * as ROUTES from "../../constants/routes"
-import { CollectionsBookmarkRounded } from "@material-ui/icons";
 const AdminCourses = (props) => {
 const ADD_COURSE_STATE = {courseKey : "",courseId : "", courseName : "", courseDescription : "", isPublished : false ,subject : "Mathematics", error : "",createdBy : ""}
 const COURSE_MODAL_MODE = {courseModal : false, mode : "ADD_COURSE"}
@@ -15,7 +14,6 @@ const [addOrEditCourse, setaddOrEditCourse] = useState(COURSE_MODAL_MODE);
 const [courses, setCourses] = useState([])
 const db = props.firebase.db;
 useEffect(() => {
-   console.log("Hello world, I am called")
    var allCourses = [];
    db.collection("courses").get().then(querySnapshot => {
        querySnapshot.forEach( (doc) => {

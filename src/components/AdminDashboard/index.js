@@ -52,7 +52,4 @@ const [navOpen, setNavOpen] = useState(false);
     }
 
 const condition = signedInUser => !!signedInUser;
-
- 
-
 export default withRouter(withFirebase(withAuthorization(condition)(AdminDashboard)));
