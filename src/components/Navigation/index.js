@@ -2,6 +2,8 @@ import React,{useEffect,useState} from "react";
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, Button, NavItem, NavLink, Jumbotron } from 'reactstrap';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { Badge } from 'reactstrap';
+import './nav.css';
+
 import MenuIcon from '@material-ui/icons/Menu';
 import { withRouter,Link} from "react-router-dom";
 import ReactGA from "react-ga";
@@ -107,8 +109,10 @@ const Navigation = (props) =>
                                 >
                                 Events
                                 </DropdownToggle>
-                                <DropdownMenu style = {{backgroundColor : '#EDF3F5'}}>
-                                <Link className="nav-link" to={ROUTES.SMRC} onClick={switchNav} > SMRC-VESASC </Link>
+                                <DropdownMenu className="nav-dropdown">
+                                <Link className="nav-dropdown-text" to={ROUTES.POSTER} onClick={switchNav} > Poster Making </Link>
+                                <Link className="nav-dropdown-text" to={ROUTES.SMRC} onClick={switchNav} > SMRC-VESASC </Link>
+                                
                                 </DropdownMenu>
                                 </Dropdown></NavLink>
                             </NavItem>

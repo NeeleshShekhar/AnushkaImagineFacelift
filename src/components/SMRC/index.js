@@ -123,7 +123,7 @@ const SMRC = (props) => {
                 </ModalFooter>
          </Modal>
    </div>
-
+ 
     );
 }
 

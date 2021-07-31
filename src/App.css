@@ -9,6 +9,7 @@
     }
 }
 
+
 .head {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(./Images/home.png);
     border-radius: 42px;
@@ -104,10 +105,7 @@
     margin: 0;
 }
 
-.nav-link {
-    color: black;
-    cursor: pointer;
-}
+
 
 .main {
     display: flex;
@@ -572,6 +570,7 @@
 .subTopicContainer {
     flex-grow : 1;
 }
+
 
 .courses {
     flex-grow:1;
