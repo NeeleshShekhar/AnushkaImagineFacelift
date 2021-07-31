@@ -105,7 +105,7 @@ const PosterMaking = (props) => {
             </div>
             <div className="rule-body">
             <ul>
-            <br /> <li>This contest is for students from grade 
+            <br /> <li>This contest is for students <strike>from grade</strike>  &nbsp;
 It is for everyone!</li>
 <br /> 
                 <li>It should be either Digital poster or a    Handmade poster in Png or jpg Format.</li>
