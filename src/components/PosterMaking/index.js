@@ -59,14 +59,14 @@ const PosterMaking = (props) => {
            
             <br />
             <br /> 
-            <p className="rule-body">SkilWil Presents you a Poster Making Competition on various mathematical topics. This Poster making competion is more than a competition,because the posters you make are not merely for assessment but they will also help other students to understand  some topic in a better way and that is a very noble thing to do.</p>  
+            <p className="rule-body">SkilWil Presents you a Poster Making Competition on various mathematical topics. This Poster making competion is more than a competition,because the posters you make are not merely for assessment but they will also help other students to understand some topic in a better way and that is a very noble thing to do.</p>  
            
            <div className = "payAndReward">
                <form  ref = {instance}>
           
         </form>
            <Button style = {{width : '150px',marginLeft:'20px',borderColor:'#002244',textAlign:'center',color : '#002244', fontWeight:'bold'}} color = "ouline"  className = "rewardPosterButton" onClick = {toggle} >Rewards</Button>
-            <a  style = {{marginLeft : '20px'}} href="whatsapp://send?text= https://www.skilwil.com/events/postermaking SkilWil Presents you a Poster Making Competition on various mathematical topics. Win Rewards upto INR 2000. Get featured on your website and get a chance to publish your own Mathematics Course" data-action="share/whatsapp/share"><WhatsAppIcon style = {{color : '#128C7E', fontSize : '45px'}}/></a>
+            <a  style = {{marginLeft : '20px'}} href="whatsapp://send?text= https://www.skilwil.com/events/postermaking SkilWil Presents you a Poster Making Competition on various mathematical topics. Win Rewards upto INR 2000. Get featured on our website and get a chance to publish your own Mathematics Course." data-action="share/whatsapp/share"><WhatsAppIcon style = {{color : '#128C7E', fontSize : '45px'}}/></a>
            </div>
          
             <p className="register-check">Click here to register for the event</p>
