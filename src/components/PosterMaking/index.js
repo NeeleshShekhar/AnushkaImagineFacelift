@@ -53,7 +53,7 @@ const PosterMaking = (props) => {
             <img src={flag} className="poster-image-flag" alt="Marketing"/>
             </div>
             </div>
-            <h1 className="poster-head-2">Poster Making competition</h1>
+            <h1 className="poster-head-2">Poster Making Competition</h1>
             <Badge className="badge-win">Win rewards upto ₹2000 </Badge>
             <Badge color="primary" style={{ backgroundColor: '#003E61', fontSize : '20px', padding:'1%', marginLeft:'2px'}}>Entry Fees: ₹10 INR </Badge>
            
