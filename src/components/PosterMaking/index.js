@@ -10,6 +10,7 @@ import smrc2 from '../../Images/smrc1.png';
 import flag from '../../Images/poster-flag.svg';
 import teaching from '../../Images/prof-teaching.svg';
 import rules from '../../Images/rules.svg';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import './postermaking.css'
 
 
@@ -31,16 +32,9 @@ const PosterMaking = (props) => {
         
     },[])
 
-    const earnNowClicked = () => {
-         ReactGA.event({
-             category: 'Button',
-             action: 'User clicked on Earn now'
-         })
-     
-         props.history.push(ROUTES.EARN);
-     }
+   
  
-     const openForm = () =>
+     const toggle = () =>
      {
        
         toggleModal(!openModal);
@@ -65,12 +59,16 @@ const PosterMaking = (props) => {
            
             <br />
             <br /> 
-            <p className="rule-body">SkilWil Presents you a poster making competition on various mathematical topics. This Poster making competion is more than a competition,because the posters you make are not merely for assessment but they will also help other students to understand  some topic in a better way and that is a very noble thing to do.</p>  
+            <p className="rule-body">SkilWil Presents you a Poster Making Competition on various mathematical topics. This Poster making competion is more than a competition,because the posters you make are not merely for assessment but they will also help other students to understand  some topic in a better way and that is a very noble thing to do.</p>  
            
-            
-            <form  ref = {instance}>
-           
-            </form>
+           <div className = "payAndReward">
+               <form  ref = {instance}>
+          
+        </form>
+           <Button style = {{width : '150px',marginLeft:'20px',borderColor:'#002244',textAlign:'center',color : '#002244', fontWeight:'bold'}} color = "ouline"  className = "rewardPosterButton" onClick = {toggle} >Rewards</Button>
+            <a  style = {{marginLeft : '20px'}} href="whatsapp://send?text= https://www.skilwil.com/events/postermaking SkilWil Presents you a Poster Making Competition on various mathematical topics. Win Rewards upto INR 2000. Get featured on your website and get a chance to publish your own Mathematics Course" data-action="share/whatsapp/share"><WhatsAppIcon style = {{color : '#128C7E', fontSize : '45px'}}/></a>
+           </div>
+         
             <p className="register-check">Click here to register for the event</p>
             </div>  
             <div className="col-lg-5  col-sm-12">
@@ -86,12 +84,8 @@ const PosterMaking = (props) => {
           <CardTitle className="card-head-1" tag="h5">Contest</CardTitle>
           <CardText className="card-text-1">1<sup>st</sup> August to 15<sup>st</sup> August</CardText>
           <CardTitle className="card-head-1" tag="h5">Theme</CardTitle>
-          <CardText className="card-text-1">Any mathematical concept</CardText>
-          
-          
-
+          <CardText className="card-text-1">Any Mathematical Concept</CardText>
         </CardBody>
-  
       </Card>
       <br/>
       <br />
@@ -105,15 +99,16 @@ const PosterMaking = (props) => {
             </div>
             <div className="rule-body">
             <ul>
-            <br /> <li>This contest is for students <strike>from grade</strike>  &nbsp;
-It is for everyone!</li>
-<br /> 
-                <li>It should be either Digital poster or a    Handmade poster in Png or jpg Format.</li>
-                <br /> <li>The judgement will not be based on the difficulty of topic rather will be based on how well the concept is explained and presented.</li>
-                <br /> <li>All entries are to be sumitted at 
-www.skilwil.com/events/postermaking.</li>
+            <br /> <li>This contest is open for all students from all grades.</li>
+            <br/>
+            <li>After successful registration and payment, we would be sending you a unique link on your registered email id to submit your poster. Kindly, do not share your submission link with anyone else.</li>
+            <br/>
+                <li>The Poster to be submitted must either be Digital or Handmade. Accepted formats are .jpg, .png and .pdf</li>
+                <br/>
+                <li>The final judgement will not be based on the difficulty of topic you chose for the poster but rather will be on how well the concept is explained and presented in simple words.</li>
 <br /> <li>No entries will be accepted after 6:00 Pm, 14th August.</li>
-            
+<br/>
+        <li><a style = {{cursor : 'pointer'}} href = "https://docs.google.com/document/d/14qUP_KoFg-rmi8v6TykyDpsssw8FWPV6WX7BUCvcgog/edit?usp=sharing" >Terms and Conditions</a></li>
             </ul>
             </div>
             </div>
@@ -122,12 +117,32 @@ www.skilwil.com/events/postermaking.</li>
             </div>
         </div>
         </div>
-
-                 
         </div>
-   
+   { openModal && <Modal isOpen={openModal} toggle={toggle}  >
+        <ModalHeader  style = {{border : 'none', backgroundColor: '#8EC5FC',
+backgroundImage: 'linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)'}} toggle={toggle}>Rewards</ModalHeader>
+        <ModalBody style = {{fontFamily : 'Raleway', fontWeight:'bold', backgroundColor: '#8EC5FC',
+backgroundImage: 'linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)'}} >
+          <ul>
+              <li>Winners of the contest can win cash-prizes upto INR 2000.</li>
+              <br/>
+              <li>Winners may get a chance to feature a Course or an Article on the website.</li>
+              <br/>
+              <li>Good posters from the contest will be displayed on our <a href = "https://www.instagram.com/skilwil">Instagram Handle</a> and on our website.</li>
+                   <br/>
+              <li>All registered participants will recieve a Certificate of Participation.</li>
+                   <br/>
+              <li>All registered participants will get a free 2-month access to Doubt Clearnace via one-to-one session with our subject experts. </li>
+                   <br/>
+              <li>All registered participants will get a free access to SkilWil Learn Courses.</li>
+          </ul>
+        </ModalBody>
+        <ModalFooter  style = {{border:'none', backgroundColor: '#8EC5FC',
+backgroundImage: 'linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)'}}>
+          <Button color="secondary" onClick={toggle}>Cancel</Button>
+        </ModalFooter>
+      </Modal> }
    </div>
-
      )};
 
      export default withRouter(withFirebase(PosterMaking));

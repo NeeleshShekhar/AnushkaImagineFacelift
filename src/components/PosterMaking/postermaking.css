@@ -92,3 +92,15 @@
     font-weight: 600;
     color: rgb(0, 27, 87);
 }
+
+.payAndReward{
+    display: flex;
+}
+
+#rewardPosterButton{
+    
+}
+#rewardPosterButton:hover {
+    background-color:'red';
+}
+
