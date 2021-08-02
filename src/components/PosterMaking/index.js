@@ -59,7 +59,7 @@ const PosterMaking = (props) => {
            
             <br />
             <br /> 
-            <p className="rule-body">SkilWil Presents you a Poster Making Competition on various mathematical topics. This Poster making competion is more than a competition,because the posters you make are not merely for assessment but they will also help other students to understand some topic in a better way and that is a very noble thing to do.</p>  
+            <p className="rule-body">SkilWil Presents you a Poster Making Competition on various mathematical topics. This poster making competition is more than a competition,because the posters you make are not merely for assessment but they will also help other students to understand some topic in a better way and that is a very noble thing to do.</p>  
            
            <div className = "payAndReward">
                <form  ref = {instance}>
@@ -108,7 +108,7 @@ const PosterMaking = (props) => {
                 <li>The final judgement will not be based on the difficulty of topic you chose for the poster but rather will be on how well the concept is explained and presented in simple words.</li>
 <br /> <li>No entries will be accepted after 6:00 Pm, 14th August.</li>
 <br/>
-        <li><a style = {{cursor : 'pointer'}} href = "https://docs.google.com/document/d/14qUP_KoFg-rmi8v6TykyDpsssw8FWPV6WX7BUCvcgog/edit?usp=sharing" >Terms and Conditions</a></li>
+        <li><a style = {{cursor : 'pointer'}} href = "https://docs.google.com/document/u/1/d/e/2PACX-1vSwrzE2wwo1DxA3Vm-dqMWBlpIaSegZGX40xzfq_BHelH21X1zijYn4DrV7aJjuN-aUwYmcmEqOuzv8/pub" >Terms and Conditions</a></li>
             </ul>
             </div>
             </div>
@@ -132,7 +132,7 @@ backgroundImage: 'linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)'}} >
                    <br/>
               <li>All registered participants will recieve a Certificate of Participation.</li>
                    <br/>
-              <li>All registered participants will get a free 2-month access to Doubt Clearnace via one-to-one session with our subject experts. </li>
+              <li>All registered participants will get a free 2-month access to Doubt Clearance via one-to-one session with our subject experts. </li>
                    <br/>
               <li>All registered participants will get a free access to SkilWil Learn Courses.</li>
           </ul>
