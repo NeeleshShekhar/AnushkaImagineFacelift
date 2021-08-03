@@ -69,7 +69,8 @@ const PosterMaking = (props) => {
             <a  style = {{marginLeft : '20px'}} href="whatsapp://send?text= https://www.skilwil.com/events/postermaking SkilWil Presents you a Poster Making Competition on various mathematical topics. Win Rewards upto INR 2000. Get featured on our website and get a chance to publish your own Mathematics Course." data-action="share/whatsapp/share"><WhatsAppIcon style = {{color : '#128C7E', fontSize : '45px'}}/></a>
            </div>
          
-            <p className="register-check">Click here to register for the event</p>
+            <p className="register-check">Click here to register for the event <br/>
+           If you are facing any issues with the payment, contact us at skilwilbusiness@gmail.com. </p>
             </div>  
             <div className="col-lg-5  col-sm-12">
             <img src={teaching} className="poster-image-head" alt="Marketing"/>
