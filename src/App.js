@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import MainComponent from './components/MainComponent';
@@ -31,7 +31,8 @@ function App() {
       <meta name="theme-color" content="#008f68" />
     </Helmet>
     <Router>
-      <Navigation />
+     <Navigation />
+    <Switch>
      <Route exact path = {ROUTES.EARN} component = {Earn}/>
      <Route exact path = {ROUTES.SMRC} component = {SMRC}/>
      <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/>
@@ -46,11 +47,9 @@ function App() {
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
      <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
      <Route exact path = {ROUTES.POSTER} component = {PosterMaking}/>
-     <Route path = "*" component = {oops}/>
+     <Route  component = {oops}/>
+     </Switch>
     </Router>
-    <br/>
-    <br/>
-    <br/>
     <br/>
     <Footer/>
     </div>

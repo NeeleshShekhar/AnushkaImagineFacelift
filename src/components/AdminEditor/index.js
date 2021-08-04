@@ -182,11 +182,11 @@ const toolbarOptions = [
   }
   }), [])
  return (
-    <div className = "articles container">
+  <div className = "articles container">
   <p className = "lead"> You are an writing an article for {topicAndCourseDetails.topicName} under the Course : {topicAndCourseDetails.courseName}</p>
   <ButtonGroup size="lg" >
-  <Button onClick = {saveAsDraft}>Save as Draft</Button>
-  <Button onClick = {postBlogAdmin}>Post</Button>
+  <Button onClick = {saveAsDraft}>Save as Draft</Button> {' '}
+  <Button onClick = {postBlogAdmin}>Post</Button> {' '}
   <Button onClick = {sendForPreview}>Preview</Button>
 </ButtonGroup>
 <br/>
