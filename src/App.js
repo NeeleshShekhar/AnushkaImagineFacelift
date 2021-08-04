@@ -20,6 +20,7 @@ import * as ROUTES from "./constants/routes";
 import './App.css';
 import { Helmet } from 'react-helmet';
 import PosterMaking from './components/PosterMaking';
+import oops from './components/oops';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
      <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
      <Route exact path = {ROUTES.POSTER} component = {PosterMaking}/>
+     <Route path = "*" component = {oops}/>
     </Router>
     <br/>
     <br/>

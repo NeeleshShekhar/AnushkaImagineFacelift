@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+.head-text{
+    font-size: 500%;
+    font-weight: bolder;
+    color:rgb(7, 150, 206);
+    background:linear-gradient(89.87deg, #570EF3 0.13%, #1B4A91 30.06%, #291F9C 67.49%, #08313A 99.91%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'raleway';
+}
+@media only screen and (max-width: 995px) {
+    .phone-head-text{
+        font-size: 500%;
+        font-weight: bolder;
+        color:rgb(7, 150, 206);
+        background:linear-gradient(89.87deg, #570EF3 0.13%, #1B4A91 30.06%, #291F9C 67.49%, #08313A 99.91%);
+        -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'raleway';
+    }
+}
+
+@media only screen and (max-width: 995px) {
+    .hide-mobile {
+        display: none;
+    }
+}
+
+.quote-head{
+    color: rgb(0, 0, 88);
+}
+
+.lead{
+    font-size: larger;
+    font-weight: 500;
+    color: rgb(1, 14, 71);
+}
+.head-left{
+    background: linear-gradient(89.87deg, #570EF3 0.13%, #1B4A91 30.06%, #291F9C 67.49%, #08313A 99.91%);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 22px 4px rgba(0, 0, 0, 0.25);
+    
+
+}
+
+.image-head{
+    background: rgb(255, 255, 255);
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 10px;
+  
+}
