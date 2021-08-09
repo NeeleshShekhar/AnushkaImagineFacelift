@@ -64,15 +64,19 @@ hljs.configure({
 
  const update = () => {
        var userName = ""
+       
        props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(doc => {
             userName = doc.data().name;
+            
+           
             props.firebase.subTopic(topicAndCourseDetails.topicId).update({
      "isDraft" : true,
      "lastUpdatedBy" : userName,
      
    }).then(() => {
       props.firebase.blog(topicAndCourseDetails.blog).update({
-        "blogContent" : text
+        "blogContent" : text,
+        
       }).then(() => {
 
       }).catch(error => {
@@ -102,7 +106,9 @@ hljs.configure({
    }).then(() => {
       props.firebase.blog(topicAndCourseDetails.blog).update({
         "blogContent" : text,
-        "isPublished" : true
+        "isPublished" : true,
+        
+        
       }).then(() => {
         alert("Sub Topic successfully Published !")
       }).catch(error => {

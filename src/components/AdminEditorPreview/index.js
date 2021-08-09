@@ -13,7 +13,7 @@ const AdminEditorPreview = (props) =>
                 <div style = {{fontSize : '28px'}}  className = "lead">{props.history.location.state.topicDescription}</div>
             </div>
             <br/>
-           <div className = "ql-container ql-editor testEditor" style = {{fontFamily : 'Festive'}} 
+           <div className = "ql-container ql-editor testEditor " style = {{fontFamily : 'Festive'}} 
            dangerouslySetInnerHTML={{__html : props.history.location.state.text}}></div>
         </div>
        

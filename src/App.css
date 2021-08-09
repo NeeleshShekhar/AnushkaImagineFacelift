@@ -9,6 +9,21 @@
     }
 }
 
+.course-header{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    background-image: url(./Images/courses.png);
+    border-radius: 10px;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    
+}
+.editor{
+    margin-bottom: 10px;
+    
+}
 
 .head {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(./Images/home.png);
@@ -24,7 +39,9 @@
     height: 100%;
 }
 
-.head-nav-item {}
+.head-nav-item {
+    
+}
 
 .display-6 {
     font-weight: 700;
@@ -213,6 +230,7 @@
     border-radius: 15px;
     margin: 3px;
     position: relative;
+    
 }
 
 .info-cards-heading {
