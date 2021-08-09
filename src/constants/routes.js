@@ -13,4 +13,4 @@ export const CERTIFICATE_COLLEGE = '/certificates/:contestName/:groupName'
 export const POSTER = "/events/postermaking"
 export const COURSEHOME = "/courses"
 export const SUBTOPICS = "/courses/:id"
-export const SUBTOPICS = "/blogs/:id"
+export const BLOGS = "/blogs/:id"
