@@ -8,7 +8,7 @@ import { withAuthorization } from "../SessionManagement";
 import * as ROUTES from "../../constants/routes";
 import './AdminCourses.css'
 const AdminCourses = (props) => {
-const ADD_COURSE_STATE = {courseKey : "",courseId : "", courseName : "", courseDescription : "", isPublished : false ,subject : "Mathematics", error : "",createdBy : ""}
+const ADD_COURSE_STATE = {courseKey : "",courseId : "", courseName : "", courseDescription : "", isPublished : false ,subject : "Mathematics", error : "",createdBy : "",imageUrl : ""}
 const COURSE_MODAL_MODE = {courseModal : false, mode : "ADD_COURSE"}
 const [courseDetails, setCourseDetails] = useState(ADD_COURSE_STATE);
 const [addOrEditCourse, setaddOrEditCourse] = useState(COURSE_MODAL_MODE);
@@ -31,7 +31,7 @@ useEffect(() => {
     }
      const adminStartCourse = () =>
     {
-      setaddOrEditCourse({...addOrEditCourse,courseModal : true})
+      setaddOrEditCourse({mode : 'ADD_COURSE',courseModal : true})
     }
     const editCourse = (event) =>
     {

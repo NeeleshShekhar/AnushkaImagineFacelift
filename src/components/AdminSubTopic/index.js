@@ -10,7 +10,7 @@ import { FormatListNumberedRtlOutlined } from '@material-ui/icons';
 
 const AdminSubTopic = (props) => {
     const courseDetails = JSON.parse(props.location.state.courseDetails);
-    const ADD_SUBTOPIC_STATE = {topicKey : "", topicName : "", topicDescription : "", blogId : null, courseIdentifier : courseDetails.id, errorTopic : "",isDraft : false, courseName: ""}
+    const ADD_SUBTOPIC_STATE = {topicKey : "", topicName : "", topicDescription : "", blogId : null, courseIdentifier : courseDetails.id, errorTopic : "",isDraft : false, courseName: "",topicImgUrl:""}
     const STATE_BLOG = {topicModal : false, mode : ""}
     const [topicDetails,setTopicDetails] = useState(ADD_SUBTOPIC_STATE);
     const [addOrEditTopic, setaddOrEditTopic] = useState(STATE_BLOG);
