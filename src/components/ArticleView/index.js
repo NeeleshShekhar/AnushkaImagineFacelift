@@ -4,17 +4,8 @@ import './ArticleView.css';
 
 import { withRouter,useLocation,useParams } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import {Button, CardGroup,Badge} from 'reactstrap';
-import {
-    Card, CardImg, CardTitle, CardText,
-    CardSubtitle, CardBody,CardDeck,CardHeader
-} from 'reactstrap';
-import CourseNav from '../CourseNav';
-import courseimage from '../../Images/courseimage.jpg';
 import { withFirebase } from "../Firebase";
-import { TrendingUpRounded, WhereToVote } from '@material-ui/icons';
-import subtopicfirst from '../../Images/subtopic1.jpg';
-import insta from '../../Images/instagram.png';
+
 import { Carousel } from 'react-responsive-carousel';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -23,6 +14,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import GrainIcon from '@material-ui/icons/Grain';
 import Link from '@material-ui/core/Link';
+import { FontAwesomeIcon } from 'fontawesome'; 
 
 
 const ArticleView = (props)=>{
@@ -70,26 +62,28 @@ const ArticleView = (props)=>{
         <div className="subTopicContainer ">
             
             <div className=" container blue">
-                <Breadcrumbs aria-label="breadcrumb" className="bread">
-      <Link  href="/courses" >
+                <Breadcrumbs className="bread">
+      <Link  className="bread-link" href="/courses" >
         <HomeIcon className={classes.icon} />
         Home
       </Link>
       <Link
         
         href={"/courses/"+subTopic.courseIdentifier}
-      >
+      > 
         <WhatshotIcon className={classes.icon} />
         {subTopic.courseName}
       </Link>
-      <Typography color="textPrimary" className={classes.link}>
+      <Typography  className={classes.link}>
         <GrainIcon className={classes.icon} />
         Blog
       </Typography>
     </Breadcrumbs></div>
-            <div className="center articleHead container">{subTopic.topicName}</div><hr className="container" />
+            <div style = {{fontFamily:'Ubuntu', fontSize:'300%', fontWeight:'bold'}} className="center articleHead container">{subTopic.topicName}</div>
+            
+            <div  className = "lead container author">{subTopic.courseDescription}</div>
             <div className="container author"><h6 className="name">Author: <i>{subTopic.lastUpdatedBy}</i></h6></div>
-     <div><div className = "   ql-editor testEditor viewArticle container center" 
+     <div><div style = {{fontFamily : 'Festive'}}  className = "   ql-editor testEditor viewArticle container center test-image" 
            dangerouslySetInnerHTML={{__html : blog.blogContent}}>
                
            </div>

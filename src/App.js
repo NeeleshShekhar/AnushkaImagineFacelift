@@ -21,6 +21,9 @@ import './App.css';
 import { Helmet } from 'react-helmet';
 import PosterMaking from './components/PosterMaking';
 import oops from './components/oops';
+import CourseHome from './components/CourseHome';
+import Subtopic from './components/SubTopics';
+import ArticleView from './components/ArticleView';
 
 function App() {
   return (
@@ -47,6 +50,10 @@ function App() {
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
      <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
      <Route exact path = {ROUTES.POSTER} component = {PosterMaking}/>
+     <Route exact path = {ROUTES.COURSEHOME} component = {CourseHome}/>
+     <Route exact path = {ROUTES.SUBTOPICS} component = {Subtopic}/>
+     <Route exact path = {ROUTES.BLOGS} component = {ArticleView}/>
+
      <Route  component = {oops}/>
      </Switch>
     </Router>

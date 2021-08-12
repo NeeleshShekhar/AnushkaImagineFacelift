@@ -20,4 +20,4 @@ const AdminEditorPreview = (props) =>
     );
 }
 const condition = signedInUser => !!signedInUser;
-export default withRouter(withAuthorization(condition)(AdminEditorPreview));
+export default withRouter(withAuthorization(condition)(AdminEditorPreview)); 

@@ -80,7 +80,7 @@ const Navigation = (props) =>
                                 <Link  className="nav-link" to={ROUTES.ADMIN_DASHBOARD} > Dashboard </Link>
                             </NavItem>
                                 <NavItem onClick={switchNav}>
-                                <Link  className="nav-link" to={ROUTES.ADMIN_COURSES} > Courses </Link>
+                                <Link  className="nav-link" to={ROUTES.ADMIN_COURSES} > Admin Courses </Link>
                             </NavItem>
                             <NavItem  onClick={switchNav}>
                                 <Link className="nav-link" to = {ROUTES.DRAFT_COURSE} >Drafts</Link>

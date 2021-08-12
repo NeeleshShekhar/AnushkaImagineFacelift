@@ -62,7 +62,7 @@ const AdminAddCourse = (props) => {
             "courseId" : props.courseDetails.courseId,
             "courseDescription" : props.courseDetails.courseDescription,
             "subjectRef" : ref,
-            "imageUrl" : null,
+            "imgUrl" : props.courseDetails.imgUrl,
             "isPublished" : false,
             "isTrending" : false,
             "subject" : props.courseDetails.subject,
@@ -164,6 +164,11 @@ const AdminAddCourse = (props) => {
       <FormGroup>
         <Label for="courseDescription">Course Description</Label>
         <Input type="textarea" value = {props.courseDetails.courseDescription}  onChange = {onChange} name="courseDescription" id="courseDescription"  placeholder = "Enter few lines about the course"/>
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="imgUrl">Image URL</Label>
+        <Input type="textarea" value = {props.courseDetails.imgUrl}  onChange = {onChange} name="imgUrl" id="imgUrl"  placeholder = "Enter Image URL"/>
       </FormGroup>
 
         </Form>

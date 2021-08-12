@@ -4,15 +4,19 @@
 margin: 0px,0px,8px,0px;
 }
 .bread{
-	font-size: medium;
+	font-family: 'ubuntu';
+	font-size: small;
+	padding-left: 1%;
 	}
-.blue{
-	
-	font-family: 'raleway';
-	color: rgb(219, 235, 255);
-	font-weight: 600;
-	padding: 0.3%;
-}
+
+	.bread-link{
+		text-decoration: none;
+		font-family:'ubuntu';
+		color: black;
+		
+		
+	}
+
 
 .viewArticle{
 	font-family:'Playfair Display';
@@ -24,5 +28,10 @@ margin: 0px,0px,8px,0px;
 	font-family: 'EB Garamond';
 	font-size: xx-large;
 	line-height:120%;
+}
+
+.lead{
+	font-family: 'ubuntu';
+	font-size: medium;
 }
 

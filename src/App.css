@@ -7,12 +7,15 @@
     .hide-mobile {
         display: none;
     }
+   
 }
 
 .course-header{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: larger;
     background-image: url(./Images/courses.png);
+    
+    background-size:cover;
     border-radius: 10px;
     padding-left: 5%;
     padding-top: 2%;
@@ -105,7 +108,7 @@
 }
 
 .display-8 {
-    color: #ebfbff;
+    color: #ffffff;
     font-family: sans-serif;
 }
 
@@ -125,13 +128,13 @@
 
 
 .main {
-    display: flex;
+    
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
     margin: 0;
-    background-color: #dbf1ff;
-    background-image: linear-gradient(180deg, #edf3f5 0%, #e7f1f3 100%);
+    background-color: #ffffff;
+    background-image: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
 }
 
 .earnButton {
@@ -633,7 +636,9 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 40%;
+  border-radius: 10px;
+  padding: 1%;
 }
 
 .ql-editor{

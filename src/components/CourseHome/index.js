@@ -3,17 +3,14 @@ import ReactGA from "react-ga";
 import './courseHome.css';
 import { withRouter,Route,useLocation } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import {Button, CardGroup} from 'reactstrap';
+
 import {
     Card, CardImg, CardTitle, CardText,
     CardSubtitle, CardBody,CardDeck,CardHeader
 } from 'reactstrap';
-import CourseNav from '../CourseNav';
+
 import { withFirebase } from "../Firebase";
-import { WhereToVote } from '@material-ui/icons';
-import courseimage from '../../Images/courseimage.jpg';
-import { Carousel } from 'react-responsive-carousel';
-import ReactHover, {Hover } from "react-hover";
+
 
 const CourseHome = (props) =>
 {
@@ -59,7 +56,7 @@ const CourseHome = (props) =>
         <hr/>
        
       <br/>
-      
+     
        <div>
        <div className="row">
         

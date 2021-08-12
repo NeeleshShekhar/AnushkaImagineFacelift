@@ -9,8 +9,8 @@
     
 }
 .head-back{
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.096);
+    backdrop-filter: blur(3px);
 /* Note: backdrop-filter has minimal browser support */
     padding: 3%;
     border-radius: 37px;
@@ -45,19 +45,20 @@
     background:rgb(255, 255, 255);
     border-radius: 10px;
     font-family: "Raleway";
-    
+    border-color: aquamarine;
+    border-width: 1px;
     margin-top: -10px;
     
     
 } 
 
 .card-course-img{
-    padding: 5px;
+    padding: 15px;
 }
 .card-course-title{
     font-weight: 800;
     font-size: 20px;
-    color: rgb(1, 59, 114);
+    color: rgb(2, 44, 83);
     text-align: center;
 }
 .card-course-body{
