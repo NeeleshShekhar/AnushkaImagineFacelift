@@ -24,6 +24,7 @@ const AdminAddCourse = (props) => {
               courseName : props.courseDetails.courseName,
               courseDescription : props.courseDetails.courseDescription,
               subject : props.courseDetails.subject,
+              imgUrl : props.courseDetails.imgUrl
 
             }
           ).then(() => {
@@ -75,6 +76,7 @@ const AdminAddCourse = (props) => {
           {
             alert("Course has been created ");
             props.addCourse({...props.courseDetails,createdBy : userName, id : id});
+            
           }).catch((error) =>
           {
             alert(error);
@@ -142,7 +144,7 @@ const AdminAddCourse = (props) => {
     return (
     <div>
       <Modal className = "addCourseModal" isOpen={true} toggle={toggle} backdrop = {false}>
-        <ModalHeader toggle={toggle}>{props.addOrEditCourse === "ADD_COURSE" ? "Add a course" : "Edit Course"}</ModalHeader>
+        <ModalHeader toggle={toggle}>{props.addOrEditCourse.mode === "ADD_COURSE" ? "Add a course" : "Edit Course"}</ModalHeader>
         {  props.courseDetails.error &&  <p style = {{color : 'red', textAlign : 'center'}}> <br/> {props.courseDetails.error}</p>}
         <ModalBody>
         <Form>

@@ -26,7 +26,8 @@ const AdminAddSubTopic = (props) => {
               "blog" : null,
               "isDraft" : false,
               "courseName" : props.topicDetails.courseName,
-              "isPublised" : false
+              "isPublished" : false,
+              "topicImgUrl" : props.topicDetails.topicImgUrl
             
           }
             props.firebase.db.collection("subTopics").doc(id).set(DATA_TO_BE_ADDED).then (() => 
@@ -51,7 +52,8 @@ const AdminAddSubTopic = (props) => {
         props.firebase.subTopic(props.topicDetails.topicKey).update(
             {
                 "topicName" : props.topicDetails.topicName,
-                "topicDescription" : props.topicDetails.topicDescription
+                "topicDescription" : props.topicDetails.topicDescription,
+                "topicImgUrl" : props.topicDetails.topicImgUrl
             }
         ).then(() => {
             props.setTopic(props.topics.map(eachTopic => {
@@ -95,6 +97,10 @@ const AdminAddSubTopic = (props) => {
       <FormGroup>
         <Label for="topicDescription">Topic Description</Label>
         <Input type="textarea" value = {props.topicDetails.topicDescription}  onChange = {onChange} name="topicDescription" id="topicDescription"  placeholder = "Enter few lines about the topic"/>
+      </FormGroup>
+        <FormGroup>
+        <Label for="topicImgUrl">Image Url (G:photos)</Label>
+        <Input type="textarea" value = {props.topicDetails.topicImgUrl}  onChange = {onChange} name="topicImgUrl" id="topicImgUrl"  placeholder = "Enter a public link from Google Photos"/>
       </FormGroup>
         </Form>
         </ModalBody>
