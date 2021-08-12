@@ -5,7 +5,8 @@ import AdminAddCourse from "../AdminAddCourse";
 import {withRouter} from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import { withAuthorization } from "../SessionManagement";
-import * as ROUTES from "../../constants/routes"
+import * as ROUTES from "../../constants/routes";
+import './AdminCourses.css'
 const AdminCourses = (props) => {
 const ADD_COURSE_STATE = {courseKey : "",courseId : "", courseName : "", courseDescription : "", isPublished : false ,subject : "Mathematics", error : "",createdBy : ""}
 const COURSE_MODAL_MODE = {courseModal : false, mode : "ADD_COURSE"}
@@ -46,17 +47,19 @@ useEffect(() => {
         var selectedTopic = courses.filter(temp => temp.id === event.target.id)[0]
         props.history.push({pathname : ROUTES.ADMIN_ADD_SUBTOPIC_TO_COURSE,state : {courseDetails :JSON.stringify(selectedTopic) } })
     }
+    
     return(
         <div className = "container courses">
              <Button onClick = {adminStartCourse} color = "primary">Add Course</Button>
             {addOrEditCourse.courseModal && <AdminAddCourse addOrEditCourse = {addOrEditCourse} setaddOrEditCourse = {setaddOrEditCourse} courseDetails = {courseDetails} setCourseDetails = {setCourseDetails} courses = {courses} setCourses = {setCourses} addCourse = {addCourse} />}
             <p>Current Courses are : </p>
             <br/>
-         <CardDeck> 
+         <div className="row">
          { courses.map( a_course => {
             return (
-        <div key = {a_course.id}>
+        <div className="col-12 col-md-6 col-lg-4" key = {a_course.id}>
         <Card >
+        <CardImg src = {a_course.imgUrl} />
         <CardHeader>{a_course.courseName}</CardHeader>
         <CardBody>
           <CardText>
@@ -78,7 +81,8 @@ useEffect(() => {
         <br/>
         </div>)
         })}
-        </CardDeck>
+        </div>
+        
         </div>
     );
 }

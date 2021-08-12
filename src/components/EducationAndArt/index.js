@@ -26,8 +26,8 @@ const EducationAndArt = (props) =>
  <div>
  <br/>
      <div className="container">
-         <div className="row justify-content-md-center ">
-             <div className="col-lg-5 col-sm-12 info-cards">
+         <div className="row justify-content-md-center " >
+             <div className="col-lg-5 col-sm-12 info-cards" >
                  <div className="info-cards-heading">
                      <h2>Education</h2>
                  </div>

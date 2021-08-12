@@ -7,8 +7,26 @@
     .hide-mobile {
         display: none;
     }
+   
 }
 
+.course-header{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    background-image: url(./Images/courses.png);
+    
+    background-size:cover;
+    border-radius: 10px;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    
+}
+.editor{
+    margin-bottom: 10px;
+    
+}
 
 .head {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(./Images/home.png);
@@ -24,7 +42,9 @@
     height: 100%;
 }
 
-.head-nav-item {}
+.head-nav-item {
+    
+}
 
 .display-6 {
     font-weight: 700;
@@ -88,7 +108,7 @@
 }
 
 .display-8 {
-    color: #ebfbff;
+    color: #ffffff;
     font-family: sans-serif;
 }
 
@@ -108,13 +128,13 @@
 
 
 .main {
-    display: flex;
+    
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
     margin: 0;
-    background-color: #dbf1ff;
-    background-image: linear-gradient(180deg, #edf3f5 0%, #e7f1f3 100%);
+    background-color: #ffffff;
+    background-image: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
 }
 
 .earnButton {
@@ -213,6 +233,7 @@
     border-radius: 15px;
     margin: 3px;
     position: relative;
+    
 }
 
 .info-cards-heading {
@@ -615,7 +636,9 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 40%;
+  border-radius: 10px;
+  padding: 1%;
 }
 
 .ql-editor{

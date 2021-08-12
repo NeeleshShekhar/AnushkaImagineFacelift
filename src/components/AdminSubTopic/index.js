@@ -104,11 +104,12 @@ const AdminSubTopic = (props) => {
             <br/>
             <br/>
             <div className = "row">
-                <CardDeck>
+                
                    { topics.map( topicInCourse => {
                        return (
-        <div key = {topicInCourse.id}>
+        <div className="col-12 col-lg-4 col-md-6" key = {topicInCourse.id}>
         <Card >
+        <CardImg src = {topicInCourse.topicImgUrl} />
         <CardHeader>{courseDetails.courseName}</CardHeader>
         <CardBody>
           <CardTitle tag="h5">{topicInCourse.topicName}</CardTitle>
@@ -123,7 +124,7 @@ const AdminSubTopic = (props) => {
          </div>
                        )
                    } ) }
-        </CardDeck>
+        
             </div>
 
        { addOrEditTopic.topicModal && <AdminAddSubTopic topicDetails = {{...topicDetails, ...courseDetails}} setTopicDetails = {setTopicDetails} addOrEditTopic = {addOrEditTopic} setaddOrEditTopic = {setaddOrEditTopic} topics = {topics} addSubTopicToCourse = {addSubTopicToCourse} setTopic = {setTopic}/>}

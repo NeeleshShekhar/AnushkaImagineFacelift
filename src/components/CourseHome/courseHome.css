@@ -1,0 +1,77 @@
+.course-header-title{
+    color: rgb(3, 48, 100);
+    font-weight: bold;
+    
+}
+.course-header-content{
+    color: rgb(3, 48, 100);
+    font-weight:lighter;
+    
+}
+.head-back{
+    background: rgba(255, 255, 255, 0.096);
+    backdrop-filter: blur(3px);
+/* Note: backdrop-filter has minimal browser support */
+    padding: 3%;
+    border-radius: 37px;
+}
+
+.coursecard{
+    background: rgb(0, 35, 63);
+    color: rgb(249, 252, 255);
+    border-color: rgb(0, 2, 15);
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.course-card-img{
+    width: 20%;
+    align-self: center;
+    padding: 2%;
+    border-radius: 10px;
+    
+}
+
+.card-course{
+    background:rgb(255, 255, 255);
+    border-radius: 10px;
+    font-family: "Raleway";
+    transition: margin-top 300ms;
+
+    
+    
+}
+.card-course:hover{
+    background:rgb(255, 255, 255);
+    border-radius: 10px;
+    font-family: "Raleway";
+    border-color: aquamarine;
+    border-width: 1px;
+    margin-top: -10px;
+    
+    
+} 
+
+.card-course-img{
+    padding: 15px;
+}
+.card-course-title{
+    font-weight: 800;
+    font-size: 20px;
+    color: rgb(2, 44, 83);
+    text-align: center;
+}
+.card-course-body{
+    font-family: "Roboto";
+    font-weight: 500;
+    text-align: center;
+    color: rgb(2, 16, 54);
+}
+
+.card-author{
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+/* new */
+

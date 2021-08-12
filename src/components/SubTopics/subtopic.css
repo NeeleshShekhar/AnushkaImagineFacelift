@@ -1,0 +1,13 @@
+.subtopic-head-image{
+    background: linear-gradient(106.1deg, rgba(0, 61, 80, 0.71) 16%, rgba(1, 44, 108, 0.71) 93.43%),url('../../Images/subtopic.jpg');
+    padding-left: 1%;
+    padding-bottom: 1%;
+    border-radius: 5px;
+    color: azure;
+}
+
+.subtopic-image-body{
+    margin-top: 10%;
+    
+    padding: 1%;
+}

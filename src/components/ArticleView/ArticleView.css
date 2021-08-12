@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Playfair+Display:wght@500&display=swap');
+.center {
+margin: 0px,0px,8px,0px;
+}
+.bread{
+	font-family: 'ubuntu';
+	font-size: small;
+	padding-left: 1%;
+	}
+
+	.bread-link{
+		text-decoration: none;
+		font-family:'ubuntu';
+		color: black;
+		
+		
+	}
+
+
+.viewArticle{
+	font-family:'Playfair Display';
+	font-size:130%;
+	
+	
+}
+.articleHead{
+	font-family: 'EB Garamond';
+	font-size: xx-large;
+	line-height:120%;
+}
+
+.lead{
+	font-family: 'ubuntu';
+	font-size: medium;
+}
+
