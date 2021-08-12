@@ -26,7 +26,8 @@ const AdminAddSubTopic = (props) => {
               "blog" : null,
               "isDraft" : false,
               "courseName" : props.topicDetails.courseName,
-              "isPublised" : false
+              "isPublished" : false,
+              
             
           }
             props.firebase.db.collection("subTopics").doc(id).set(DATA_TO_BE_ADDED).then (() => 
