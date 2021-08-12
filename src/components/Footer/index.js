@@ -34,7 +34,7 @@ const Footer = (props) =>
         })
     }
 
-    const twitterIconClicked = () => {
+    const twitterIconClicked = () => { 
         ReactGA.event({
             category: 'Social',
             action: 'User clicked on Twitter from Footer!'

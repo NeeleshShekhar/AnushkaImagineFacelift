@@ -15,6 +15,9 @@ import WhatshotIcon from '@material-ui/icons/Whatshot';
 import GrainIcon from '@material-ui/icons/Grain';
 import Link from '@material-ui/core/Link';
 import { FontAwesomeIcon } from 'fontawesome'; 
+import { Icon, InlineIcon } from '@iconify/react';
+import penIcon from '@iconify/icons-emojione/pen';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 
 const ArticleView = (props)=>{
@@ -58,9 +61,15 @@ const ArticleView = (props)=>{
         },
       }));
       const classes = useStyles();
+      const whatsappIconClicked = () => {
+        ReactGA.event({
+            category: 'Social',
+            action: 'User shared on Whatsapp from Footer!'
+        })
+    }
     return (
         <div className="subTopicContainer ">
-            
+             
             <div className=" container blue">
                 <Breadcrumbs className="bread">
       <Link  className="bread-link" href="/courses" >
@@ -82,7 +91,8 @@ const ArticleView = (props)=>{
             <div style = {{fontFamily:'Ubuntu', fontSize:'300%', fontWeight:'bold'}} className="center articleHead container">{subTopic.topicName}</div>
             
             <div  className = "lead container author">{subTopic.courseDescription}</div>
-            <div className="container author"><h6 className="name">Author: <i>{subTopic.lastUpdatedBy}</i></h6></div>
+            <div className="container author"><h6 className="name"><Icon icon={penIcon} style={{fontSize: '20px'}} /> <i>{subTopic.lastUpdatedBy}</i></h6></div>
+           <div className="container author"> <div class="social"><a href={"whatsapp://send?text= https://www.skilwil.com Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards. Also, ask your subject doubts for free."}><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a></div></div>
      <div><div style = {{fontFamily : 'Festive'}}  className = "   ql-editor testEditor viewArticle container center test-image" 
            dangerouslySetInnerHTML={{__html : blog.blogContent}}>
                

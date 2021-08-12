@@ -3,11 +3,14 @@ import ReactGA from "react-ga";
 import './courseHome.css';
 import { withRouter,Route,useLocation } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-
-import {
+import ReactReadMoreReadLess from "react-read-more-read-less";
+import {Button,
     Card, CardImg, CardTitle, CardText,
-    CardSubtitle, CardBody,CardDeck,CardHeader
+    CardSubtitle, CardBody,CardDeck,CardHeader, CardFooter
 } from 'reactstrap';
+import { Icon, InlineIcon } from '@iconify/react';
+import penIcon from '@iconify/icons-emojione/pen';
+import playCircleFilled from '@iconify/icons-ant-design/play-circle-filled';
 
 import { withFirebase } from "../Firebase";
 
@@ -65,22 +68,28 @@ const CourseHome = (props) =>
             return (
         
         <div className="col-12 col-md-6 col-lg-3 " key = {a_course.id}>
-        <a href={'/courses/'+a_course.id} target="_self" style={{textDecoration:"none"}}>
-        <Card id = {a_course.id} onClick = {()=>this.goToSubtopic(a_course.courseName)} className="card-course">
+       
+        <Card id = {a_course.id} className="card-course">
         <CardImg className="card-course-img" top width="100%" src={a_course.imgUrl} alt="Ques2" ></CardImg>
         <CardTitle className="card-course-title">{a_course.courseName}</CardTitle>
         <CardBody className="card-course-body">
           <CardText>
-          {a_course.courseDescription}
-            <br/>
+          <ReactReadMoreReadLess 
+          charLimit={100}
+          readMoreText={"Read more ▼"}
+          readLessText={"Read less ▲"}
+          >{a_course.courseDescription}</ReactReadMoreReadLess>
+          
+          <br/>
             
 
-          <p className="card-author">Author :{a_course.createdBy} </p>
+            <p ><Icon icon={penIcon} style={{fontSize: '20px'}} />{a_course.createdBy} </p>
           </CardText>
         </CardBody>
+        <CardFooter className="card-author"> <a href={'/courses/'+a_course.id} target="_self" style={{textDecoration:"none"}}><Button className="openSubtopcic"><Icon icon={playCircleFilled} style={{color: '#083e4f', fontSize: '27px'}} /> {' '} Start</Button></a></CardFooter>
         </Card>
         
-        <br/></a>
+        <br/>
         </div>
         )
         })}
