@@ -92,7 +92,7 @@ const ArticleView = (props)=>{
             
             <div  className = "lead container author">{subTopic.courseDescription}</div>
             <div className="container author"><h6 className="name"><Icon icon={penIcon} style={{fontSize: '20px'}} /> <i>{subTopic.lastUpdatedBy}</i></h6></div>
-           <div className="container author"> <div class="social"><a href={"whatsapp://send?text= https://www.skilwil.com Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards. Also, ask your subject doubts for free."}><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a></div></div>
+           <div className="container author"> <div class="social"><a href={"whatsapp://send?text= https://www.skilwil.com/courses Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards. Also, ask your subject doubts for free."}><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a></div></div>
      <div><div style = {{fontFamily : 'Festive'}}  className = "   ql-editor testEditor viewArticle container center test-image" 
            dangerouslySetInnerHTML={{__html : blog.blogContent}}>
                

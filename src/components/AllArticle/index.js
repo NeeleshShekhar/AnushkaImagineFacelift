@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react';
 import ReactGA from "react-ga";
-import './subtopic.css';
+import './allarticle.css';
 import { withRouter,Link,useLocation,useParams } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -16,7 +16,7 @@ import playCircleFilled from '@iconify/icons-ant-design/play-circle-filled';
 import { withFirebase } from "../Firebase";
 
 
-const Subtopic = (props)=>{
+const AllArticle = (props)=>{
     const parameters = useParams();
    
     const [subtopics, setsubtopics] = useState([])
@@ -27,7 +27,7 @@ const Subtopic = (props)=>{
         ReactGA.pageview(window.location.pathname + window.location.search);
         console.log("Hello world, I am called and I am course/subtopic page for users");
    var allSubtopic = [];
-   props.firebase.db.collection("subTopics").where("isPublished","==",true).where("courseIdentifier","==",subid.trim()).get().then(querySnapshot => {
+   props.firebase.db.collection("subTopics").where("isPublished","==",true).get().then(querySnapshot => {
        querySnapshot.forEach( (doc) => {
         allSubtopic.push({...doc.data(), id : doc.id});
        })
@@ -41,29 +41,9 @@ const Subtopic = (props)=>{
     return(
     <div className="subTopicContainer">
     <div className=" container ">
-       <div className="row">
-            <div className="col-12 col-md-12 col-lg-7 subtopic-head-image">
-            <div className="subtopic-image-body">
-            <div className="subtopic-head-title">
-            <Badge color="primary" style={{ backgroundColor: 'rgb(0, 35, 63)', color: 'aliceblue', fontSize : '14px',
-                                padding:'1%'
-                                 }}>  {subtopics && subtopics.length > 0 && subtopics[0].subject}</Badge>
-                <h1>
-                 {subtopics && subtopics.length > 0 && subtopics[0].courseName}  
-                </h1>
-                <h6>{subtopics && subtopics.length > 0 && subtopics[0].courseDescription}</h6>
-            </div>
-            </div>
-            </div>
-            <div className="col-12 col-md-12 col-lg-5 notmobile">
-                <div className="recent-main">
-                    <div className="row recent-title">
-                        <h6 className="recent-heading"></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <br/>
+        <div className="head-all">Articles</div>
         <br/>
         <div >
        <div className="row">
@@ -104,4 +84,4 @@ const Subtopic = (props)=>{
     )
 };
 
-export default withFirebase(withRouter(Subtopic));
+export default withFirebase(withRouter(AllArticle));

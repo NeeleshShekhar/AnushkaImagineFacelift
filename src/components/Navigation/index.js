@@ -46,7 +46,13 @@ const Navigation = (props) =>
     const courseClicked = () => {
         ReactGA.event({
             category: 'Button',
-            action: 'User clicked on Earn now'
+            action: 'User clicked on courses now'
+        })
+    }
+    const articleClicked = () => {
+        ReactGA.event({
+            category: 'Button',
+            action: 'User clicked on artices now'
         })
     }
 
@@ -132,6 +138,9 @@ const Navigation = (props) =>
                             </NavItem>
                             <NavItem onClick = {courseClicked}>
                                 <Link className="nav-link" to = {ROUTES.COURSEHOME} onClick={switchNav} >Courses</Link>
+                            </NavItem>
+                            <NavItem onClick = {articleClicked}>
+                                <Link className="nav-link" to = {ROUTES.ALLARTICLE} onClick={switchNav} >Articles</Link>
                             </NavItem>
 
                                 <NavItem>

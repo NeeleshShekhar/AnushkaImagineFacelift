@@ -24,6 +24,7 @@ import oops from './components/oops';
 import CourseHome from './components/CourseHome';
 import Subtopic from './components/SubTopics';
 import ArticleView from './components/ArticleView';
+import AllArticle from './components/AllArticle';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
      <Route exact path = {ROUTES.COURSEHOME} component = {CourseHome}/>
      <Route exact path = {ROUTES.SUBTOPICS} component = {Subtopic}/>
      <Route exact path = {ROUTES.BLOGS} component = {ArticleView}/>
+     <Route exact path = {ROUTES.ALLARTICLE} component = {AllArticle}/>
 
      <Route  component = {oops}/>
      </Switch>
