@@ -35,3 +35,11 @@ margin: 0px,0px,8px,0px;
 	font-size: medium;
 }
 
+.spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031; /* High z-index so it is on top of the page */
+  top: 50%;
+  right: 50%; /* or: left: 50%; */
+color  : #002D62;
+}
