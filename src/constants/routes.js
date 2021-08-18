@@ -15,3 +15,4 @@ export const COURSEHOME = "/courses"
 export const SUBTOPICS = "/courses/:id"
 export const BLOGS = "/blogs/:id"
 export const ALLARTICLE = "/articles"
+export const ERROR = "/page-not-found";

@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import ReactGA from "react-ga";
 import './ArticleView.css';
-
+import Oops from '../oops';
 import { withRouter,useLocation,useParams } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import { withFirebase } from "../Firebase";
@@ -25,10 +25,12 @@ const ArticleView = (props)=>{
     const subid = parameters.id;
     const [blog,setBlog] = useState([]);
     const [subTopic,setSubtopic] = useState([]);
+    const currentLocation = useLocation();
+ 
     useEffect(() => {
         ReactGA.initialize('UA-198309082-1')
+        console.log(currentLocation.pathname)
         ReactGA.pageview(window.location.pathname + window.location.search);
-        console.log("Hello world, I am called and I am course/subtopic page for users");
    props.firebase.db.collection("blogs").where("isPublished","==",true).where("subTopic","==",subid).get().then(querySnapshot => {
        querySnapshot.forEach( (doc) => {
         setBlog({...doc.data(),id : doc.id})
@@ -67,8 +69,11 @@ const ArticleView = (props)=>{
             action: 'User shared on Whatsapp from Footer!'
         })
     }
+
+    const textToBeShared = "whatsapp://send?text=" + "Check out the article on " + subTopic.topicName + ": " + subTopic.topicDescription + "....Read more at SkilWil " +  "%0a" + "*Take our academic courses on Mathematics and get certified. Apply now!*" + "%0a" + "https://www.skilwil.com" + currentLocation.pathname 
+
     return (
-        <div className="subTopicContainer ">
+      blog.size > 0 ? <div className="subTopicContainer ">
              
             <div className=" container blue">
                 <Breadcrumbs className="bread">
@@ -92,19 +97,14 @@ const ArticleView = (props)=>{
             
             <div  className = "lead container author">{subTopic.courseDescription}</div>
             <div className="container author"><h6 className="name"><Icon icon={penIcon} style={{fontSize: '20px'}} /> <i>{subTopic.lastUpdatedBy}</i></h6></div>
-           <div className="container author"> <div class="social"><a href={"whatsapp://send?text= https://www.skilwil.com/courses Earn while you learn ! Join your friends in solving brainstorming question from various subject and earn rewards. Also, ask your subject doubts for free."}><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a></div></div>
+           <div className="container author"> <div class="social"><a href={textToBeShared} ><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a></div></div>
      <div><div style = {{fontFamily : 'Festive'}}  className = "   ql-editor testEditor viewArticle container center test-image" 
            dangerouslySetInnerHTML={{__html : blog.blogContent}}>
                
            </div>
            <hr />
            <h5 className="container author" >Contribute us at <a href="https://www.buymeacoffee.com/skilwil.com"> Buy me a coffee!</a></h5></div>
-           
-          
-           
-
-          
-        </div>
+        </div> : <Oops/>
         
     )
 }

@@ -45,7 +45,8 @@ const Oops = (props) =>
         </div>
 
         <h1 className="also_search">Read our featured articles</h1>
-        Coming Soon!
+
+        <a href = "/courses" style = {{cursor:'pointer'}}>Course Section</a>
 
     </div>
  </div>   
