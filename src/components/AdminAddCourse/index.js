@@ -52,11 +52,10 @@ const AdminAddCourse = (props) => {
         const validatedData = await validate();
         if(!validatedData.hasErrors)
         { 
-          //Call to Firebase
-          var userName; 
-          props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(user => {
-            userName = user.data().name;
-               const id = db.collection("courses").doc().id;
+         var userName; 
+         await props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(user => {
+          userName = user.data().name;
+          const id = db.collection("courses").doc().id;
           const ref = db.collection("subject").doc(props.courseDetails.subject);
           const DATA_TO_BE_ADDED = {
             "courseName" : props.courseDetails.courseName,
@@ -83,7 +82,7 @@ const AdminAddCourse = (props) => {
           })
            toggle();
           }).catch(error => {
-            alert("Username cannot be fetched !");
+            alert("Username cannot be fetched !" + error);
           })
         }
         else
