@@ -30,36 +30,31 @@ const ArticleView = (props)=>{
  
     useEffect(() => {
         ReactGA.initialize('UA-198309082-1')
-        console.log(currentLocation.pathname)
         ReactGA.pageview(window.location.pathname + window.location.search);
    props.firebase.db.collection("blogs").where("isPublished","==",true).where("subTopic","==",subid).get().then
    (querySnapshot => {
-
+     if(querySnapshot.size === 0)
+     props.history.push(ROUTES.ERROR);
        querySnapshot.forEach( (doc) => {
         setBlog({...doc.data(),id : doc.id}) 
        })
-      
-             props.firebase.db.collection("subTopics").doc(subid).get().then((doc1) => {
-    if (doc1.exists) {
-        console.log("Document data:", doc1.data());
-        setSubtopic({...doc1.data(),id : doc1.id})
-
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-  
-   setLoader(!loader);
-}
-).catch((error) => {
-    console.log("Error getting document:", error);
-});
-
       }
        ).catch((error) => {
        alert("Some error occured! Contact admin:"+error);
    })
 
+    props.firebase.db.collection("subTopics").doc(subid).get().then((doc1) => {
+    if (doc1.exists) {
+        setSubtopic({...doc1.data(),id : doc1.id})
+    } else {
+       
+    }
+  
+   setLoader(false);
+}
+).catch((error) => {
+    console.log("Error getting document:", error);
+});
     }, []);
     const useStyles = makeStyles((theme) => ({
         link: {
@@ -80,14 +75,12 @@ const ArticleView = (props)=>{
     }
 
     const textToBeShared = "whatsapp://send?text=" + "Check out the article on " + subTopic.topicName + ": " + subTopic.topicDescription + "....Read more at SkilWil " +  "%0a" + "*Take our academic courses on Mathematics and get certified. Apply now!*" + "%0a" + "https://www.skilwil.com" + currentLocation.pathname 
-
-    console.log(JSON.stringify(blog) + " nlog is" + loader)
     return (
      loader == true ? <div>
       <Spinner className = "spinner"  text = "">
       <span className = "sr-only"></span>
       </Spinner>
-     </div> : loader == false && blog.blogContent ?  
+     </div> :  
       <div className="subTopicContainer ">
             <div className=" container blue">
                 <Breadcrumbs className="bread">
@@ -119,8 +112,6 @@ const ArticleView = (props)=>{
            <hr />
            <h5 className="container author" >Contribute us at <a href="https://www.buymeacoffee.com/skilwil.com"> Buy me a coffee!</a></h5></div>
         </div> 
-        :
-        <Oops/>
     )
 }
 
