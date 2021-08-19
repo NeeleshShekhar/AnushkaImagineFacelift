@@ -43,3 +43,7 @@ margin: 0px,0px,8px,0px;
   right: 50%; /* or: left: 50%; */
 color  : #002D62;
 }
+
+.subTopicContainer{
+ flex: 1 0 auto;
+}
