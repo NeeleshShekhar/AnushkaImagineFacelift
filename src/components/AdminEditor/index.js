@@ -200,6 +200,9 @@ const toolbarOptions = [
         <div className = "row" >
          <ReactQuill  value = {text} ref={quillRef} theme = "snow" onChange={handleChange} modules={modules} formats = {formats}/>
         </div>  
+
+        <br/>
+        <br/>
     </div>
  )
 }

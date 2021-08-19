@@ -88,12 +88,12 @@ const ArticleView = (props)=>{
         <HomeIcon className={classes.icon} />
         Home
       </Link>
-      <Link
+     <Link
         
-        href={"/courses/"+subTopic.courseIdentifier}
+        href={subTopic.courseName === 'Articles' ? "/articles" : "/courses/"+subTopic.courseIdentifier}
       > 
         <WhatshotIcon className={classes.icon} />
-        {subTopic.courseName}
+        {subTopic.courseName === 'Articles' ? 'Articles' : subTopic.courseName}
       </Link>
       <Typography  className={classes.link}>
         <GrainIcon className={classes.icon} />
@@ -102,7 +102,7 @@ const ArticleView = (props)=>{
     </Breadcrumbs></div>
             <div style = {{fontFamily:'Ubuntu', fontSize:'300%', fontWeight:'bold'}} className="center articleHead container">{subTopic.topicName}</div>
             
-            <div  className = "lead container author">{subTopic.courseDescription}</div>
+            <div  className = "lead container author">{subTopic.courseDescription === "DO NOT PUBLISH" ? '' : subTopic.courseDescription}</div>
             <div className="container author"><h6 className="name"><Icon icon={penIcon} style={{fontSize: '20px'}} /> <i>{subTopic.lastUpdatedBy}</i></h6></div>
            <div className="container author"> <div class="social"><a href={textToBeShared} ><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a></div></div>
      <div><div style = {{fontFamily : 'Festive'}}  className = "   ql-editor testEditor viewArticle container center test-image" 
