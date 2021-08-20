@@ -40,8 +40,8 @@ const AllArticle = (props)=>{
 
     return(
     <div className="subTopicContainer">
-    <div className=" container ">
-       
+    <div className="container">
+                               
         <br/>
         <div className="head-all">Articles</div>
         <br/>

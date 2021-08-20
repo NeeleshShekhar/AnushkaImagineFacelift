@@ -38,7 +38,10 @@ border-radius: 9px;
     margin-top: -10px;
     
     
-} 
+}
+.subTopicContainer {
+    bottom: 0;
+}
 
 .head-all{
     color: rgb(2, 70, 126);
