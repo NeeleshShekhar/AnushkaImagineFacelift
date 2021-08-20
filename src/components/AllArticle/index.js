@@ -74,8 +74,6 @@ const AllArticle = (props)=>{
         })}
         
         </div>  
-
-
                 
          </div>
         </div> 
