@@ -77,7 +77,7 @@ const ArticleView = (props)=>{
     const textToBeShared = "whatsapp://send?text=" + "Check out the article on " + subTopic.topicName + ": " + subTopic.topicDescription + "....Read more at SkilWil " +  "%0a" + "*Take our academic courses on Mathematics and get certified. Apply now!*" + "%0a" + "https://www.skilwil.com" + currentLocation.pathname 
     return (
      loader == true ? <div>
-      <Spinner className = "spinner"  text = "">
+      <Spinner className = "spinner" type="grow" text = "">
       <span className = "sr-only"></span>
       </Spinner>
      </div> :  
