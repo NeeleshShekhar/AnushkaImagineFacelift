@@ -585,9 +585,11 @@
   }
 
    pre.ql-syntax {
-    background-color: #c8ddf8;
-    color:rgba(5, 15, 24, 0.74);
+    background-color:black;
+    color: white;
     overflow: visible;
+    border-radius: 15px;
+    padding:1%;
 }
 
 .addCourseModal{
@@ -657,4 +659,13 @@
     font-size: '60px';
 }
 
+.editor-wrapper {
+  position: relative;
+}
 
+.ql-toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%);
+}

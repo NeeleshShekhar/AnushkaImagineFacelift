@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import "highlight.js/styles/github.css";
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import Firebase, {FirebaseContext} from './components/Firebase';
+import 'highlight.js/styles/atom-one-dark.css';
 
 ReactDOM.render(
 <FirebaseContext.Provider value = {new Firebase()}>

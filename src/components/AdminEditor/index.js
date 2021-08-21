@@ -3,7 +3,6 @@ import {Button,ButtonGroup} from 'reactstrap';
 import hljs from 'highlight.js'
 import 'react-quill/dist/quill.core.css'
 import 'react-quill/dist/quill.snow.css'
-import 'highlight.js/styles/devibeans.css'
 import ReactQuill,{Quill} from 'react-quill'
 import { withRouter } from "react-router-dom";
 import 'katex/dist/katex.min.css'
@@ -12,6 +11,7 @@ import { withAuthorization } from "../SessionManagement";
 import { withFirebase } from "../Firebase";
 
 import katex from 'katex';
+
 
 window.katex = katex;
 
@@ -134,6 +134,7 @@ const formats = [
   'header',
   'font',
   'size',
+  'color',
   'bold',
   'italic',
   'underline',
@@ -159,13 +160,14 @@ return () => {
 }
 });
 const toolbarOptions = [
-          [{ header: [3,2] }, { 'font': Font.whitelist}],
+          [{ header: [3,2] }, { 'font': Font.whitelist},{ size: ["small", false, "large", "huge"] },{ color: [] }],
           ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
           [
             { list: "ordered" },
             { list: "bullet" },
             { indent: "-1" },
-            { indent: "+1" }
+            { indent: "+1" },
+            { align: [] }
           ],
           ["link", "image"],
           ["formula"],
@@ -197,7 +199,7 @@ const toolbarOptions = [
 </ButtonGroup>
 <br/>
 <br/>
-        <div className = "row" >
+        <div className = "row editor-wrapper" >
          <ReactQuill  value = {text} ref={quillRef} theme = "snow" onChange={handleChange} modules={modules} formats = {formats}/>
         </div>  
 
