@@ -1,11 +1,15 @@
 import 'react-quill/dist/quill.core.css'
 import 'react-quill/dist/quill.snow.css';
-import 'highlight.js/styles/devibeans.css';
+import hljs from 'highlight.js'
 import {withRouter} from 'react-router-dom';
 import { withAuthorization } from "../SessionManagement";
+import 'highlight.js/styles/atom-one-dark.css';
 const AdminEditorPreview = (props) => 
 {
-    
+ 
+    hljs.configure({
+    languages: ['javascript', 'java', 'python'],
+  });
     return (
         <div className = "container editorPreview">
             <div className = "row">
@@ -13,7 +17,7 @@ const AdminEditorPreview = (props) =>
                 <div style = {{fontSize : '28px'}}  className = "lead">{props.history.location.state.topicDescription}</div>
             </div>
             <br/>
-           <div className = "ql-container ql-editor testEditor " style = {{fontFamily : 'Festive'}} 
+           <div className = "ql-editor ql-container testEditor " style = {{fontFamily : 'Festive'}} 
            dangerouslySetInnerHTML={{__html : props.history.location.state.text}}></div>
         </div>
        

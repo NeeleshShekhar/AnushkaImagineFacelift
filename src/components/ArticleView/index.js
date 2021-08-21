@@ -1,12 +1,11 @@
 import React, {useEffect,useState} from 'react';
 import ReactGA from "react-ga";
 import './ArticleView.css';
-import Oops from '../oops';
 import { withRouter,useLocation,useParams } from 'react-router-dom';
+import hljs from 'highlight.js'
 import * as ROUTES from '../../constants/routes';
 import { withFirebase } from "../Firebase";
 import { Spinner } from 'reactstrap';
-import { Carousel } from 'react-responsive-carousel';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
@@ -14,11 +13,10 @@ import HomeIcon from '@material-ui/icons/Home';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import GrainIcon from '@material-ui/icons/Grain';
 import Link from '@material-ui/core/Link';
-import { FontAwesomeIcon } from 'fontawesome'; 
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon} from '@iconify/react';
 import penIcon from '@iconify/icons-emojione/pen';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-
+import 'highlight.js/styles/atom-one-dark.css';
 
 const ArticleView = (props)=>{
     const parameters = useParams();
@@ -27,6 +25,9 @@ const ArticleView = (props)=>{
     const [subTopic,setSubtopic] = useState([]);
     const currentLocation = useLocation();
     const [loader,setLoader] = useState(true);
+       hljs.configure({
+    languages: ['javascript', 'java', 'python'],
+  });
  
     useEffect(() => {
         ReactGA.initialize('UA-198309082-1')
@@ -105,7 +106,7 @@ const ArticleView = (props)=>{
             <div  className = "lead container author">{subTopic.courseDescription === "DO NOT PUBLISH" ? '' : subTopic.courseDescription}</div>
             <div className="container author"><h6 className="name"><Icon icon={penIcon} style={{fontSize: '20px'}} /> <i>{subTopic.lastUpdatedBy}</i></h6></div>
            <div className="container author"> <div class="social"><a href={textToBeShared} ><WhatsAppIcon onClick={whatsappIconClicked} style={{ fontSize: "35px" }} /></a></div></div>
-     <div><div style = {{fontFamily : 'Festive'}}  className = "   ql-editor testEditor viewArticle container center test-image" 
+     <div><div style = {{fontFamily : 'Festive'}}  className = "ql-editor testEditor viewArticle container center test-image" 
            dangerouslySetInnerHTML={{__html : blog.blogContent}}>
                
            </div>
