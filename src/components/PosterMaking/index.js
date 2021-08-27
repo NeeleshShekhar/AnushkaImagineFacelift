@@ -11,6 +11,7 @@ import flag from '../../Images/poster-flag.svg';
 import teaching from '../../Images/prof-teaching.svg';
 import rules from '../../Images/rules.svg';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+
 import './postermaking.css'
 
 
@@ -65,7 +66,7 @@ const PosterMaking = (props) => {
                {/* <form  ref = {instance}>
           
         </form> */}
-            <Button disabled>This contest has ended</Button>
+            <a href="/event/postermakingwinners"><Button >View Winners</Button></a>
            <Button style = {{width : '150px',marginLeft:'20px',borderColor:'#002244',textAlign:'center',color : '#002244', fontWeight:'bold'}} color = "ouline"  className = "rewardPosterButton" onClick = {toggle} >Rewards</Button>
             <a  style = {{marginLeft : '20px'}} href="whatsapp://send?text= https://www.skilwil.com/events/postermaking SkilWil Presents you a Poster Making Competition on various mathematical topics. Win Rewards upto INR 2000. Get featured on our website and get a chance to publish your own Mathematics Course." data-action="share/whatsapp/share"><WhatsAppIcon style = {{color : '#128C7E', fontSize : '45px'}}/></a>
            </div>

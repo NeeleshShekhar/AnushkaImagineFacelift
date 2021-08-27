@@ -25,6 +25,7 @@ import CourseHome from './components/CourseHome';
 import Subtopic from './components/SubTopics';
 import ArticleView from './components/ArticleView';
 import AllArticle from './components/AllArticle';
+import PosterWinning from './components/PosterWinning';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
      <Route exact path = {ROUTES.SUBTOPICS} component = {Subtopic}/>
      <Route exact path = {ROUTES.BLOGS} component = {ArticleView}/>
      <Route exact path = {ROUTES.ALLARTICLE} component = {AllArticle}/>
+     <Route exact path = {ROUTES.POSTERWINNING} component = {PosterWinning}/>
 
      <Route  component = {oops}/>
      </Switch>

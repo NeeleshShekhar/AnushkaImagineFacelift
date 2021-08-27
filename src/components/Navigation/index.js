@@ -100,8 +100,8 @@ const Navigation = (props) =>
    
     return(
         <>
-        <div>
-        <Navbar  nav-fill expand="md" >
+        
+        <Navbar  sticky={'top'} nav-fill expand="md" className="nav-back" >
                     <div className="container">
                         <NavbarBrand className="mr-auto logo" href="/" ><span className="logo-nav">SkilWil</span></NavbarBrand>
                         <NavbarToggler 
@@ -111,7 +111,7 @@ const Navigation = (props) =>
                         <MenuIcon style = {{fontSize : "30px"}}/>
                         </NavbarToggler>
                         <Collapse navbar isOpen = {navOpen} >
-                            <Nav navbar className = "justify-content-end" style = {{width :'100%'}}>
+                            <Nav navbar className = "justify-content-end " style = {{width :'100%'}}>
                             <NavItem onClick = {smrcRegistrationClicked}>
                                 <NavLink onClick = {toggleDropdown}> <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} size = "sm">
                                 <DropdownToggle
@@ -157,7 +157,7 @@ const Navigation = (props) =>
                         </Collapse>
                     </div>
                 </Navbar>
-        </div>  
+        
         </>   
     );
     
