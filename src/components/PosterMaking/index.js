@@ -90,6 +90,7 @@ const PosterMaking = (props) => {
           <CardText className="card-text-1">Any Mathematical Concept</CardText>
         </CardBody>
       </Card>
+
       <br/>
       <br />
         </div>

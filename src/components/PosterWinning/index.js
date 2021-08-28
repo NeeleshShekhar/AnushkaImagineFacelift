@@ -92,7 +92,7 @@ const PosterMaking = (props) => {
             Winners List
         </div>
     
-        <h5 className="course-header-content" style={{fontWeight:'10px'}}>Browse through all these exciting courses in multiple domains to stengthen your intellect.</h5>
+        
         <h5 className="course-header-content">SkilWil provides a platform which exposes an individual to brainstorming contests which enables them to explore, assess and deepen their depth of knowledge.</h5>
     
     
@@ -204,7 +204,7 @@ const PosterMaking = (props) => {
     </div>
 
     <div className="row">
-      <div className="col-12 col-md-12 col-lg-8" style={{ height: 400,}}>
+      <div className="col-12 col-md-12 col-lg-8" >
       <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -238,30 +238,24 @@ const PosterMaking = (props) => {
               <TableCell align="right"><a href ="https://drive.google.com/file/d/1HYsXhlFO7-i7MemSIPNNjJDPM7fReTsw/view" target="_blank">Click</a></TableCell>
               <TableCell align="right">None</TableCell>
             </TableRow>
+            
             <TableRow >
               
               <TableCell align="right">4</TableCell>
-              <TableCell align="right">Aanchal patel</TableCell>
-              <TableCell align="right"><a href ="https://drive.google.com/file/d/1IqoYcKYWHRRCDX6w0SaibNscDpn_-f8b/view" target="_blank">Click</a></TableCell>
-              <TableCell align="right">Model higher secondary school</TableCell>
-            </TableRow>
-            <TableRow >
-              
-              <TableCell align="right">5</TableCell>
               <TableCell align="right">Divya Kumari Harendra Prasad Prajapati</TableCell>
               <TableCell align="right"><a href ="https://drive.google.com/file/d/1sRzjkUtM5cTs4BEZvA9rX5nN6Z7ypOs1/view" target="_blank">Click</a></TableCell>
               <TableCell align="right">Vivekanand Education Society of Arts, Science and Commerce</TableCell>
             </TableRow>
             <TableRow >
               
-              <TableCell align="right">6</TableCell>
+              <TableCell align="right">5</TableCell>
               <TableCell align="right">Babita gupta</TableCell>
               <TableCell align="right"><a href ="https://drive.google.com/file/d/16CFxG3cFgfONn-AEmPKhXn6QQtfCO4vx/view" target="_blank">Click</a></TableCell>
               <TableCell align="right">Ves</TableCell>
             </TableRow>
             <TableRow >
               
-              <TableCell align="right">7</TableCell>
+              <TableCell align="right">6</TableCell>
               <TableCell align="right">Sharayu kadam</TableCell>
               <TableCell align="right"><a href ="https://drive.google.com/file/d/1NSEdym5u49H25qGBXAoJYPUIqTmmn5LQ/view" target="_blank">Click</a></TableCell>
               <TableCell align="right">NES Ratnam</TableCell>
@@ -278,8 +272,9 @@ const PosterMaking = (props) => {
         </TableBody>
       </Table>
     </TableContainer>
+    <br />
    </div> 
-   <div className="col-12 col-md-12 col-lg-4"><img src={jump} width="100%" className="card-disp-image"/></div>
+   <div className="col-12 col-md-12 col-lg-4 hide-mobile"><img src={jump} width="100%" className="card-disp-image"/></div>
    </div>
    </div>  
    
