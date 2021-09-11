@@ -30,7 +30,7 @@ const Testimonial = (props) =>
         interval={6100}
       >
         
-      <div>
+      <div className="container carousel-main" >
         <img src={teacher} width="100%" alt="Contribute" />
           <div className="myCarousel">
             <h3>Mr. Vikas Ware</h3>

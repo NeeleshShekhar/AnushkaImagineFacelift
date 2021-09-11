@@ -49,7 +49,7 @@ const ArticleView = (props)=>{
         setSubtopic({...doc1.data(),id : doc1.id})
     } else {
        
-    }
+    } 
   
    setLoader(false);
 }

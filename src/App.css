@@ -10,6 +10,8 @@
    
 }
 
+
+
 .course-header{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: larger;
@@ -447,9 +449,12 @@
     width: 139px !important;
     border-radius: 50%;
   }
-  
+
+  .carousel-main{
+    padding: 50px;
+  }
   .myCarousel {
-    background: #fafafa;
+    background: #ffffff;
     margin-top: -6%;
     width: 100%;
     margin-left: auto;
@@ -458,10 +463,17 @@
     padding-bottom: 8%;
     padding-left: 5%;
     padding-right: 5%;
-    border: 1px solid #ddd;
+    border: 0px solid #ddd;
     height: 286px;
-    border-radius: 5%;
+    border-radius: 42px;
+    
   }
+
+  .testimonial-card{
+    background:#fdfeff;
+    
+}
+  
   
   .carousel .control-dots {
     padding-left: 5px !important;
@@ -590,7 +602,10 @@
     overflow: visible;
     border-radius: 15px;
     padding:1%;
+    overflow-x: auto;
+    
 }
+
 
 .addCourseModal{
       min-width: 80%;

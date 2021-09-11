@@ -17,6 +17,7 @@ window.katex = katex;
 
 export const EditorContext = createContext("");
 const AdminEditor = (props) => {
+  console.log("I am in admin Editor after hack");
 
  const[text,setText] = useState("Start Typing Here!");
  const [topicAndCourseDetails, setTopicAndCourseDetails] = useState(props.location.state);
@@ -28,7 +29,7 @@ const AdminEditor = (props) => {
  const fetchBlogs = async() => {
   try{
   await props.firebase.db.collection("blogs").doc(topicAndCourseDetails.blog).get().then((doc) =>
-  {
+  {   console.log("This is nice check");
      if(!doc.exists)
      {
       props.firebase.db.collection("blogs").doc(topicAndCourseDetails.blog).set({
