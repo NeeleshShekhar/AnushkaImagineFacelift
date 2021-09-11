@@ -664,6 +664,18 @@
   padding: 1%;
 }
 
+@media only screen and (max-width: 600px) {
+    .testEditor img
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-radius: 10px;
+  padding: 1%;
+}
+  }
+
 .ql-editor{
     font-family: "Ubuntu";
 }

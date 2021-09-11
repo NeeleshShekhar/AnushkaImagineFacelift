@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom';
 import { withAuthorization } from "../SessionManagement";
 import 'highlight.js/styles/atom-one-dark.css';
 const AdminEditorPreview = (props) => 
-{console.log("I am in admin Preview after hack");
+{
  
     hljs.configure({
     languages: ['javascript', 'java', 'python'],

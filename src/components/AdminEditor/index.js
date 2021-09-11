@@ -17,7 +17,7 @@ window.katex = katex;
 
 export const EditorContext = createContext("");
 const AdminEditor = (props) => {
-  console.log("I am in admin Editor after hack");
+  
 
  const[text,setText] = useState("Start Typing Here!");
  const [topicAndCourseDetails, setTopicAndCourseDetails] = useState(props.location.state);
