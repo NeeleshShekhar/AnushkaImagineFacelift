@@ -29,17 +29,22 @@ const AdminEditor = (props) => {
  const fetchBlogs = async() => {
   try{
   await props.firebase.db.collection("blogs").doc(topicAndCourseDetails.blog).get().then((doc) =>
-  {   console.log("This is nice check");
+  { 
      if(!doc.exists)
      {
-      props.firebase.db.collection("blogs").doc(topicAndCourseDetails.blog).set({
+        props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(doc => {
+             props.firebase.db.collection("blogs").doc(topicAndCourseDetails.blog).set({
         "isPublished" : false,
         "subTopic" : topicAndCourseDetails.topicId,
-        "blogContent" : text
+        "blogContent" : text,
+        "createdBy" :  doc.data().name,
       }).then(() => {
       }).catch(error => {
-        alert("Some error occured ! Contact your administrator + error");
+        alert("Some error occured ! Contact your administrator" +  error);
       })
+        }).catch(error => {
+           alert("Some error occured ! Contact your administrator" + error);
+        });
      }
      else
      {
@@ -65,11 +70,8 @@ hljs.configure({
 
  const update = () => {
        var userName = ""
-       
        props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(doc => {
             userName = doc.data().name;
-            
-           
             props.firebase.subTopic(topicAndCourseDetails.topicId).update({
      "isDraft" : true,
      "lastUpdatedBy" : userName,
@@ -99,17 +101,13 @@ hljs.configure({
  }
 
  const postBlogAdmin = () => {
-      props.firebase.db.collection("users").doc(props.signedInUser.uid).get().then(doc => {
       props.firebase.subTopic(topicAndCourseDetails.topicId).update({
      "isDraft" : false,
-     "lastUpdatedBy" : doc.data().name,
      "isPublished" : true,
    }).then(() => {
       props.firebase.blog(topicAndCourseDetails.blog).update({
         "blogContent" : text,
         "isPublished" : true,
-        
-        
       }).then(() => {
         alert("Sub Topic successfully Published !")
       }).catch(error => {
@@ -118,11 +116,6 @@ hljs.configure({
    }).catch(error => {
      alert("Cannot update SubTopic! Please contact your administrator" + error);
    })
-          }).catch(error => {
-            alert("Username cannot be fetched !");
-          })
-   
-
  }
  const saveAsDraft = () => {
   update();
