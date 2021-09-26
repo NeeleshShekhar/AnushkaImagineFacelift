@@ -40,7 +40,7 @@ function Header(props) {
             { color: 'white' }
         } > <span style = {{ color: '#96D2FF', fontWeight: 'bold' }}> SkilWil </span> provides a platform which exposes an individual to brainstorming contests which enables them to explore, assess and deepen their depth of knowledge. </p>
         <span>
-        <Button className = "earnButton" onClick = { earnNowClicked } outline > Compete Now ! </Button>
+        <Button className = "earnButton" onClick = { earnNowClicked }  > Compete Now ! </Button>
         {/* <Button className = "Register-smrchome" onClick = { smrcRegistrationClicked } outline style={{marginLeft:"2px"}}> Attempt SMRC  </Button> */}
         <p style = {{ color: '#D2ECFF' }} > No sign up required! </p> </span> 
         </div>

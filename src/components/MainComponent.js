@@ -5,6 +5,7 @@ import PostQuestion from './PostQuestion';
 import EducationAndArt from './EducationAndArt';
 import Testimonial from './Testimonial';
 import Contribute from './Contribute';
+import ArticleHomePreview from './ArticleHomePreview';
 
 function MainComponent(props) {
     useEffect(() => {
@@ -15,13 +16,14 @@ function MainComponent(props) {
             <div className = "main-body">
             <Header/>
                 <br/>
-                <EducationAndArt/>
+                {/* <EducationAndArt/> */}
+                <ArticleHomePreview/>
                 <Testimonial/>
                 <br/>
                <PostQuestion/>
                <br/>
-               <Contribute/>
-               <br/>
+               {/* <Contribute/> */}
+               
             </div>
         );
     }
