@@ -31,22 +31,22 @@
 }
 
 .head {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(./Images/home.png);
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(./Images/home.png); */
+    background: url(./Images/home.png);
     border-radius: 42px;
-    box-shadow: 0px 4px 23px 6px rgba(0, 0, 0, 0.25);
-    width: "fit-content";
-    height: fit-content;
+    /* box-shadow: 0px 4px 23px 6px rgba(0, 0, 0, 0.25); */
+   
     padding: 3%;
+    
+
 }
 
 .head-card {
     padding: 2px;
-    height: 100%;
-}
-
-.head-nav-item {
     
 }
+
+
 
 .display-6 {
     font-weight: 700;
@@ -87,7 +87,7 @@
     backdrop-filter: blur(33px);
     /* Note: backdrop-filter has minimal browser support */
     padding: 30px;
-    border-radius: 35px;
+    border-radius: 42px;
 }
 
 .head-nav {
@@ -143,9 +143,10 @@
 }
 
 .earnButton {
-    color: rgb(3, 61, 63);
-    border-color: #002D62;
-    background-color: rgb(95, 157, 185);
+    color: rgb(5, 57, 92);
+    font-family: 'Source Sans Pro';
+    background-color: rgb(191, 242, 255);
+    border-width: 0px;
 }
 
 .navbutton {
@@ -159,6 +160,7 @@
 }
 
 .earnButton:hover {
+    font-family: 'Source Sans Pro';
     color: white;
     background-color: #2a839e;
 }
@@ -465,7 +467,7 @@
     padding-right: 5%;
     border: 0px solid #ddd;
     height: 286px;
-    border-radius: 42px;
+    border-radius: 10px;
     
   }
 
