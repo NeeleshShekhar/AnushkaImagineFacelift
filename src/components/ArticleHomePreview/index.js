@@ -82,6 +82,7 @@ const ArticleHomePreview = (props)=>{
                 
          </div>
         </div> 
+        <br/>
     </div>
     
     )
