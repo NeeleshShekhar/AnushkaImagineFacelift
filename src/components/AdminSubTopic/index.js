@@ -17,6 +17,7 @@ const AdminSubTopic = (props) => {
     const [topics, setTopic] = useState([])
 
     useEffect(() => {
+       
         var allTopics = [];
         props.firebase.subTopics().where("courseIdentifier","==",courseDetails.id).get().then(docs => {
             docs.forEach((doc) => {
@@ -27,7 +28,7 @@ const AdminSubTopic = (props) => {
             ).catch(error => {
                 alert("Some error occured ! Contact your administration");
             });
-    });
+    },[]);
     const addSubTopicToCourse = (topic) =>
     {
         setTopic(topics.concat(topic))
