@@ -152,6 +152,8 @@ const AdminAddCourse = (props) => {
           <Input type="select" value = {props.courseDetails.subject || "Mathematics"} onChange = {onChange} name="subject" id="subject">
             <option value = "Mathematics">Mathematics</option>
             <option value = "Physics">Physics</option>
+            <option value = "Chemistry">Chemistry</option>
+            <option value = "Computer Science">Computer Science</option>
           </Input>
       </FormGroup>
        { props.addOrEditCourse.mode === "ADD_COURSE" && <FormGroup>
