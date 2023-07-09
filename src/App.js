@@ -9,8 +9,6 @@ import SMRC from './components/SMRC';
 import Certificate from './components/Certificates';
 import SignIn from './components/SignIn';
 import AdminDashboard from './components/AdminDashboard';
-import AdminEditor from './components/AdminEditor';
-import AdminEditorPreview from './components/AdminEditorPreview';
 import AdminSubTopic from './components/AdminSubTopic';
 import AdminCourses from './components/AdminCourses';
 import AdminDraftCourses from './components/AdminDraftCourses';
@@ -45,8 +43,6 @@ function App() {
     <Route exact path = {ROUTES.LANDING} component = {MainComponent}/>
     <Route exact path = {ROUTES.ADMIN_DASHBOARD} component = {AdminDashboard}/>
     <Route exact path = {ROUTES.ADMIN_COURSES} component = {AdminCourses}/>
-    <Route exact path = {ROUTES.ADMIN_WRITE_ARTICLE} component = {AdminEditor}/>
-    <Route exact path = {ROUTES.ADMIN_PREVIEW_ARTICLE} component = {AdminEditorPreview}/>
     <Route exact path = {ROUTES.ADMIN_ADD_SUBTOPIC_TO_COURSE} component = {AdminSubTopic}/>
     <Route exact path = {ROUTES.DRAFT_COURSE} component = {AdminDraftCourses}/>
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
