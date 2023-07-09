@@ -6,6 +6,7 @@ import EducationAndArt from './EducationAndArt';
 import Testimonial from './Testimonial';
 import Contribute from './Contribute';
 import ArticleHomePreview from './ArticleHomePreview';
+import Home from './Home/home';
 
 function MainComponent(props) {
     useEffect(() => {
@@ -14,10 +15,10 @@ function MainComponent(props) {
     }, [])
         return (
             <div className = "main-body">
-            <Header/>
+            <Home/>
                 <br/>
                 {/* <EducationAndArt/> */}
-                <ArticleHomePreview/>
+                {/* <ArticleHomePreview/> */}
                 <Testimonial/>
                 <br/>
                <PostQuestion/>

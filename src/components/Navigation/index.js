@@ -11,7 +11,7 @@ import * as ROUTES from "../../constants/routes";
 import { withFirebase } from "../Firebase";
 import { SignedInUserContext } from "../SessionManagement";
 import { withAuthentication  } from "../SessionManagement";
-
+import logo from '../../Assets/logo.png';
 const Navigation = (props) =>
 {
 
@@ -103,7 +103,7 @@ const Navigation = (props) =>
         
         <Navbar  sticky={'top'} nav-fill expand="md" className="nav-back" >
                     <div className="container">
-                        <NavbarBrand className="mr-auto logo" href="/" ><span className="logo-nav">SkilWil</span></NavbarBrand>
+                        <NavbarBrand className="mr-auto logo" href="/" > <span className="logo-nav">Anushka Imagine</span></NavbarBrand>
                         <NavbarToggler 
                         style = {{outline : 'none'}}
                         onClick={switchNav} 

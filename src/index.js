@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import Firebase, {FirebaseContext} from './components/Firebase';
 import 'highlight.js/styles/atom-one-dark.css';
 
+
 ReactDOM.render(
 <FirebaseContext.Provider value = {new Firebase()}>
 <BrowserRouter> 
