@@ -58,14 +58,14 @@ const AdminAddCourse = (props) => {
           const id = db.collection("courses").doc().id;
           const ref = db.collection("subject").doc(props.courseDetails.subject);
           const DATA_TO_BE_ADDED = {
-            "courseName" : props.courseDetails.courseName,
-            "courseId" : props.courseDetails.courseId,
-            "courseDescription" : props.courseDetails.courseDescription,
+            "projectName" : props.courseDetails.projectName,
+            "projectId" : props.courseDetails.projectId,
+            "projectDescription" : props.courseDetails.projectDescription,
             "subjectRef" : ref,
             "imgUrl" : props.courseDetails.imgUrl,
             "isPublished" : false,
             "isTrending" : false,
-            "subject" : props.courseDetails.subject,
+            "subject" : props.courseDetails.project,
             "ratings" : 1,
             "tags" : [],
             "createdAt": Date.now(),
@@ -89,50 +89,17 @@ const AdminAddCourse = (props) => {
         props.setCourseDetails({...props.courseDetails, error : validatedData.message})
       
     }
-    const  checkAndUpdate = async () => {
-      let message = ""
-      await props.firebase.db.collection("validCourses").doc(props.courseDetails.courseId).get().then(doc => {
-            if(!doc.exists || (doc.exists && doc.data().isUsed == true) )
-            {
-               message = "You dont have permission to access the course. Please contact Aditya Deo Ojha to have the access"
-            }
-            else
-            {
-              props.firebase.db.collection("validCourses").doc(props.courseDetails.courseId).update({
-                "isUsed" : true
-              }).then(
-                message = ""
-              ).catch(error => {
-                 alert("Something Went Wrong! Please contact the administration. Error is " + error);
-              })
-            }
-    }).catch(error => {
-            alert("Something Went Wrong! Please contact the administration. The error is " + error);
-          });
-
-          return message;
-  }
+    
 
     const validate = async () =>
     {
          let message = ""
          //For CourseName
-        if(!props.courseDetails.courseName)
-         message = "Course Name cannot be blanked";
-        else if(!props.courseDetails.courseDescription)
-        message = "Course Description cannot be blank. Please provide some important details on what this course is all about"
-        else if(props.addOrEditCourse.mode === "ADD_COURSE")
-        {
-          if(props.courseDetails.courseId)
-          {
-           
-           message = await checkAndUpdate();
-
-          }
-          else
-         message = "Course Id cannot be blank";
-         
-        }
+        if(!props.courseDetails.projectName)
+         message = "Project Name cannot be blanked";
+        else if(!props.courseDetails.projectDescription)
+        message = "Project Description cannot be blank. Please provide some important details on what this Project is all about"
+        
        
         return {"hasErrors" : message, "message" : message};
        
@@ -143,30 +110,30 @@ const AdminAddCourse = (props) => {
     return (
     <div>
       <Modal className = "addCourseModal" isOpen={true} toggle={toggle} backdrop = {false}>
-        <ModalHeader toggle={toggle}>{props.addOrEditCourse.mode === "ADD_COURSE" ? "Add a course" : "Edit Course"}</ModalHeader>
+        <ModalHeader toggle={toggle}>{props.addOrEditCourse.mode === "ADD_COURSE" ? "Add a Project" : "Edit Project"}</ModalHeader>
         {  props.courseDetails.error &&  <p style = {{color : 'red', textAlign : 'center'}}> <br/> {props.courseDetails.error}</p>}
         <ModalBody>
         <Form>
          <FormGroup>
-        <Label for="subject">Select Subject</Label>
-          <Input type="select" value = {props.courseDetails.subject || "Mathematics"} onChange = {onChange} name="subject" id="subject">
-            <option value = "Mathematics">Mathematics</option>
-            <option value = "Physics">Physics</option>
-            <option value = "Chemistry">Chemistry</option>
-            <option value = "Computer Science">Computer Science</option>
+        <Label for="project">Select Project Type</Label>
+          <Input type="select" value = {props.courseDetails.project || "Residential"} onChange = {onChange} name="project" id="project">
+            <option value = "Residential">Residential</option>
+            <option value = "Commercial">Commercial</option>
+            <option value = "Social">Social</option>
+            <option value = "Landscape">Landscape</option>
           </Input>
       </FormGroup>
        { props.addOrEditCourse.mode === "ADD_COURSE" && <FormGroup>
-        <Label for="courseId">Course Id</Label>
-        <Input type="text" value = {props.courseDetails.courseId}  onChange = {onChange} name="courseId" id="courseId" placeholder="Enter CourseId"/>
+        <Label for="projectId">Project Id</Label>
+        <Input type="text" value = {props.courseDetails.projectId}  onChange = {onChange} name="projectId" id="projectId" placeholder="Enter projectId"/>
       </FormGroup>}
        <FormGroup>
-        <Label for="courseName">Course Name</Label>
-        <Input type="text" value = {props.courseDetails.courseName}  onChange = {onChange}  name="courseName" id="courseName" placeholder="Enter Name of Course"/>
+        <Label for="projectName">Project Name</Label>
+        <Input type="text" value = {props.courseDetails.projectName}  onChange = {onChange}  name="projectName" id="projectName" placeholder="Enter Name of Project"/>
       </FormGroup>
       <FormGroup>
-        <Label for="courseDescription">Course Description</Label>
-        <Input type="textarea" value = {props.courseDetails.courseDescription}  onChange = {onChange} name="courseDescription" id="courseDescription"  placeholder = "Enter few lines about the course"/>
+        <Label for="projectDescription">Project Description</Label>
+        <Input type="textarea" value = {props.courseDetails.projectDescription}  onChange = {onChange} name="projectDescription" id="projectDescription"  placeholder = "Enter few lines about the Project"/>
       </FormGroup>
 
       <FormGroup>

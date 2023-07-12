@@ -11,6 +11,7 @@ import SignIn from './components/SignIn';
 import AdminDashboard from './components/AdminDashboard';
 import AdminSubTopic from './components/AdminSubTopic';
 import AdminCourses from './components/AdminCourses';
+import AdditionProject from './components/AdditionProject';
 import AdminDraftCourses from './components/AdminDraftCourses';
 import { withAuthentication } from './components/SessionManagement';
 import CertificateCollege from './components/Certificates/CertificateCollege';
@@ -43,6 +44,7 @@ function App() {
     <Route exact path = {ROUTES.LANDING} component = {MainComponent}/>
     <Route exact path = {ROUTES.ADMIN_DASHBOARD} component = {AdminDashboard}/>
     <Route exact path = {ROUTES.ADMIN_COURSES} component = {AdminCourses}/>
+    <Route exact path = {ROUTES.ADMIN_PROJECTS} component = {AdditionProject}/>
     <Route exact path = {ROUTES.ADMIN_ADD_SUBTOPIC_TO_COURSE} component = {AdminSubTopic}/>
     <Route exact path = {ROUTES.DRAFT_COURSE} component = {AdminDraftCourses}/>
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}

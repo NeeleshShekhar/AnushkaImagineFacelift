@@ -8,6 +8,7 @@ export const ADMIN_WRITE_ARTICLE = '/adminWriteArticle'
 export const ADMIN_PREVIEW_ARTICLE = '/adminPreviewArticle'
 export const ADMIN_ADD_SUBTOPIC_TO_COURSE = '/addSubTopicsToCourse'
 export const ADMIN_COURSES = "/adminAllCourses"
+export const ADMIN_PROJECTS = "/adminAllProjects"
 export const DRAFT_COURSE = "/adminDrafts"
 export const CERTIFICATE_COLLEGE = '/certificates/:contestName/:groupName'
 export const POSTER = "/events/postermaking"

@@ -34,21 +34,20 @@ const Testimonial = (props) =>
         <img src={teacher} width="100%" alt="Contribute" />
           <div className="myCarousel">
             <h3>Mr. Vikas Ware</h3>
-            <h4>Head of Department, Mathematics, VESASC </h4>
+            <h4>Kia Motors </h4>
             <p><i>
-            Great set of questions for the contest. A platform like SkilWil will enhance the ability of the students by letting them synergize with the opportunities provided by SkilWil.
-            </i></p>
+            The interior design team at XYZ Company completely transformed my home. Their attention to detail and creative ideas made the space feel stylish and functional. I couldn't be happier with the results!</i></p>
           </div>
         </div>
       <div>
         <img src={girl} width="100%" alt="Contribute" />
           <div className="myCarousel">
             <h3>Nibedita Sharma</h3>
-            <h4>Winner, SRMC-VESASC</h4>
+            <h4>Maihar Gardens</h4>
             <h6>
-              One of the most informative and perfectly organized seminars attended.
+            Working with XYZ Company was an absolute pleasure. Their professionalism and design expertise were evident from start to finish. They created a beautiful, inviting space that reflects my personal style.
             </h6>
-            <p><i>A thoroughly explained seminar that answered almost all relevent queries. The event was extremly organized and I would definitely invite my friends for upcoming contests and events </i></p>
+            <p><i>XYZ Company made our dream home a reality. Their innovative design concepts and meticulous execution turned our space into a stunning showcase. We are grateful for their talent and dedication." </i></p>
           </div>
         </div>
 

@@ -88,6 +88,9 @@ const Navigation = (props) =>
                                 <NavItem onClick={switchNav}>
                                 <Link  className="nav-link" to={ROUTES.ADMIN_COURSES} > Admin Courses </Link>
                             </NavItem>
+                            <NavItem onClick={switchNav}>
+                                <Link  className="nav-link" to={ROUTES.ADMIN_PROJECTS} > Admin Projects </Link>
+                            </NavItem>
                             <NavItem  onClick={switchNav}>
                                 <Link className="nav-link" to = {ROUTES.DRAFT_COURSE} >Drafts</Link>
                             </NavItem>
@@ -113,7 +116,7 @@ const Navigation = (props) =>
                         <Collapse navbar isOpen = {navOpen} >
                             <Nav navbar className = "justify-content-end " style = {{width :'100%'}}>
                             <NavItem onClick = {smrcRegistrationClicked}>
-                                <NavLink onClick = {toggleDropdown}> <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} size = "sm">
+                                {/* <NavLink onClick = {toggleDropdown}> <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} size = "sm">
                                 <DropdownToggle
                                     tag="span"
                                     data-toggle="dropdown"
@@ -126,7 +129,7 @@ const Navigation = (props) =>
                                 <Link className="nav-dropdown-text" to={ROUTES.SMRC} onClick={switchNav} > SMRC-VESASC </Link>
                                 
                                 </DropdownMenu>
-                                </Dropdown></NavLink>
+                                </Dropdown></NavLink> */}
                             </NavItem>
                                 <NavItem onClick={doubtClearingClicked}>
                                 <NavLink  onClick={switchNav} className="nav-link" href = "https://forms.gle/2GyMKybVWRX5h2sF6" > Doubt Clearing <Badge color = "primary" style = {{backgroundColor : 'red'}}>FREE</Badge> </NavLink>
