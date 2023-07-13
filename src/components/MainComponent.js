@@ -7,6 +7,8 @@ import Testimonial from './Testimonial';
 import Contribute from './Contribute';
 import ArticleHomePreview from './ArticleHomePreview';
 import Home from './Home/home';
+import {ContactUs} from './Contact/Contactus';
+import MainComproject from './MainCompproject/MainComproject';
 
 function MainComponent(props) {
     useEffect(() => {
@@ -17,12 +19,13 @@ function MainComponent(props) {
             <div className = "main-body">
             <Home/>
                 <br/>
-                {/* <EducationAndArt/> */}
-                {/* <ArticleHomePreview/> */}
+                
+                <MainComproject/>
                 <Testimonial/>
                 <br/>
-               <PostQuestion/>
+                <EducationAndArt/>  
                <br/>
+               <ContactUs/>
                {/* <Contribute/> */}
                
             </div>

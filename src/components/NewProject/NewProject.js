@@ -1,16 +1,18 @@
 import React, { useRef } from 'react';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import 'firebase/compat/storage';
+import { withFirebase } from "../Firebase";
+import { withAuthorization } from "../SessionManagement";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './Addproject.css';
+import './NewProject.css';
 import Button from 'react-bootstrap/Button';
-import { toast } from "react-toastify";
 
-export const AddProject = () => {
+import {withRouter} from "react-router-dom";
+
+export const NewProject = (props) => {
   const form = useRef(null);
+
+  
 
   const AddData = async (event) => {
     event.preventDefault();
@@ -25,21 +27,11 @@ export const AddProject = () => {
       // Initialize Firebase app 
       
       
-      if (firebase.apps.length === 0){
-        firebase.initializeApp({
-          apiKey: "AIzaSyA_7ttet5NQc2RsVGTiMyirSOWr18wzbTs",
-          authDomain: "anushkadep-48683.firebaseapp.com",
-          projectId: "anushkadep-48683",
-          storageBucket: "anushkadep-48683.appspot.com",
-          messagingSenderId: "582543308981",
-          appId: "1:582543308981:web:ea1c9f47b2cccdc92d26fc",
-          measurementId: "G-LN2L84X2YT"
-      });
-    }
+      
 
       // Get Firestore and Storage instances
-      const firestore = firebase.firestore();
-      const storage = firebase.storage();
+      const firestore = props.firebase.db;
+      const storage = props.firebase.storage;
 
       // Array to store the image URLs
       const imageUrls = [];
@@ -69,7 +61,7 @@ export const AddProject = () => {
       }
 
       // Add a new document to the "Project" collection
-      await firestore.collection('Project').add({
+      await props.firebase.db.collection('Project').add({
         projectName,
         shortDesc,
         desc,
@@ -86,7 +78,7 @@ export const AddProject = () => {
         img9: imageUrls[9]
       });
 
-      toast.success("Project created successfully");
+      
       alert("Project Added")
 
       // Clear the form after successful submission
@@ -166,5 +158,5 @@ export const AddProject = () => {
     </div>
   );
 }
-
-export default AdditionProject;
+const condition = signedInUser => !!signedInUser;
+export default withFirebase(withRouter(withAuthorization(condition)(NewProject)))

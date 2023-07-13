@@ -1,6 +1,5 @@
 import React, {useEffect,useState} from 'react';
 import ReactGA from "react-ga";
-import './courseHome.css';
 import { withRouter,Route,useLocation } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -13,7 +12,7 @@ import playCircleFilled from '@iconify/icons-ant-design/play-circle-filled';
 import { withFirebase } from "../Firebase";
 
 
-const CourseHome = (props) =>
+const MainComproject = (props) =>
 {
     const [courses, setCourses] = useState([])
     const db = props.firebase.db;
@@ -23,7 +22,7 @@ const CourseHome = (props) =>
         ReactGA.pageview(window.location.pathname + window.location.search);
         console.log("Hello world, I am called and I am course page for users");
    var allCourses = [];
-   db.collection("Project").get().then(querySnapshot => {
+   db.collection("Project").limit(3).get().then(querySnapshot => {
        querySnapshot.forEach((doc) => {
             allCourses.push({...doc.data(), id : doc.id});
        })
@@ -39,24 +38,16 @@ const CourseHome = (props) =>
  <div>
  <br/>
      <div className="container main-body">
-        <div className=" row course-header">
-          <div className="col-12 col-md-12 col-lg-8 head-back">
-        <h2 className="course-header-title">Projects</h2>
-    
-        <h5 className="course-header-content" style={{fontWeight:'10px'}}> Anushka Imagine is a leading interior design company specializing
-              in creating stunning and functional spaces. </h5>
-        <h5 className="course-header-content">We have a team of
-              highly skilled designers who are passionate about transforming
-              ordinary spaces into extraordinary environments.</h5>
-    
-    
-    </div>
-    </div> 
+     <div>
+        <div className="head-all-p"> Latest Projects <a href={'/projects'}  className="viewall">View All</a></div>
+        <div></div>
+        
+        </div>
      
-      <br/>
+      
     
       {/*<CourseNav/>*/}
-      <br/>
+      
         <hr/>
        
       <br/>
@@ -106,4 +97,4 @@ const CourseHome = (props) =>
     );
 }
 
-export default withFirebase(withRouter(CourseHome));
+export default withFirebase(withRouter(MainComproject));

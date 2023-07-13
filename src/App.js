@@ -11,7 +11,7 @@ import SignIn from './components/SignIn';
 import AdminDashboard from './components/AdminDashboard';
 import AdminSubTopic from './components/AdminSubTopic';
 import AdminCourses from './components/AdminCourses';
-import AdditionProject from './components/AdditionProject';
+
 import AdminDraftCourses from './components/AdminDraftCourses';
 import { withAuthentication } from './components/SessionManagement';
 import CertificateCollege from './components/Certificates/CertificateCollege';
@@ -22,9 +22,13 @@ import PosterMaking from './components/PosterMaking';
 import oops from './components/oops';
 import CourseHome from './components/CourseHome';
 import Subtopic from './components/SubTopics';
+
 import ArticleView from './components/ArticleView';
 import AllArticle from './components/AllArticle';
 import PosterWinning from './components/PosterWinning';
+import NewProject from './components/NewProject/NewProject';
+import { ContactUs } from './components/Contact/Contactus';
+import AboutUs from './components/Aboutus/Aboutus';
 
 function App() {
   return (
@@ -44,7 +48,8 @@ function App() {
     <Route exact path = {ROUTES.LANDING} component = {MainComponent}/>
     <Route exact path = {ROUTES.ADMIN_DASHBOARD} component = {AdminDashboard}/>
     <Route exact path = {ROUTES.ADMIN_COURSES} component = {AdminCourses}/>
-    <Route exact path = {ROUTES.ADMIN_PROJECTS} component = {AdditionProject}/>
+    <Route exact path = {ROUTES.ADMIN_PROJECTS} component = {NewProject}/>
+    <Route exact path = {ROUTES.CONTACT_US} component = {ContactUs}/>
     <Route exact path = {ROUTES.ADMIN_ADD_SUBTOPIC_TO_COURSE} component = {AdminSubTopic}/>
     <Route exact path = {ROUTES.DRAFT_COURSE} component = {AdminDraftCourses}/>
      {/* <Route exact path = {ROUTES.CERTIFICATE} component = {Certificate}/> */}
@@ -55,6 +60,7 @@ function App() {
      <Route exact path = {ROUTES.BLOGS} component = {ArticleView}/>
      <Route exact path = {ROUTES.ALLARTICLE} component = {AllArticle}/>
      <Route exact path = {ROUTES.POSTERWINNING} component = {PosterWinning}/>
+     <Route exact path = {ROUTES.ABOUTUS} component = {AboutUs}/>
 
      <Route  component = {oops}/>
      </Switch>

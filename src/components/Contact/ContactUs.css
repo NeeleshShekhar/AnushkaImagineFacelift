@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.contact-us-title{
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Roboto';
+    text-align: left;
+}
+
+.contact-us-description{
+    font-size: 15px;
+    text-align: left;
+    
+}
+
+.contact-us-main{
+   padding: 30px; 
+   align-items: start;
+}
+.dream{
+    background: radial-gradient(50% 50% at 50% 50%, #007CA4 0%, #02917F 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+
+
+}
+
+.reality{
+    background: radial-gradient(50% 50% at 50% 50%, #007CA4 0%, #02917F 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;   
+}
+
+.form-head{
+    text-align: left;
+    font-size: 25px;
+    border-radius: 30px;
+}
+
+.text-box{
+    float: left;
+    width: 370px;
+}
+
+.text-box-button{
+    float: left;
+    width: 370px;
+    background-color: #057aa1; 
+}
+
+.address-title{
+    background: #004e5c;
+     
+}
+.contact-address-main{
+    background: #8fe2f1;
+    border-radius: 10px 0px 0px 20px;
+   
+}
+
+.address{
+    font-size: 30px;
+    font-weight: 600;
+    color: #8fe2f1;
+    
+    
+}
+
+.address-desc{
+    text-align: left;
+    font-size: 15px;
+    
+}

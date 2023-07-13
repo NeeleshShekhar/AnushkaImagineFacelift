@@ -44,9 +44,9 @@ const Oops = (props) =>
             </div>
         </div>
 
-        <h1 className="also_search">Read our featured articles</h1>
+        <h1 className="also_search">View our projects</h1>
 
-        <a href = "/courses" style = {{cursor:'pointer'}}>Course Section</a>
+        <a href = "/projects" style = {{cursor:'pointer'}}>Course Section</a>
 
     </div>
  </div>   

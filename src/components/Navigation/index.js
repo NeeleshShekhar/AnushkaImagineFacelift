@@ -85,15 +85,15 @@ const Navigation = (props) =>
                                <NavItem onClick={switchNav}>
                                 <Link  className="nav-link" to={ROUTES.ADMIN_DASHBOARD} > Dashboard </Link>
                             </NavItem>
-                                <NavItem onClick={switchNav}>
+                                {/* <NavItem onClick={switchNav}>
                                 <Link  className="nav-link" to={ROUTES.ADMIN_COURSES} > Admin Courses </Link>
-                            </NavItem>
+                            </NavItem> */}
                             <NavItem onClick={switchNav}>
                                 <Link  className="nav-link" to={ROUTES.ADMIN_PROJECTS} > Admin Projects </Link>
                             </NavItem>
-                            <NavItem  onClick={switchNav}>
+                            {/* <NavItem  onClick={switchNav}>
                                 <Link className="nav-link" to = {ROUTES.DRAFT_COURSE} >Drafts</Link>
-                            </NavItem>
+                            </NavItem> */}
                                 <NavItem>
                                     <NavLink className="nav-link" onClick = {signOutAdmin} >Sign Out</NavLink>
                                 </NavItem>
@@ -131,27 +131,30 @@ const Navigation = (props) =>
                                 </DropdownMenu>
                                 </Dropdown></NavLink> */}
                             </NavItem>
-                                <NavItem onClick={doubtClearingClicked}>
+                                {/* <NavItem onClick={doubtClearingClicked}>
                                 <NavLink  onClick={switchNav} className="nav-link" href = "https://forms.gle/2GyMKybVWRX5h2sF6" > Doubt Clearing <Badge color = "primary" style = {{backgroundColor : 'red'}}>FREE</Badge> </NavLink>
-                            </NavItem>
+                            </NavItem> */}
 
                            
-                            <NavItem onClick = {earnNowClicked}>
+                            {/* <NavItem onClick = {earnNowClicked}>
                                 <Link className="nav-link" to = {ROUTES.EARN} onClick={switchNav} >Compete</Link>
-                            </NavItem>
+                            </NavItem> */}
                             <NavItem onClick = {courseClicked}>
-                                <Link className="nav-link" to = {ROUTES.COURSEHOME} onClick={switchNav} >Courses</Link>
+                                <Link className="nav-link" to = {ROUTES.COURSEHOME} onClick={switchNav} >Projects</Link>
                             </NavItem>
-                            <NavItem onClick = {articleClicked}>
+                            {/* <NavItem onClick = {articleClicked}>
                                 <Link className="nav-link" to = {ROUTES.ALLARTICLE} onClick={switchNav} >Articles</Link>
-                            </NavItem>
+                            </NavItem> */}
 
                                 <NavItem>
-                                    <NavLink className="nav-link" onClick={switchNav}  href= "https://forms.gle/vcXEqv1QAg5QsGiTA" >Contact us</NavLink>
+                                    <NavLink className="nav-link" onClick={switchNav}  href= "/contactus" >Contact us</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                <NavLink onClick={switchNav} className="nav-link" href = "/#contribute">Contribute</NavLink>
+                                    <NavLink className="nav-link" onClick={switchNav}  href= "/aboutus" >About us</NavLink>
                                 </NavItem>
+                                {/* <NavItem>
+                                <NavLink onClick={switchNav} className="nav-link" href = "/#contribute">Contribute</NavLink>
+                                </NavItem> */}
                                   <SignedInUserContext.Consumer>
                                     { signedInUser => signedInUser &&  <AdminNavbar/>  } 
                                   </SignedInUserContext.Consumer>
