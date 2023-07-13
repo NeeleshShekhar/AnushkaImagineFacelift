@@ -29,6 +29,7 @@ import PosterWinning from './components/PosterWinning';
 import NewProject from './components/NewProject/NewProject';
 import { ContactUs } from './components/Contact/Contactus';
 import AboutUs from './components/Aboutus/Aboutus';
+import ProjectDetail from './components/ProjectDetail/ProjectDetail';
 
 function App() {
   return (
@@ -56,7 +57,7 @@ function App() {
      <Route exact path = {ROUTES.CERTIFICATE_COLLEGE} component = {CertificateCollege}/>
      <Route exact path = {ROUTES.POSTER} component = {PosterMaking}/>
      <Route exact path = {ROUTES.COURSEHOME} component = {CourseHome}/>
-     <Route exact path = {ROUTES.SUBTOPICS} component = {Subtopic}/>
+     <Route exact path = {ROUTES.SUBTOPICS} component = {ProjectDetail}/>
      <Route exact path = {ROUTES.BLOGS} component = {ArticleView}/>
      <Route exact path = {ROUTES.ALLARTICLE} component = {AllArticle}/>
      <Route exact path = {ROUTES.POSTERWINNING} component = {PosterWinning}/>
