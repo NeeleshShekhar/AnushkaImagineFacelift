@@ -1,30 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import firebase from 'firebase/compat/app';
+
 import {Row,Col,Container} from 'react-bootstrap';
 import ImageGallery from 'react-image-gallery';
-import 'firebase/compat/firestore';
+
 import './ProjectDetail.css';
+import { withRouter,Route,useLocation } from 'react-router-dom';
+import { withFirebase } from "../Firebase";
 
 // Initialize Firebase (ensure you've set up Firebase in your project)
-const firebaseConfig = {
-    apiKey: "AIzaSyDxv26dr0PJVqUulJXVoNjvWPxBUtg7NwY",
-    authDomain: "anushkaimagine.firebaseapp.com",
-    projectId: "anushkaimagine",
-    storageBucket: "anushkaimagine.appspot.com",
-    messagingSenderId: "463368236524",
-    appId: "1:463368236524:web:2dbc6298a7f078f32f24c9",
-    measurementId: "G-HF6NT09K3E"
-};
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
-const ProjectDetail = () => {
+const ProjectDetail = (props) => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [data, setData] = useState([]);
-  
+  const db = props.firebase.db;
+
   
   useEffect(() => {
     const fetchProject = async () => {
@@ -143,4 +135,4 @@ const getImg=(imgUrl)=>{
   );
 };
 
-export default ProjectDetail;
+export default withFirebase(withRouter(ProjectDetail));
