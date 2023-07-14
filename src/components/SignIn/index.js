@@ -12,7 +12,7 @@ const [userDetail, setUserDetail] = useState(INITIAL_STATE);
  }
  const onSubmit = () => {
      props.firebase.signInAdminWithEmailAndPassword(userDetail.email, userDetail.password).then(() => {
-        props.history.push(ROUTES.ADMIN_DASHBOARD);
+        props.history.push(ROUTES.ADMIN_PROJECTS);
       }
      ).catch(error => setUserDetail({email : '', password : '' , error : error}))
   
